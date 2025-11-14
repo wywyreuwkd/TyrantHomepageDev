@@ -10,9 +10,6 @@ export const Main = () => {
           <div className="max-w-2xl mb-8">
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
               여기는 메인 페이지 입니다.
-              Nextly is a free landing page & marketing website
-              template for startups and indie projects. Its built with
-              Next.js & TailwindCSS. And its completely open-source.
             </p>            
           </div>
         </div>
