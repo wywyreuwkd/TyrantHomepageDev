@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/Container";
+
+import { Slot } from "@radix-ui/react-slot@1.1.2";
 import heroImg from "../../public/img/hero.png";
 
 export const Main = () => {
