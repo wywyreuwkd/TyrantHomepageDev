@@ -63,7 +63,7 @@ export function CompanyIntro() {
             <div className="w-full lg:w-[45%] lg:sticky lg:top-32">
               <div className="relative overflow-hidden" style={{ borderRadius: '24px', height: '100%' }}>
                 <ImageWithFallback
-                  src={ceoImage}
+                  src={ceoImage.src}
                   alt="CEO"
                   className="w-full h-full object-cover"
                   style={{ minHeight: '800px' }}

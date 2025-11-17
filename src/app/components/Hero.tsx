@@ -48,7 +48,7 @@ export function Hero() {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ 
-              backgroundImage: `url(${slides[currentSlide].image})`,
+              backgroundImage: `url(${slides[currentSlide].image.src})`,
               width: '100%',
               height: '100%',
               top: 0,

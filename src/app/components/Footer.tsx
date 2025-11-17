@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <img src={logo} alt="TYRANT Logo" className="h-12 object-contain" />
+            <img src={logo.src} alt="TYRANT Logo" className="h-12 object-contain" />
             <p className="text-gray-400 text-sm max-w-xs">
               솔라오는 산업단지 및 물류센터를 위한 수익공유형 태양광 무상설치 전문 기업입니다. Next.js와 Tailwind CSS로 구축되었으며 완전히 오픈소스입니다.
             </p>

@@ -429,7 +429,7 @@ export function RevenueComparison() {
                 }}
               >
                 <ImageWithFallback 
-                  src={hanwhaLogo} 
+                  src={hanwhaLogo.src} 
                   alt="한화시스템" 
                   style={{ 
                     maxWidth: '160px',
@@ -463,7 +463,7 @@ export function RevenueComparison() {
                 }}
               >
                 <ImageWithFallback 
-                  src={jbcorpLogo} 
+                  src={jbcorpLogo.src} 
                   alt="제이비코퍼레이션" 
                   style={{ 
                     maxWidth: '160px',
@@ -497,7 +497,7 @@ export function RevenueComparison() {
                 }}
               >
                 <ImageWithFallback 
-                  src={daeboLogo} 
+                  src={daeboLogo.src} 
                   alt="대보" 
                   style={{ 
                     maxWidth: '160px',
