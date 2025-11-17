@@ -1,4 +1,4 @@
-import partnerImage from "figma:asset/a1f7ca076bee9c69717df0093bffe7922bc05fcb.png";
+import partnerImage from "../assets/a1f7ca076bee9c69717df0093bffe7922bc05fcb.png";
 
 export function Partners() {
   return (
@@ -10,7 +10,7 @@ export function Partners() {
         
         <div className="bg-white rounded-3xl p-16 shadow-sm border border-gray-100">
           <img 
-            src={partnerImage} 
+            src={partnerImage.src} 
             alt="한화시스템, JBCORP, DAEBO 파트너 로고" 
             className="w-full max-w-5xl mx-auto"
           />
