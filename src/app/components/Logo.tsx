@@ -11,7 +11,7 @@ export function Logo() {
       }}
     >
       <img 
-        src={logo} 
+        src={logo.src} 
         alt="TYRANT Logo" 
         style={{
           height: '56px',
