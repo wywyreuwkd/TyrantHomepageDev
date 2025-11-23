@@ -1,5 +1,5 @@
 import { Building2, Handshake, Award, CheckCircle2, Zap, TrendingUp, Users, Shield } from "lucide-react";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { ImageWithFallback } from "../../components/figma/ImageWithFallback";
 
 export function Partners() {
   const partnerCategories = [

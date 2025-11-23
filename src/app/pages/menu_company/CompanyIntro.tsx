@@ -1,5 +1,5 @@
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import ceoImage from "../assets/e1eaffd9dd03e97649563fdb53c07145f7f5b620.png";
+import { ImageWithFallback } from "../..//components/figma/ImageWithFallback";
+import ceoImage from "../../assets/e1eaffd9dd03e97649563fdb53c07145f7f5b620.png";
 
 export function CompanyIntro() {
   return (
