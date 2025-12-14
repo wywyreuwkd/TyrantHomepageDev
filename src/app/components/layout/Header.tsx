@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@components/shared/Logo";
@@ -15,6 +15,7 @@ const menuData = [
       { label: "CI소개", href: "/company/ci" },
       { label: "그룹사소개", href: "/company/group" },
       { label: "연혁", href: "/company/history" },
+      { label: "핵심인력", href: "/company/members" },
       { label: "협력사소개", href: "/company/partners" },
     ],
   },
@@ -93,7 +94,31 @@ const menuData = [
 
 export function Header() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedMobileMenu, setExpandedMobileMenu] = useState<number | null>(null);
   const pathname = usePathname();
+
+  // 모바일 메뉴가 열렸을 때 스크롤 방지
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
+  // 경로 변경 시 모바일 메뉴 닫기
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setExpandedMobileMenu(null);
+  }, [pathname]);
+
+  const toggleMobileSubmenu = (index: number) => {
+    setExpandedMobileMenu(expandedMobileMenu === index ? null : index);
+  };
 
   return (
     <header className="bg-header shadow-sm">
@@ -154,11 +179,119 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
+          {/* 햄버거 메뉴 버튼 - xl 미만에서만 표시 */}
+          <button
+            className="xl:hidden color-white hover:color-accent transition-colors p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="메뉴 열기"
+          >
+            <Menu size={28} />
+          </button>
+
+
+          {/* 스타일 가이드 버튼 (데스크탑만) */}
+          <Link href="/styleguide">
+            <button 
+              className="hidden xl:flex items-center gap-2 px-5 py-2.5 border-2 border-[#FF6B2C]/30 text-[#FF6B2C] hover:bg-[#FF6B2C] hover:text-white transition-all hover:scale-105"
+              style={{
+                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
+                fontWeight: '600',
+                borderRadius: '100px',
+                fontSize: '15px'
+              }}>
+              <div className="w-1.5 h-1.5 bg-[#FF6B2C] rounded-full"></div>
+              STYLE GUIDE
+            </button>
+          </Link>          
+
           <Button
-            className="bg-accent hover:bg-accent-90 color-white transition-all hover:scale-105 shadow-md font-semibold rounded-full py-3 px-[26px] text-base"
+            className="hidden sm:flex items-center justify-center bg-accent hover:bg-accent-90 color-white transition-all hover:scale-105 shadow-md font-semibold rounded-full py-3 px-[26px] text-base leading-none"
           >
             빠른 상담
           </Button>
+        </div>
+      </div>
+
+      {/* 모바일 메뉴 오버레이 */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-40 xl:hidden transition-opacity duration-300 ${
+          mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* 모바일 메뉴 패널 */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[320px] max-w-[85vw] bg-primary z-50 xl:hidden transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        {/* 모바일 메뉴 헤더 */}
+        <div className="flex items-center justify-between h-20 px-6 border-b border-white/10">
+          <span className="color-white font-semibold text-lg">메뉴</span>
+          <button
+            className="color-white hover:color-accent transition-colors p-2"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="메뉴 닫기"
+          >
+            <X size={28} />
+          </button>
+        </div>
+
+        {/* 모바일 메뉴 내용 */}
+        <div className="overflow-y-auto h-[calc(100%-80px)] py-4">
+          {menuData.map((menu, index) => (
+            <div key={index} className="border-b border-white/5">
+              {/* 메뉴 타이틀 */}
+              <button
+                className="w-full flex items-center justify-between px-6 py-4 color-white hover:bg-white/5 transition-colors"
+                onClick={() => toggleMobileSubmenu(index)}
+              >
+                <span className="font-medium">{menu.title}</span>
+                <ChevronDown
+                  size={20}
+                  className={`transition-transform duration-200 ${
+                    expandedMobileMenu === index ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+
+              {/* 서브메뉴 */}
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  expandedMobileMenu === index ? 'max-h-[500px]' : 'max-h-0'
+                }`}
+              >
+                <div className="bg-white/5 py-2">
+                  {menu.items.map((item, itemIndex) => {
+                    const isActive = pathname === item.href;
+                    return (
+                      <Link
+                        key={itemIndex}
+                        href={item.href}
+                        className={`block px-8 py-3 text-sm transition-colors ${
+                          isActive
+                            ? 'color-accent bg-accent-10'
+                            : 'color-white-90 hover:font-semibold hover:color-white hover:bg-white/5'
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* 모바일 빠른 상담 버튼 */}
+          <div className="px-6 py-6">
+            <Button
+              className="w-full bg-accent hover:bg-accent-90 color-white transition-all shadow-md font-semibold rounded-full py-3 text-base"
+            >
+              빠른 상담
+            </Button>
+          </div>
         </div>
       </div>
     </header>

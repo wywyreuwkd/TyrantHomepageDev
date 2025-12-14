@@ -16,7 +16,9 @@ export default function HomePage() {
       <Hero />
       <ServiceIntro />
       <Process />
-      <RevenueComparison />
+      <div className="hidden md:block">
+        <RevenueComparison />
+      </div>
       <WhyNow />
     </div>
   );

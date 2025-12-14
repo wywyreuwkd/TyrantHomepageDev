@@ -1,5 +1,5 @@
 interface SolarOLogoProps {
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'responsiveLarge' | 'large';
   className?: string;
 }
 
@@ -16,6 +16,13 @@ export function SolarOLogo({ size = 'medium', className = '' }: SolarOLogoProps)
       oSizeClass: 'w-[52px] h-[52px]',
       oBorderClass: 'border-[12px] border-accent',
       gapClass: 'gap-1.5', // 6px
+    },
+    responsiveLarge: {
+      // medium(32px) ~ large(90px) 사이를 화면 너비에 따라 순차적으로 변경
+      solarFontSize: 'text-[clamp(48px,8vw,90px)]',
+      oSizeClass: 'w-[clamp(72px,12vw,160px)] h-[clamp(72px,12vw,160px)]',
+      oBorderClass: 'border-[clamp(19px,3vw,40px)] border-accent',
+      gapClass: 'gap-[clamp(12px,1.5vw,12px)]',
     },
     large: {
       solarFontSize: 'text-[90px]',

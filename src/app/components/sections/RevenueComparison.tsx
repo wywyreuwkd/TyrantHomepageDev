@@ -169,7 +169,7 @@ export function RevenueComparison() {
 
           {/* Bottom Highlight Box */}
           <div 
-            className="bg-[#1B2E4A] mx-auto text-center mt-12 flex items-center justify-center gap-2"
+            className="bg-[#1B2E4A] mx-auto text-center mt-12 flex flex-wrap items-center justify-center gap-2"
             style={{ 
               borderRadius: '24px', 
               padding: '28px 40px',

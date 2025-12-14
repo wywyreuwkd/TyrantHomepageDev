@@ -133,7 +133,7 @@ const tyrantProcess = [
         description: "실질적으로 도움이 되는 상세 분석 보고서 제공",
       },
     ],
-    color: "from-accent to-[#e55a35]",
+    color: "from-[#F47050] to-[#e55a35]",
   },
 ];
 
@@ -195,7 +195,7 @@ export default function FSAnalysisPage() {
         title={<>태양광 사업 분석,<br /><span className="color-accent">전문가</span>가 다릅니다</>}
         description={
           <>
-            대부분의 사업성 검토보고서는 회계법인에서 작성합니다.
+            사업성 검토보고서가 필요할 때 많은 경우 회계법인에 의뢰를 합니다.
             <br className="hidden md:block" />
             하지만 태양광 사업의 본질을 이해하는 전문가의 분석은 다릅니다.
           </>
@@ -204,8 +204,8 @@ export default function FSAnalysisPage() {
 
       {/* Problem Statement Section */}
       <section className="relative bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red-500 rounded-full blur-[150px]"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-400 rounded-full blur-[150px]"></div>
         </div>
 
         <div className="relative mx-auto px-6 md:px-10 py-20 md:py-32 max-w-[1280px]">
@@ -216,9 +216,9 @@ export default function FSAnalysisPage() {
             </h2>
 
             {/* Quote Box */}
-            <div className="bg-[rgba(255,107,61,0.1)] border border-accent/30 rounded-2xl p-8 md:p-12 mb-12">
+            <div className="bg-[rgba(255,107,61,0.1)] border border-accent-30 rounded-2xl p-8 md:p-12 mb-12">
               <p className="text-lg md:text-xl color-white-90 leading-[180%] mb-6">
-                대부분의 사업성 검토보고서를 작성하는 <span className="color-accent font-bold">회계법인</span>은
+                사업성 검토보고서를 작성하는 다수의 <span className="color-accent font-bold">회계법인</span>들은
                 <br className="hidden md:block" />
                 <span className="color-white font-semibold">태양광 사업의 본질에 대한 이해도가 낮을 수밖에 없습니다.</span>
               </p>
@@ -227,7 +227,7 @@ export default function FSAnalysisPage() {
 
             {/* Problem Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              <div className="bg-[rgba(21,48,90,0.5)] border border-white/10 rounded-2xl p-6">
+              <div className="bg-[rgba(21,48,90,0.5)] border border-white-10 rounded-2xl p-6">
                 <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -239,7 +239,7 @@ export default function FSAnalysisPage() {
                 </p>
               </div>
 
-              <div className="bg-[rgba(21,48,90,0.5)] border border-white/10 rounded-2xl p-6">
+              <div className="bg-[rgba(21,48,90,0.5)] border border-white-10 rounded-2xl p-6">
                 <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -251,7 +251,7 @@ export default function FSAnalysisPage() {
                 </p>
               </div>
 
-              <div className="bg-[rgba(21,48,90,0.5)] border border-white/10 rounded-2xl p-6">
+              <div className="bg-[rgba(21,48,90,0.5)] border border-white-10 rounded-2xl p-6">
                 <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
@@ -337,7 +337,7 @@ export default function FSAnalysisPage() {
                 className="relative bg-[rgba(21,48,90,0.3)] backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-10 overflow-hidden"
               >
                 {/* Background Gradient */}
-                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${process.color} opacity-10 blur-3xl`}></div>
+                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br bg-blue-400 opacity-10 blur-3xl`}></div>
 
                 {/* Step Badge */}
                 <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">

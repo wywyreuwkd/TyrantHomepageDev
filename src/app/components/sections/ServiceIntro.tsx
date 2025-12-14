@@ -51,11 +51,15 @@ export function ServiceIntro() {
     <section id="service" className="bg-primary py-12 md:py-24">
       <div className="mx-auto px-6 md:px-10 max-w-[1280px]">
         {/* Single Section with Title and Cards */}
-        <div className="bg-third shadow-sm rounded-2xl py-20 px-16">
+        <div className="bg-third shadow-sm rounded-2xl py-20 px-6 md:px-16">
           {/* Title Area */}
           <div className="mb-[24px]">
-            <h2 className="color-white flex items-center gap-2 text-left text-4xl font-bold leading-[1.4] mb-4">
-              솔라오 [ <SolarOLogo size="medium" /> ] 프로젝트는?
+            <h2 className="color-white flex flex-wrap items-center gap-2 text-left text-2xl sm:text-4xl font-bold leading-[1.4] mb-4">
+              <span className="flex items-center gap-2">
+                <span className="hidden sm:inline">솔라오 [ <SolarOLogo size="medium" /> ]</span>
+                <span className="inline sm:hidden">솔라오 [ <SolarOLogo size="small" /> ]</span>
+              </span>
+              <span className="block sm:inline">프로젝트는?</span>
             </h2>
             <p className="color-white text-left leading-[140%] text-[18px]">
               건물주 부담 없이 태양광을 설치하고, 15년간 발생하는 수익을 함께 나누는 무상설치 수익공유 프로그램입니다.
