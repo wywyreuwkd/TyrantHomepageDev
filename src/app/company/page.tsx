@@ -19,7 +19,7 @@ export default function CompanyIntro() {
           <>
             타이런트는 태양광 발전 전문 기업으로, 수익공유형 무상설치 모델을 통해
             <br className="hidden md:block" />
-            기업과 함께 성장하며 탄소중립 사회 실현에 기여하고 있습니다. 강준호
+            기업과 함께 성장하며 탄소중립 사회 실현에 기여하고 있습니다.
           </>
         }
       />
