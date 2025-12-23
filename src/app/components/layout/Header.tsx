@@ -22,16 +22,16 @@ const menuData = [
   {
     title: "사업영역",
     items: [
-      { label: "태양광 사업성분석(FS)", href: "/business/fs" },
       { label: "태양광 개발", href: "/business/development" },
-      { label: "태양광 기자재 공급", href: "/business/materials" },
       { label: "태양광 시공", href: "/business/construction" },
       { label: "태양광 투자", href: "/business/investment" },
-      { label: "태양광 관리운영(모니터링)", href: "/business/monitoring" },
-      { label: "태양광 사무관리(보험)", href: "/business/insurance" },
+      { label: "태양광 기자재공급", href: "/business/materials" },
+      { label: "태양광 사업성분석", href: "/business/fs" },
       { label: "태양광 기술실사", href: "/business/duediligence" },
-      { label: "데이터센터", href: "/business/datacenter" },
-      { label: "태양광 교육", href: "/business/education" },
+      { label: "태양광 관리운영", href: "/business/monitoring" },
+      { label: "태양광 사무관리", href: "/business/operation" },
+      // { label: "데이터센터", href: "/business/datacenter" },
+      // { label: "태양광 교육", href: "/business/education" },
     ],
   },
   {

@@ -3,7 +3,7 @@ import { HeroSection } from "@components/shared/HeroSection";
 import { LabelAccent, LabelGray } from "@components/shared/SectionLabel";
 
 export const metadata: Metadata = {
-  title: "태양광 사업 분석",
+  title: "태양광 사업성분석",
   description: "태양광 개발 사업 전문가의 실질적인 사업성 분석. 형식적인 보고서가 아닌, 발주처에게 진정한 도움이 되는 리포트를 제공합니다.",
 };
 
@@ -192,7 +192,7 @@ export default function FSAnalysisPage() {
       {/* Hero Section */}
       <HeroSection
         badge="F/S ANALYSIS SERVICE"
-        title={<>태양광 사업 분석,<br /><span className="color-accent">전문가</span>가 다릅니다</>}
+        title={<>태양광 사업성분석</>} //,<br /><span className="color-accent">전문가</span>가 다릅니다</>}
         description={
           <>
             사업성 검토보고서가 필요할 때 많은 경우 회계법인에 의뢰를 합니다.

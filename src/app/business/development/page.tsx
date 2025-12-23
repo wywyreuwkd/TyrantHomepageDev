@@ -1,370 +1,300 @@
-import { Lightbulb, FileCheck, Map, Users, Zap, Building2, CheckCircle2, TrendingUp } from "lucide-react";
+import type { Metadata } from "next";
+import { HeroSection } from "@components/shared/HeroSection";
+import { LabelAccent, LabelGray } from "@components/shared/SectionLabel";
+import { CheckCircle2, ShieldCheck, Factory, Car, Warehouse, Leaf, Map } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "태양광 개발",
+  description: "타이런트는 혼자 해결하지 않습니다. 수백 명의 전문가가 모여 태양광 발전 개발의 최적 솔루션을 제공합니다.",
+};
+
+// 핵심 서비스
+const services = [
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+      </svg>
+    ),
+    title: "부지 발굴",
+    desc: "전국 산업단지, 물류센터, 유휴부지 등 최적의 사업지를 발굴하고 확보합니다",
+    items: ["입지 분석", "토지주 협상", "계약 체결"]
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+    title: "설계",
+    desc: "대상지 특성을 반영한 최적 시스템 설계 및 구조물 안전성을 검토합니다",
+    items: ["전기설계", "구조설계", "토목설계"]
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+    title: "인허가 진행",
+    desc: "발전사업 허가부터 전기사업 등록까지 복잡한 전 과정을 대행합니다",
+    items: ["발전사업허가", "개발행위허가", "전기사업등록"]
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: "금융 조달",
+    desc: "경력 15년 이상의 발전사업 금융 전문가가 최적의 금융 솔루션을 제공합니다",
+    items: ["프로젝트금융", "투자유치", "세무컨설팅"]
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+      </svg>
+    ),
+    title: "시공",
+    desc: "검증된 협력사 네트워크를 통해 품질 높은 발전소를 건설합니다",
+    items: ["EPC 총괄", "품질관리", "공정관리"]
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    title: "관리",
+    desc: "발전소 준공 이후에도 안정적인 운영과 수익 극대화를 지원합니다",
+    items: ["발전량 모니터링", "유지보수", "성능 최적화"]
+  }
+];
+
+// 대상지별 솔루션
+const siteTypes = [
+  { icon: Factory, title: "지붕형", desc: "방수 솔루션을 연구하고 검증된 공법만 적용" },
+  { icon: Car, title: "주차장", desc: "주차 공간 활용과 발전 수익을 동시에" },
+  { icon: Warehouse, title: "축사", desc: "축사 환경에 최적화된 구조 및 환기 설계" },
+  { icon: Leaf, title: "나대지·전·답", desc: "토지 특성과 일조량을 고려한 맞춤 개발" },
+  { icon: Map, title: "유수지", desc: "수상 태양광 전문 설계 및 시공 솔루션" }
+];
+
+// 개발 프로세스
+const process = [
+  {
+    step: "STEP 01",
+    phase: "기획 단계",
+    duration: "1~2개월",
+    steps: [
+      "부지 발굴 및 현장 실사",
+      "사업성 분석 (FS)",
+      "사업 구조 설계",
+      "토지주/건물주 협상"
+    ],
+    color: "from-blue-500 to-blue-600"
+  },
+  {
+    step: "STEP 02",
+    phase: "인허가 단계",
+    duration: "3~6개월",
+    steps: [
+      "발전사업 허가 신청",
+      "개발행위 허가",
+      "한전 계통연계 검토",
+      "각종 인허가 취득"
+    ],
+    color: "from-emerald-500 to-emerald-600"
+  },
+  {
+    step: "STEP 03",
+    phase: "설계 단계",
+    duration: "1~2개월",
+    steps: [
+      "전기/구조/토목 설계",
+      "안전성 검토",
+      "자재 사양 확정",
+      "시공 계획 수립"
+    ],
+    color: "from-purple-500 to-purple-600"
+  },
+  {
+    step: "STEP 04",
+    phase: "금융/시공 단계",
+    duration: "3~6개월",
+    steps: [
+      "금융기관 협의 및 PF 조건 협상",
+      "투자자 유치 및 자금 조달",
+      "EPC 시공 및 품질관리",
+      "준공 및 사용전검사"
+    ],
+    color: "from-[#F47050] to-[#e55a35]"
+  }
+];
+
+// 타이런트 경쟁력
+const advantages = [
+  {
+    title: "수백 명의 전문가 협업",
+    desc: "여러 협력사들이 매주 회의를 통해 제대로 된 태양광발전소를 짓기 위해 노력합니다",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    )
+  },
+  {
+    title: "15년+ 경력 전문가",
+    desc: "발전사업 금융 전문가와 태양광 개발 전문가들이 함께 모여 최적의 솔루션을 제공합니다",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    )
+  },
+  {
+    title: "토탈 솔루션",
+    desc: "사업지 발굴부터 설계, 인허가, 금융조달, 시공까지 전 과정을 원스톱으로 지원합니다",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    )
+  },
+  {
+    title: "대상지별 맞춤 설계",
+    desc: "지붕, 주차장, 축사, 나대지, 전, 답, 유수지 등 각 대상지에 맞는 최적화 솔루션을 보유하고 있습니다",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    )
+  }
+];
 
 export default function BusinessDevelopment() {
-  const services = [
-    {
-      icon: Map,
-      title: "부지 발굴",
-      desc: "전국 산업단지, 물류센터, 유휴부지 발굴 및 확보",
-      color: "#FF6B3D",
-      items: ["입지 분석", "토지주 협상", "계약 체결"]
-    },
-    {
-      icon: FileCheck,
-      title: "인허가 진행",
-      desc: "발전사업 허가부터 전기사업 등록까지 전 과정 대행",
-      color: "#00D9FF",
-      items: ["발전사업허가", "개발행위허가", "전기사업등록"]
-    },
-    {
-      icon: Building2,
-      title: "설계 및 설계",
-      desc: "최적 시스템 설계 및 구조물 안전성 검토",
-      color: "#FF6B3D",
-      items: ["전기설계", "구조설계", "토목설계"]
-    },
-    {
-      icon: Users,
-      title: "금융 조달",
-      desc: "PF, 투자유치 등 최적의 금융 솔루션 제공",
-      color: "#00D9FF",
-      items: ["프로젝트금융", "투자유치", "세무컨설팅"]
-    }
-  ];
-
-  const process = [
-    {
-      phase: "기획 단계",
-      duration: "1~2개월",
-      steps: [
-        "부지 발굴 및 현장 실사",
-        "사업성 분석 (FS)",
-        "사업 구조 설계",
-        "토지주/건물주 협상"
-      ]
-    },
-    {
-      phase: "인허가 단계",
-      duration: "3~6개월",
-      steps: [
-        "발전사업 허가 신청",
-        "개발행위 허가",
-        "한전 계통연계 검토",
-        "각종 인허가 취득"
-      ]
-    },
-    {
-      phase: "설계 단계",
-      duration: "1~2개월",
-      steps: [
-        "전기/구조/토목 설계",
-        "안전성 검토",
-        "자재 사양 확정",
-        "시공 계획 수립"
-      ]
-    },
-    {
-      phase: "금융 단계",
-      duration: "1~3개월",
-      steps: [
-        "금융기관 협의",
-        "PF 조건 협상",
-        "투자자 유치",
-        "자금 조달 완료"
-      ]
-    }
-  ];
-
-  const advantages = [
-    {
-      title: "풍부한 개발 경험",
-      desc: "100MW+ 프로젝트 개발 실적",
-      icon: TrendingUp
-    },
-    {
-      title: "전국 네트워크",
-      desc: "지자체, 토지주 협력 네트워크",
-      icon: Map
-    },
-    {
-      title: "원스톱 서비스",
-      desc: "기획부터 준공까지 토탈 솔루션",
-      icon: Zap
-    },
-    {
-      title: "금융 전문성",
-      desc: "최적의 금융 구조 설계",
-      icon: Building2
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-white" style={{ paddingTop: '80px' }}>
+    <div className="min-h-screen bg-primary pt-20">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0F214A] via-[#15305A] to-[#273b82] text-white overflow-hidden">
+      <HeroSection
+        badge="SOLAR DEVELOPMENT"
+        title={<>태양광 개발</>} // ,<br /><span className="color-accent">토탈 솔루션</span>을 제공합니다
+        description={
+          <>
+            타이런트는 혼자 해결하지 않습니다.
+            <br className="hidden md:block" />
+            여러 협력사들이 매주 모여 제대로 된 태양광발전소를 짓기 위해 노력합니다.
+            <br className="hidden md:block" />
+            수백 명의 경험이 모여 태양광 발전 개발의 최적 솔루션을 제공합니다.
+          </>
+        }
+      />
+
+      {/* Core Services Section */}
+      <section className="relative bg-[#0a1628] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#FF6B3D] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent rounded-full blur-[150px]"></div>
         </div>
-        
-        <div className="relative mx-auto px-6 md:px-10 py-20 md:py-32" style={{ maxWidth: '1280px' }}>
-          <div className="max-w-3xl">
-            <div className="inline-block px-4 py-2 bg-[#FF6B3D]/20 border border-[#FF6B3D]/30 mb-6" style={{ borderRadius: '100px' }}>
-              <span style={{ 
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontSize: '14px',
-                fontWeight: '600',
-                color: '#FF6B3D'
-              }}>
-                SOLAR DEVELOPMENT
-              </span>
-            </div>
-            
-            <h1 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: 'clamp(32px, 5vw, 56px)',
-              fontWeight: '700',
-              lineHeight: '1.3',
-              marginBottom: '24px'
-            }}>
-              태양광 개발
-            </h1>
-            
-            <p style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '18px',
-              lineHeight: '1.7',
-              color: 'rgba(255, 255, 255, 0.9)',
-              marginBottom: '32px'
-            }}>
-              부지 발굴부터 금융 조달까지<br className="hidden md:block" />
-              태양광 발전소 개발의 모든 과정을 책임집니다.
+
+        <div className="relative mx-auto px-6 md:px-10 py-20 md:py-32 max-w-[1280px]">
+          <div className="text-center mb-16">
+            <LabelAccent label="CORE SERVICES" />
+            <h2 className="text-2xl md:text-4xl font-bold color-white leading-[140%] mb-6">
+              <span className="color-accent">핵심 서비스</span>
+            </h2>
+            <p className="text-lg color-white-90 leading-[170%] max-w-3xl mx-auto">
+              사업지 발굴부터 설계, 인허가, 금융조달, 시공, 관리까지
+              <br className="hidden md:block" />
+              <span className="color-white font-semibold">태양광 발전소 개발의 전 과정을 원스톱으로 지원합니다</span>
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Services Grid */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="mx-auto px-6 md:px-10" style={{ maxWidth: '1280px' }}>
-          <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6" style={{
-              background: 'rgba(255, 107, 61, 0.08)',
-              border: '1px solid rgba(255, 107, 61, 0.2)',
-              borderRadius: '100px'
-            }}>
-              <Lightbulb size={16} style={{ color: '#FF6B3D' }} />
-              <span style={{
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontSize: '13px',
-                fontWeight: '700',
-                color: '#FF6B3D',
-                letterSpacing: '2px'
-              }}>
-                CORE SERVICES
-              </span>
-            </div>
-
-            <h2 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '40px',
-              fontWeight: '700',
-              color: '#0F214A',
-              lineHeight: '1.3',
-              marginBottom: '16px'
-            }}>
-              핵심 서비스
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group relative"
-                style={{
-                  background: 'white',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '24px',
-                  padding: '40px',
-                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.04)',
-                  transition: 'all 0.3s ease'
-                }}
+                className="bg-[rgba(21,48,90,0.3)] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-accent/30 transition-all"
               >
-                <div
-                  className="mb-6 inline-flex p-4"
-                  style={{
-                    background: `linear-gradient(135deg, ${service.color}15, ${service.color}05)`,
-                    borderRadius: '20px',
-                    border: `1px solid ${service.color}20`
-                  }}
-                >
-                  <service.icon size={36} style={{ color: service.color }} />
+                <div className="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center color-accent mb-6">
+                  {service.icon}
                 </div>
 
-                <h3 style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '26px',
-                  fontWeight: '600',
-                  color: '#0F214A',
-                  lineHeight: '1.3',
-                  marginBottom: '12px'
-                }}>
-                  {service.title}
-                </h3>
+                <h3 className="text-xl font-bold color-white mb-3">{service.title}</h3>
+                <p className="text-base color-white-90 leading-[170%] mb-6">{service.desc}</p>
 
-                <p style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '16px',
-                  lineHeight: '1.6',
-                  color: '#666',
-                  marginBottom: '24px'
-                }}>
-                  {service.desc}
-                </p>
-
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {service.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex items-center gap-3">
-                      <CheckCircle2 size={18} style={{ color: service.color, flexShrink: 0 }} />
-                      <span style={{
-                        fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                        fontSize: '15px',
-                        color: '#333'
-                      }}>
-                        {item}
-                      </span>
+                    <div key={itemIndex} className="flex items-center gap-2">
+                      <CheckCircle2 size={16} className="color-accent flex-shrink-0" />
+                      <span className="text-sm color-white-90">{item}</span>
                     </div>
                   ))}
                 </div>
-
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{
-                    borderRadius: '24px',
-                    border: `2px solid ${service.color}`,
-                    boxShadow: `0 12px 32px ${service.color}15`
-                  }}
-                ></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="mx-auto px-6 md:px-10" style={{ maxWidth: '1280px' }}>
-          <div className="mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6" style={{
-              background: 'rgba(0, 217, 255, 0.08)',
-              border: '1px solid rgba(0, 217, 255, 0.2)',
-              borderRadius: '100px'
-            }}>
-              <Zap size={16} style={{ color: '#00D9FF' }} />
-              <span style={{
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontSize: '13px',
-                fontWeight: '700',
-                color: '#00D9FF',
-                letterSpacing: '2px'
-              }}>
-                DEVELOPMENT PROCESS
-              </span>
-            </div>
+      {/* Development Process Section */}
+      <section className="relative bg-primary overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-400 rounded-full blur-[150px]"></div>
+        </div>
 
-            <h2 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '40px',
-              fontWeight: '700',
-              color: '#0F214A',
-              lineHeight: '1.3',
-              marginBottom: '16px'
-            }}>
+        <div className="relative mx-auto px-6 md:px-10 py-20 md:py-32 max-w-[1280px]">
+          <div className="text-center mb-16">
+            <LabelAccent label="DEVELOPMENT PROCESS" />
+            <h2 className="text-2xl md:text-4xl font-bold color-white leading-[140%] mb-6">
               개발 프로세스
             </h2>
-
-            <p style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '17px',
-              lineHeight: '1.6',
-              color: '#666',
-              maxWidth: '600px'
-            }}>
+            <p className="text-lg color-white-90 leading-[170%] max-w-2xl mx-auto">
               체계적인 단계별 프로세스로 안정적인 프로젝트 개발을 진행합니다
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Process Timeline */}
+          <div className="space-y-8">
             {process.map((phase, index) => (
               <div
                 key={index}
-                style={{
-                  background: 'white',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '20px',
-                  padding: '32px 28px',
-                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.04)'
-                }}
+                className="relative bg-[rgba(21,48,90,0.3)] backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-10 overflow-hidden"
               >
-                <div className="mb-6">
-                  <div
-                    className="inline-flex items-center justify-center px-4 py-2 mb-3"
-                    style={{
-                      background: index % 2 === 0 
-                        ? 'linear-gradient(135deg, #FF6B3D, #FF8C3D)' 
-                        : 'linear-gradient(135deg, #00D9FF, #00B8E6)',
-                      borderRadius: '100px',
-                      boxShadow: index % 2 === 0
-                        ? '0 4px 12px rgba(255, 107, 61, 0.25)'
-                        : '0 4px 12px rgba(0, 217, 255, 0.25)'
-                    }}
-                  >
-                    <span style={{
-                      fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                      fontSize: '13px',
-                      fontWeight: '700',
-                      color: 'white'
-                    }}>
-                      {phase.duration}
-                    </span>
+                {/* Background Gradient */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br bg-blue-400 opacity-10 blur-3xl"></div>
+
+                {/* Step Badge & Content */}
+                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+                  <div className="flex-shrink-0">
+                    <div className={`inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${phase.color} rounded-full`}>
+                      <span className="text-white text-sm font-bold tracking-wider">{phase.step}</span>
+                    </div>
                   </div>
 
-                  <h3 style={{
-                    fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                    fontSize: '22px',
-                    fontWeight: '600',
-                    color: '#0F214A',
-                    lineHeight: '1.3',
-                    marginBottom: '4px'
-                  }}>
-                    {phase.phase}
-                  </h3>
-                </div>
-
-                <div className="space-y-3">
-                  {phase.steps.map((step, stepIndex) => (
-                    <div key={stepIndex} className="flex items-start gap-2">
-                      <div
-                        className="mt-1"
-                        style={{
-                          width: '6px',
-                          height: '6px',
-                          background: index % 2 === 0 ? '#FF6B3D' : '#00D9FF',
-                          borderRadius: '50%',
-                          flexShrink: 0
-                        }}
-                      ></div>
-                      <span style={{
-                        fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                        fontSize: '15px',
-                        color: '#666',
-                        lineHeight: '1.5'
-                      }}>
-                        {step}
+                  <div className="flex-1">
+                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-6">
+                      <h3 className="text-2xl md:text-3xl font-bold color-white">{phase.phase}</h3>
+                      <span className="inline-flex items-center px-3 py-1 bg-white/10 rounded-full text-sm color-accent font-semibold">
+                        {phase.duration}
                       </span>
                     </div>
-                  ))}
+
+                    {/* Steps Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {phase.steps.map((step, stepIndex) => (
+                        <div
+                          key={stepIndex}
+                          className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3"
+                        >
+                          <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
+                          <span className="text-base color-white-90">{step}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -372,65 +302,141 @@ export default function BusinessDevelopment() {
         </div>
       </section>
 
-      {/* Advantages Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="mx-auto px-6 md:px-10" style={{ maxWidth: '1280px' }}>
-          <div className="mb-12 text-center">
-            <h2 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '40px',
-              fontWeight: '700',
-              color: '#0F214A',
-              lineHeight: '1.3',
-              marginBottom: '16px'
-            }}>
-              타이런트의 경쟁력
+      {/* Site Types Section - White Background */}
+      <section className="bg-white py-20 md:py-32">
+        <div className="mx-auto px-6 md:px-10 max-w-[1280px]">
+          <div className="text-center mb-16">
+            <LabelGray label="SITE SOLUTIONS" />
+            <h2 className="text-2xl md:text-4xl font-bold color-primary leading-[140%] mb-6">
+              대상지별 맞춤 솔루션
             </h2>
+            <p className="text-lg text-gray-600 leading-[170%] max-w-2xl mx-auto">
+              주차장, 축사, 일반 나대지, 전, 답, 유수지 등
+              <br className="hidden md:block" />
+              각각의 대상지에 맞는 적절한 개발 솔루션을 보유하고 있습니다
+            </p>
+          </div>
+
+          {/* Site Types Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-12">
+            {siteTypes.map((site, index) => (
+              <div
+                key={index}
+                className="text-center bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:border-accent/30 hover:shadow-lg transition-all"
+              >
+                <div className="w-14 h-14 mx-auto mb-4 bg-accent/10 rounded-xl flex items-center justify-center">
+                  <site.icon size={28} className="color-accent" />
+                </div>
+                <h3 className="text-lg font-bold color-primary mb-2">{site.title}</h3>
+                <p className="text-sm text-gray-600 leading-[160%]">{site.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 지붕 방수 강조 */}
+          <div
+            className="rounded-2xl p-8 md:p-12"
+            style={{ background: 'linear-gradient(to right, #0F214A, #15305A)' }}
+          >
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <div className="flex-shrink-0">
+                <div className="w-20 h-20 bg-accent/20 rounded-2xl flex items-center justify-center border border-accent/30">
+                  <ShieldCheck size={40} className="color-accent" />
+                </div>
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                  지붕형 태양광, <span className="text-[#FF6B3D]">방수가 핵심입니다</span>
+                </h3>
+                <p className="text-base md:text-lg text-white/85 leading-[170%]">
+                  타이런트는 지붕 방수에 대한 구체적인 솔루션들을 끊임없이 고민하고 연구합니다.
+                  <br className="hidden md:block" />
+                  검증된 공법만을 실무에 적용하여 건물주의 자산을 안전하게 보호합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 주차장 강조 */}
+          <div
+            className="mt-6 rounded-2xl p-8 md:p-12"
+            style={{ background: 'linear-gradient(to right, #0F214A, #15305A)' }}
+          >
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <div className="flex-shrink-0">
+                <div className="w-20 h-20 bg-[#00D9FF]/20 rounded-2xl flex items-center justify-center border border-[#00D9FF]/30">
+                  <Car size={40} className="text-[#00D9FF]" />
+                </div>
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                  주차장 태양광, <span className="text-[#00D9FF]">실용성과 미관의 균형</span>
+                </h3>
+                <p className="text-base md:text-lg text-white/85 leading-[170%]">
+                  차량 동선에 맞춘 최적의 설계로 실용성을 확보하고, 비용과 미관의 장단점을 면밀히 분석하여 다양한 조건을 제안합니다.
+                  <br className="hidden md:block" />
+                  고객의 상황에 맞게 최선의 선택을 할 수 있도록 깊이 있는 맞춤형 솔루션을 제공합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 축사 강조 */}
+          <div
+            className="mt-6 rounded-2xl p-8 md:p-12"
+            style={{ background: 'linear-gradient(to right, #0F214A, #15305A)' }}
+          >
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <div className="flex-shrink-0">
+                <div className="w-20 h-20 bg-accent/20 rounded-2xl flex items-center justify-center border border-accent/30">
+                  <Warehouse size={40} className="color-accent" />
+                </div>
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3">
+                  축사 태양광, <span className="text-[#FF6B3D]">구조와 효익의 최적화</span>
+                </h3>
+                <p className="text-base md:text-lg text-white/85 leading-[170%]">
+                  개별 축사마다 구조상 보강이 필요한 부분을 정밀하게 분석하고, 비용과 효익을 철저히 검토합니다.
+                  <br className="hidden md:block" />
+                  상황에 맞는 적절한 구조보강 방안을 제시하여 사업자에게 실질적인 이익이 되도록 설계합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Tyrant Section */}
+      <section className="relative bg-gradient-primary overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-[400px] h-[400px] bg-accent rounded-full blur-[150px]"></div>
+        </div>
+
+        <div className="relative mx-auto px-6 md:px-10 py-20 md:py-32 max-w-[1280px]">
+          <div className="text-center mb-16">
+            <LabelAccent label="WHY TYRANT" />
+            <h2 className="text-2xl md:text-4xl font-bold color-white leading-[140%] mb-6">
+              타이런트의 <span className="color-accent">경쟁력</span>
+            </h2>
+            <p className="text-lg color-white-90 leading-[170%] max-w-3xl mx-auto">
+              경력 15년 이상의 발전사업 금융 전문가와 태양광 개발 전문가들이 모여
+              <br className="hidden md:block" />
+              사업지 발굴부터 설계, 인허가, 금융조달, 시공까지 토탈 솔루션을 제공합니다
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {advantages.map((adv, index) => (
               <div
                 key={index}
-                className="text-center p-8"
-                style={{
-                  background: 'white',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '20px',
-                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.04)'
-                }}
+                className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
               >
-                <div
-                  className="w-16 h-16 mx-auto mb-6 flex items-center justify-center"
-                  style={{
-                    background: index % 2 === 0 
-                      ? 'linear-gradient(135deg, #FF6B3D15, #FF6B3D05)'
-                      : 'linear-gradient(135deg, #00D9FF15, #00D9FF05)',
-                    borderRadius: '16px',
-                    border: index % 2 === 0 ? '1px solid #FF6B3D20' : '1px solid #00D9FF20'
-                  }}
-                >
-                  <adv.icon size={32} style={{ color: index % 2 === 0 ? '#FF6B3D' : '#00D9FF' }} />
+                <div className="w-16 h-16 mx-auto mb-6 bg-accent/20 rounded-xl flex items-center justify-center color-accent">
+                  {adv.icon}
                 </div>
-
-                <h3 style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '20px',
-                  fontWeight: '600',
-                  color: '#0F214A',
-                  marginBottom: '8px'
-                }}>
-                  {adv.title}
-                </h3>
-
-                <p style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '15px',
-                  color: '#666',
-                  lineHeight: '1.5'
-                }}>
-                  {adv.desc}
-                </p>
+                <h3 className="text-lg font-bold color-white mb-3">{adv.title}</h3>
+                <p className="text-sm color-white-90 leading-[160%]">{adv.desc}</p>
               </div>
             ))}
           </div>
@@ -438,52 +444,49 @@ export default function BusinessDevelopment() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[#0F214A] via-[#15305A] to-[#273b82] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D9FF] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF6B3D] rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative mx-auto px-6 md:px-10" style={{ maxWidth: '1280px' }}>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '40px',
-              fontWeight: '700',
-              lineHeight: '1.3',
-              marginBottom: '24px'
-            }}>
-              태양광 발전소 개발<br />
-              지금 시작하세요
+      <section className="bg-[#0a1628] py-20 md:py-32">
+        <div className="mx-auto px-6 md:px-10 max-w-[1280px]">
+          <div className="bg-gradient-to-br from-accent/20 via-accent/10 to-transparent border border-accent/30 rounded-3xl p-10 md:p-16 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold color-white leading-[140%] mb-6">
+              태양광 발전소 개발, 지금 시작하세요
             </h2>
-
-            <p style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '18px',
-              lineHeight: '1.7',
-              color: 'rgba(255, 255, 255, 0.9)',
-              marginBottom: '40px'
-            }}>
-              전문가와 상담하고 최적의 개발 계획을 수립하세요
+            <p className="text-lg color-white-90 leading-[170%] max-w-2xl mx-auto mb-10">
+              15년 이상 경력의 전문가들과 상담하고
+              <br className="hidden md:block" />
+              귀하의 사업지에 맞는 <span className="color-accent font-semibold">최적의 개발 계획</span>을 수립하세요
             </p>
 
-            <button
-              style={{
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontSize: '16px',
-                fontWeight: '600',
-                padding: '16px 40px',
-                background: '#FF6B3D',
-                color: 'white',
-                border: 'none',
-                borderRadius: '100px',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 8px 24px rgba(255, 107, 61, 0.3)'
-              }}
-            >
-              개발 문의하기
-            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="/contact"
+                className="
+                  inline-flex items-center gap-2 px-8 py-4
+                  bg-accent text-white font-bold text-lg
+                  rounded-full hover:bg-[#e55a35]
+                  transition-all hover:scale-105
+                  shadow-[0_8px_24px_rgba(255,107,61,0.4)]
+                "
+              >
+                개발 문의하기
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <a
+                href="tel:02-504-1204"
+                className="
+                  inline-flex items-center gap-2 px-8 py-4
+                  bg-white/10 text-white font-bold text-lg
+                  border border-white/20 rounded-full
+                  hover:bg-white/20 transition-all
+                "
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                02-504-1204
+              </a>
+            </div>
           </div>
         </div>
       </section>
