@@ -6,7 +6,7 @@ interface HeroSectionProps {
   badge: string;
   title: React.ReactNode;
   description: React.ReactNode;
-  backgroundImage: string;
+  backgroundImage: StaticImageData;
 }
 
 // 이미지 애니메이션
