@@ -8,11 +8,6 @@ import image1990 from "@public/company/history/86564f835a22586194816d8cdc93741a9
 import { useRef, useEffect, useState } from "react";
 import { ImageWithFallback } from "@components/shared/ImageWithFallback";
 
-interface CompanyHistoryProps {
-  onNavigate: (page: string) => void;
-  currentPage: string;
-}
-
 interface YearPeriod {
   id: string;
   label: string;
@@ -24,7 +19,7 @@ interface YearPeriod {
   }[];
 }
 
-export function SetCompanyHistory({ onNavigate, currentPage }: CompanyHistoryProps) {
+export function SetCompanyHistory() {
   const [activeSection, setActiveSection] = useState('2020-ongoing');
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
