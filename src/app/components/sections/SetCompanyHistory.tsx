@@ -11,7 +11,7 @@ import { ImageWithFallback } from "@components/shared/ImageWithFallback";
 interface YearPeriod {
   id: string;
   label: string;
-  image: string;
+  image: StaticImageData;
   items: {
     date: string;
     title: string;
