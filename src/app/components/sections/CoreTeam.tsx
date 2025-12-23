@@ -993,8 +993,7 @@ export function CoreTeam({ advisory }: CoreTeamProps) {
                     className="absolute inset-0 w-full h-full object-cover" />
                 ) : (
                   <div
-                    className="absolute inset-0 flex items-center justify-center"
-                    className="font-['Pretendard',_-apple-system,_-'Noto_Sans_KR',_sans-serif] text-[2.25rem] font-bold text-white/90 shadow-sm">
+                    className="absolute inset-0 flex items-center justify-center font-['Pretendard',_-apple-system,_-'Noto_Sans_KR',_sans-serif] text-[2.25rem] font-bold text-white/90 shadow-sm">
                     {selectedMember.name}
                   </div>
                 )}
