@@ -99,7 +99,7 @@ export default function CIIntro() {
             }>
           </FadeInUpAnimate>
 
-          <div initial="initial" viewport={{ once: true }} className="mb-[3.75rem]">
+          <div className="mb-[3.75rem]">
             {/* 1x2x1 레이아웃 */}
             <div className="flex flex-col gap-8">
               {/* CI 기본규격 카드 - 전체 너비 */}
