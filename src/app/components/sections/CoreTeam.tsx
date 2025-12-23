@@ -680,12 +680,10 @@ const additionalAdvisory: TeamMember[] = [
 ];
 
 interface CoreTeamProps {
-  onNavigate: (page: any) => void;
-  currentPage: string;
   advisory: boolean;
 }
 
-export function CoreTeam({ onNavigate, currentPage, advisory }: CoreTeamProps) {
+export function CoreTeam({ advisory }: CoreTeamProps) {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
