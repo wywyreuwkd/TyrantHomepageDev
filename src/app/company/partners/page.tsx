@@ -1,6 +1,35 @@
 import type { Metadata } from "next";
-import { Building2, Handshake, Award, CheckCircle2, Zap, TrendingUp, Users, Shield } from "lucide-react";
-import { ImageWithFallback } from "@components/shared/ImageWithFallback";
+import hdesLogo from "@public/company/partners/b09cca86e58d1502e59d66877830d4090f4455ef.png";
+import wonpickLogo from "@public/company/partners/7a5a8166f4e70a4a61fac46d2d3d97f466ea6864.png";
+import elmetechLogo from "@public/company/partners/55473facab290ca12d13d2812c5df43138723236.png";
+import locktonLogo from "@public/company/partners/123964a7931e1c9f41a8ca2dc7a91ee43cc4b4e4.png";
+import egiLogo from "@public/company/partners/195b3538f0b26dd92c332fa07bf59e0607bf7757.png";
+import earthEcoLogo from "@public/company/partners/d48a11296227c2f6904fb5cbb359d5d6e9316d55.png";
+import hangangLogo from "@public/company/partners/e61842f91712c2e3c53e02dca1a40eb5dfe2e981.png";
+import yujinLogo from "@public/company/partners/52f83ed8b8586d47e4b27d33985a5529a6ad662d.png";
+import wandoLogo from "@public/company/partners/faa0823e6c1a0dbfdd5d47717dbac5566fc0177d.png";
+import gwangjuLogo from "@public/company/partners/857c76f33318371a2d09fbf1a4b87609bae88d72.png";
+import mgCapitalLogo from "@public/company/partners/ed63448ffb7658761ee382c22beda9f71ff84993.png";
+import wooriCapitalLogo from "@public/company/partners/fe8dc0543c146599a8adbde893907b1a41fa0b5e.png";
+import wooriBankLogo from "@public/company/partners/25227baaa11376e520ea691db90979939d6d4124.png";
+import sgGlobalLogo from "@public/company/partners/8c1abf45b265cf1689c2890f39050003a04f6522.png";
+import jbCorpLogo from "@public/company/partners/31a6339992057d0a07b4ebbb35edd593a05e3852.png";
+import hanwhaLogo from "@public/company/partners/09cb84bd01d14a74cf384bf4522271e2352adf81.png";
+import dbIncLogo from "@public/company/partners/2ff7d3123f3c71f83f93fe7ef369e8486f79320c.png";
+import lgHelloVisionLogo from "@public/company/partners/0db29ba18c3ccd2d932b0a4c6afd56713aff024d.png";
+import htSaaeLogo from "@public/company/partners/fd30fe39c18cb07a7c104f75b88f5b4c6bd7ff1f.png";
+import jayeonEnergyLogo from "@public/company/partners/7221a6fa4d66a8ff691e2240a683f1d2c316fc05.png";
+import dainsLogo from "@public/company/partners/5e441f5e38a50b4384d1a4ba2e7717142f33e4b4.png";
+import rstDevelopLogo from "@public/company/partners/4d17a46e9fcef1eb70e3e88557c76a21bf2c6edf.png";
+import dyUwellssiLogo from "@public/company/partners/0cf875c41d6e7eab0141a9ff4d88f5eec594ee88.png";
+import hsrEnergyLogo from "@public/company/partners/be1f81879e9faf36770ce90da14e7f6028bba7ff.png";
+import wboKoreaLogo from "@public/company/partners/c74fe947b9cf1501fec920b3a7018dc9baa157e2.png";
+import hmeLogo from "@public/company/partners/06d2298150be42f1194129370b61483c9952e6d6.png";
+import gaonLogo from "@public/company/partners/b7dd0ee746ddbb38044587bd78b71156325d3b9f.png";
+import songJeonLogo from "@public/company/partners/7d4559e09a2854cc60355543823199d7802333c8.png";
+import heroImage from "@public/company/partners/5c40c3b8806d8e368a627607ec5ce36893ea1596.png";
+import { HeroSectionFeat } from "@components/shared/HeroSectionFeat";
+import { PartnerGroup, LogoItem } from "@components/sections/PartnerGroup"
 
 export const metadata: Metadata = {
   title: "파트너사",
@@ -8,528 +37,99 @@ export const metadata: Metadata = {
 };
 
 export default function Partners() {
-  const partnerCategories = [
-    {
-      icon: Building2,
-      title: "물류 및 유통",
-      count: "20+",
-      color: "#FF6B3D",
-      companies: [
-        "CJ대한통운", "한진물류", "롯데글로벌로지스", "현대글로비스",
-        "쿠팡 풀필먼트센터", "마켓컬리 물류센터"
-      ]
-    },
-    {
-      icon: Zap,
-      title: "제조 및 산업",
-      count: "15+",
-      color: "#00D9FF",
-      companies: [
-        "현대제철", "포스코케미칼", "LG화학", "삼성전자",
-        "SK이노베이션", "한화솔루션"
-      ]
-    },
-    {
-      icon: Users,
-      title: "유통 및 리테일",
-      count: "10+",
-      color: "#FF6B3D",
-      companies: [
-        "이마트", "홈플러스", "롯데마트", "코스트코",
-        "메가박스", "CGV"
-      ]
-    },
-    {
-      icon: Shield,
-      title: "금융 및 투자",
-      count: "8+",
-      color: "#00D9FF",
-      companies: [
-        "신한금융투자", "KB증권", "산업은행", "기업은행",
-        "한국투자증권", "미래에셋증권"
-      ]
-    }
-  ];
-
-  const benefits = [
-    {
-      icon: Zap,
-      title: "초기비용 Zero",
-      desc: "설치부터 운영까지 모든 비용을 타이런트가 부담합니다",
-      color: "#FF6B3D"
-    },
-    {
-      icon: TrendingUp,
-      title: "수익 공유",
-      desc: "발전 수익의 일정 비율을 매월 정산하여 지급합니다",
-      color: "#00D9FF"
-    },
-    {
-      icon: Shield,
-      title: "전주기 관리",
-      desc: "설치, 모니터링, 유지보수까지 토탈 솔루션 제공",
-      color: "#FF6B3D"
-    },
-    {
-      icon: Award,
-      title: "ESG 경영",
-      desc: "탄소중립 달성 및 RE100 목표 달성에 기여합니다",
-      color: "#00D9FF"
-    }
-  ];
-
-  const certifications = [
-    { name: "ISO 9001", desc: "품질경영시스템" },
-    { name: "ISO 14001", desc: "환경경영시스템" },
-    { name: "ISO 45001", desc: "안전보건경영" },
-    { name: "KS 인증", desc: "한국산업표준" },
-    { name: "NEP", desc: "신재생에너지설비" },
-    { name: "특허 10+", desc: "기술 특허 보유" }
-  ];
-
   return (
-    <div className="min-h-screen bg-white" style={{ paddingTop: '80px' }}>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0F214A] via-[#15305A] to-[#273b82] text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#FF6B3D] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative mx-auto px-6 md:px-10 py-20 md:py-32" style={{ maxWidth: '1280px' }}>
-          <div className="max-w-3xl">
-            <div className="inline-block px-4 py-2 bg-[#FF6B3D]/20 border border-[#FF6B3D]/30 mb-6" style={{ borderRadius: '100px' }}>
-              <span style={{ 
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontSize: '14px',
-                fontWeight: '600',
-                color: '#FF6B3D'
-              }}>
-                PARTNERS
-              </span>
+    <div className="min-h-screen pt-20">
+      <HeroSectionFeat
+        badge="PARTNERS"
+        title={<>협력사 소개</>}
+        description={<>솔라오는 에너지 산업 생태계의 전문 파트너들과 함께 성장합니다.<br className="hidden md:block" /> 사업자문부터 시공·금융까지 검증된 협력사 네트워크를 통해 안정적이고 지속가능한 태양광 발전 사업을 실현합니다.</>}
+        backgroundImage={heroImage}/>
+
+      {/* Partner Network Section */}
+      <section style={{ backgroundColor: '#FFFFFF', paddingTop: '160px', paddingBottom: '200px' }}>
+        <div className="max-w-[1240px] mx-auto px-6">
+          
+          {/* 사업자문 */}
+          <PartnerGroup
+            title="사업자문"
+            description="에너지 프로젝트 구조화 및 사업성 검증 전문 파트너">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+              <LogoItem
+                src={hangangLogo.src}
+                alt="HANGANG ASSET"
+                delay={0}/>
             </div>
-            
-            <h1 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: 'clamp(32px, 5vw, 56px)',
-              fontWeight: '700',
-              lineHeight: '1.3',
-              marginBottom: '24px'
-            }}>
-              신뢰를 기반으로<br />
-              함께 성장합니다
-            </h1>
-            
-            <p style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '18px',
-              lineHeight: '1.7',
-              color: 'rgba(255, 255, 255, 0.9)',
-              marginBottom: '32px'
-            }}>
-              국내 주요 기업들과 파트너십을 맺고<br className="hidden md:block" />
-              친환경 에너지 전환을 함께 실현하고 있습니다.
-            </p>
-          </div>
-        </div>
-      </section>
+          </PartnerGroup>
 
-      {/* Partner Benefits Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-        <div className="mx-auto px-6 md:px-10" style={{ maxWidth: '1280px' }}>
-          {/* Section Header */}
-          <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6" style={{
-              background: 'rgba(255, 107, 61, 0.08)',
-              border: '1px solid rgba(255, 107, 61, 0.2)',
-              borderRadius: '100px'
-            }}>
-              <Handshake size={16} style={{ color: '#FF6B3D' }} />
-              <span style={{
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontSize: '13px',
-                fontWeight: '700',
-                color: '#FF6B3D',
-                letterSpacing: '2px'
-              }}>
-                PARTNERSHIP BENEFITS
-              </span>
+          {/* 투자사 */}
+          <PartnerGroup
+            title="투자사"
+            description="프로젝트 금융 및 안정적 자본 구조를 함께 구축하는 파트너">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+              <LogoItem src={yujinLogo.src} alt="유진투자증권" delay={0} />
+              <LogoItem src={wandoLogo.src} alt="완도금일수협" delay={0.05} />
+              <LogoItem src={gwangjuLogo.src} alt="광주은행" delay={0.10} />
+              <LogoItem src={mgCapitalLogo.src} alt="MG캐피탈" delay={0.15} />
+              <LogoItem src={wooriCapitalLogo.src} alt="우리금융캐피탈" delay={0.20} />
+              <LogoItem src={wooriBankLogo.src} alt="우리은행" delay={0.25} />
             </div>
+          </PartnerGroup>
 
-            <h2 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '40px',
-              fontWeight: '700',
-              color: '#0F214A',
-              lineHeight: '1.3',
-              marginBottom: '16px'
-            }}>
-              파트너사 혜택
-            </h2>
-
-            <p style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '17px',
-              lineHeight: '1.6',
-              color: '#666'
-            }}>
-              타이런트와 함께하는 기업들이 누리는 특별한 가치
-            </p>
-          </div>
-
-          {/* Benefits Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="group relative"
-                style={{
-                  background: 'white',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '20px',
-                  padding: '32px 28px',
-                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.04)',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                <div
-                  className="mb-6 inline-flex p-3"
-                  style={{
-                    background: `linear-gradient(135deg, ${benefit.color}15, ${benefit.color}05)`,
-                    borderRadius: '16px',
-                    border: `1px solid ${benefit.color}20`
-                  }}
-                >
-                  <benefit.icon size={28} style={{ color: benefit.color }} />
-                </div>
-
-                <h3 style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '20px',
-                  fontWeight: '600',
-                  color: '#0F214A',
-                  lineHeight: '1.3',
-                  marginBottom: '12px'
-                }}>
-                  {benefit.title}
-                </h3>
-
-                <p style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '15px',
-                  lineHeight: '1.6',
-                  color: '#666'
-                }}>
-                  {benefit.desc}
-                </p>
-
-                {/* Hover Effect */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{
-                    borderRadius: '20px',
-                    border: `2px solid ${benefit.color}`,
-                    boxShadow: `0 8px 24px ${benefit.color}20`
-                  }}
-                ></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Categories Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="mx-auto px-6 md:px-10" style={{ maxWidth: '1280px' }}>
-          {/* Section Header */}
-          <div className="mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6" style={{
-              background: 'rgba(0, 217, 255, 0.08)',
-              border: '1px solid rgba(0, 217, 255, 0.2)',
-              borderRadius: '100px'
-            }}>
-              <Building2 size={16} style={{ color: '#00D9FF' }} />
-              <span style={{
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontSize: '13px',
-                fontWeight: '700',
-                color: '#00D9FF',
-                letterSpacing: '2px'
-              }}>
-                PARTNER COMPANIES
-              </span>
+          {/* 영업사 */}
+          <PartnerGroup
+            title="영업사"
+            description="전국 사업 발굴 및 프로젝트 유치를 담당하는 네트워크">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">                          
+              <LogoItem
+                src={sgGlobalLogo.src}
+                alt="SG GLOBAL ENERGY KOREA"
+                delay={0}/>              
             </div>
+          </PartnerGroup>
 
-            <h2 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '40px',
-              fontWeight: '700',
-              color: '#0F214A',
-              lineHeight: '1.3',
-              marginBottom: '16px'
-            }}>
-              주요 협력사
-            </h2>
-
-            <p style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '17px',
-              lineHeight: '1.6',
-              color: '#666',
-              maxWidth: '600px'
-            }}>
-              다양한 산업 분야의 선도 기업들과 함께 친환경 에너지 생태계를 구축하고 있습니다.
-            </p>
-          </div>
-
-          {/* Categories Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {partnerCategories.map((category, index) => (
-              <div
-                key={index}
-                className="group relative"
-                style={{
-                  background: 'white',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '24px',
-                  padding: '40px',
-                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.04)',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                {/* Header */}
-                <div className="flex items-center gap-4 mb-8 pb-6 border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.06)' }}>
-                  <div
-                    className="p-3"
-                    style={{
-                      background: `linear-gradient(135deg, ${category.color}15, ${category.color}05)`,
-                      borderRadius: '16px',
-                      border: `1px solid ${category.color}20`
-                    }}
-                  >
-                    <category.icon size={32} style={{ color: category.color }} />
-                  </div>
-
-                  <div className="flex-1">
-                    <h3 style={{
-                      fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                      fontSize: '24px',
-                      fontWeight: '600',
-                      color: '#0F214A',
-                      lineHeight: '1.3',
-                      marginBottom: '4px'
-                    }}>
-                      {category.title}
-                    </h3>
-                    <div style={{
-                      fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                      fontSize: '14px',
-                      fontWeight: '600',
-                      color: category.color
-                    }}>
-                      {category.count} 파트너사
-                    </div>
-                  </div>
-                </div>
-
-                {/* Companies List */}
-                <div className="grid grid-cols-2 gap-4">
-                  {category.companies.map((company, companyIndex) => (
-                    <div
-                      key={companyIndex}
-                      className="flex items-center gap-2"
-                    >
-                      <CheckCircle2 size={16} style={{ color: category.color, flexShrink: 0 }} />
-                      <span style={{
-                        fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                        fontSize: '15px',
-                        color: '#333',
-                        lineHeight: '1.4'
-                      }}>
-                        {company}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Hover Effect */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{
-                    borderRadius: '24px',
-                    border: `2px solid ${category.color}`,
-                    boxShadow: `0 12px 32px ${category.color}15`
-                  }}
-                ></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="mx-auto px-6 md:px-10" style={{ maxWidth: '1280px' }}>
-          {/* Section Header */}
-          <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6" style={{
-              background: 'rgba(255, 107, 61, 0.08)',
-              border: '1px solid rgba(255, 107, 61, 0.2)',
-              borderRadius: '100px'
-            }}>
-              <Award size={16} style={{ color: '#FF6B3D' }} />
-              <span style={{
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontSize: '13px',
-                fontWeight: '700',
-                color: '#FF6B3D',
-                letterSpacing: '2px'
-              }}>
-                CERTIFICATIONS
-              </span>
+          {/* 기자재공급사 */}
+          <PartnerGroup
+            title="기자재공급사"
+            description="고효율 태양광 기자재 및 인버터 공급 파트너">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+              <LogoItem src={jbCorpLogo.src} alt="JB CORP" delay={0} />
+              <LogoItem src={hanwhaLogo.src} alt="한화시스템" delay={0.05} />
+              <LogoItem src={dbIncLogo.src} alt="DB Inc." delay={0.10} />
+              <LogoItem src={lgHelloVisionLogo.src} alt="LG HelloVision" delay={0.15} />
+              <LogoItem src={htSaaeLogo.src} alt="HT-SAAE" delay={0.20} />
             </div>
+          </PartnerGroup>
 
-            <h2 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '40px',
-              fontWeight: '700',
-              color: '#0F214A',
-              lineHeight: '1.3',
-              marginBottom: '16px'
-            }}>
-              인증 및 자격
-            </h2>
-
-            <p style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '17px',
-              lineHeight: '1.6',
-              color: '#666'
-            }}>
-              국제 표준 인증과 기술력을 바탕으로 최고의 서비스를 제공합니다
-            </p>
-          </div>
-
-          {/* Certifications Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {certifications.map((cert, index) => (
-              <div
-                key={index}
-                className="group"
-                style={{
-                  background: 'white',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '16px',
-                  padding: '24px 20px',
-                  textAlign: 'center',
-                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.04)',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                <div
-                  className="w-12 h-12 mx-auto mb-4 flex items-center justify-center"
-                  style={{
-                    background: 'linear-gradient(135deg, #FF6B3D15, #00D9FF15)',
-                    borderRadius: '12px',
-                    border: '1px solid rgba(255, 107, 61, 0.2)'
-                  }}
-                >
-                  <Award size={24} style={{ color: '#FF6B3D' }} />
-                </div>
-
-                <div style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  color: '#0F214A',
-                  marginBottom: '6px',
-                  lineHeight: '1.2'
-                }}>
-                  {cert.name}
-                </div>
-
-                <div style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '13px',
-                  color: '#666',
-                  lineHeight: '1.4'
-                }}>
-                  {cert.desc}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[#0F214A] via-[#15305A] to-[#273b82] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D9FF] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF6B3D] rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative mx-auto px-6 md:px-10" style={{ maxWidth: '1280px' }}>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '40px',
-              fontWeight: '700',
-              lineHeight: '1.3',
-              marginBottom: '24px'
-            }}>
-              타이런트와 함께<br />
-              친환경 미래를 만들어가세요
-            </h2>
-
-            <p style={{
-              fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-              fontSize: '18px',
-              lineHeight: '1.7',
-              color: 'rgba(255, 255, 255, 0.9)',
-              marginBottom: '40px'
-            }}>
-              지금 바로 파트너십을 시작하고<br className="hidden md:block" />
-              지속 가능한 에너지 전환의 혜택을 누리세요
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  padding: '16px 40px',
-                  background: '#FF6B3D',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '100px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 8px 24px rgba(255, 107, 61, 0.3)'
-                }}
-              >
-                파트너십 문의
-              </button>
-
-              <button
-                style={{
-                  fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  padding: '16px 40px',
-                  background: 'transparent',
-                  color: 'white',
-                  border: '2px solid rgba(255, 255, 255, 0.3)',
-                  borderRadius: '100px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                자료 다운로드
-              </button>
+          {/* 시공사 */}
+          <PartnerGroup
+            title="시공사"
+            description="발전소 시공 및 현장 운영 역량을 갖춘 전문 기업">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+              <LogoItem src={jayeonEnergyLogo.src} alt="자연에너지" delay={0} />
+              <LogoItem src={dainsLogo.src} alt="DAINS" delay={0.05} />
+              <LogoItem src={rstDevelopLogo.src} alt="RST develop" delay={0.10} />
+              <LogoItem src={dyUwellssiLogo.src} alt="DY유웰씨" delay={0.15} />
+              <LogoItem src={hsrEnergyLogo.src} alt="HSR 한솔에너지" delay={0.20} />
+              <LogoItem src={wboKoreaLogo.src} alt="WBO KOREA" delay={0.25} />
+              <LogoItem src={hmeLogo.src} alt="HME" delay={0.30} />
+              <LogoItem src={gaonLogo.src} alt="GAON E&C" delay={0.35} />
+              <LogoItem src={songJeonLogo.src} alt="송전" delay={0.40} />
+              <LogoItem src={hdesLogo.src} alt="HDES" delay={0.45} />
+              <LogoItem src={wonpickLogo.src} alt="원픽이앤씨" delay={0.50} />
+              <LogoItem src={elmetechLogo.src} alt="ELMETECH" delay={0.55} />
             </div>
-          </div>
+          </PartnerGroup>
+
+          {/* 자문사 */}
+          <PartnerGroup
+            title="자문사"
+            description="법률·회계·기술 자문을 제공하는 전문 파트너">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+              <LogoItem src={locktonLogo.src} alt="Lockton" delay={0} />
+              <LogoItem src={egiLogo.src} alt="EGI" delay={0.05} />
+              <LogoItem src={earthEcoLogo.src} alt="EarthEco" delay={0.10} />
+            </div>
+          </PartnerGroup>
         </div>
       </section>
     </div>

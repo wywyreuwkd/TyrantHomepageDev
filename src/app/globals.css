@@ -169,6 +169,7 @@
   --font-size-20: 1.25rem; 
   --font-size-24: 1.5rem; 
   --font-size-36: 2.25rem; 
+  --font-size-40: 2.5rem;
   --font-size-48: 3rem; 
   --font-size-56: 3.5rem;
 
@@ -256,6 +257,7 @@
   --font-size-20: 1.25rem; 
   --font-size-24: 1.5rem; 
   --font-size-36: 2.25rem; 
+  --font-size-40: 2.5rem;
   --font-size-48: 3rem; 
   --font-size-56: 3.5rem;
 
@@ -344,7 +346,7 @@
     background: linear-gradient(135deg, rgba(15, 33, 74, 0.2) 0%, rgba(0, 100, 200, 0.1) 100%);
   }
   .bg-accent {
-    background-color: var(--accent);
+    background-color: var(--accent); /* FF6B3D */
   }
   .bg-accent-90 {
     background-color: var(--accent-90);
@@ -447,13 +449,13 @@
     color: var(--primary-dark-2);
   }
   .color-primary-dark-3 {
-    color: var(--primary-dark-3);
+    color: var(--primary-dark-3); /* #0E1C45 */
   }
   .color-primary-dark-4 {
     color: var(--primary-dark-4);
   }
   .color-accent {
-    color: var(--accent);
+    color: var(--accent); /* #FF6B3D */
   }
   .color-accent-hover-1 {
     color: var(--accent-hover-1);
@@ -465,7 +467,7 @@
     color: var(--gray-100);
   }
   .color-gray-200 {
-    color: var(--gray-200);
+    color: var(--gray-200); /* #E5E7EB */
   }
   .color-gray-400 {
     color: var(--gray-400);
@@ -488,13 +490,13 @@
     background-color: var(--primary-dark-2);
   }
   .bg-primary-dark-3 {
-    background-color: var(--primary-dark-3);
+    background-color: var(--primary-dark-3); /* #0E1C45 */
   }
   .bg-primary-dark-4 {
     background-color: var(--primary-dark-4);
   }
   .bg-accent {
-    background-color: var(--accent);
+    background-color: var(--accent); /* #FF6B3D */
   }
   .bg-accent-hover-1 {
     background-color: var(--accent-hover-1);
@@ -506,7 +508,7 @@
     background-color: var(--gray-100);
   }
   .bg-gray-200 {
-    background-color: var(--gray-200);
+    background-color: var(--gray-200); /* #E5E7EB */
   }
   .bg-gray-400 {
     background-color: var(--gray-400);
@@ -529,13 +531,13 @@
     border-color: var(--primary-dark-2);
   }
   .border-primary-dark-3 {
-    border-color: var(--primary-dark-3);
+    border-color: var(--primary-dark-3); /* #0E1C45 */
   }
   .border-primary-dark-4 {
     border-color: var(--primary-dark-4);
   }
   .border-accent {
-    border-color: var(--accent);
+    border-color: var(--accent); /* #FF6B3D */
   }
   .border-accent-hover-1 {
     border-color: var(--accent-hover-1);
@@ -547,7 +549,7 @@
     border-color: var(--gray-100);
   }
   .border-gray-200 {
-    border-color: var(--gray-200);
+    border-color: var(--gray-200); /* #E5E7EB */
   }
   .border-gray-400 {
     border-color: var(--gray-400);
@@ -591,6 +593,9 @@
   }
   .text-4xl {
     font-size: var(--font-size-36);
+  }
+  .text-40 {
+    font-size: var(--font-size-40);
   }
   .text-5xl {
     font-size: var(--font-size-48);
@@ -647,7 +652,7 @@
 
   /* 스타일 가이드 정의 버튼 - ex) 다운로드 */
   .btn-download {
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     color: #0E1C45;
     border: 1px solid #E5E7EB;
     border-radius: 12px;
