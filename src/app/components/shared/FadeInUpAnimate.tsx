@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 interface FadeInUpAnimateProps {
   contents: React.ReactNode;
-  type: string;
 }
 
 const fadeInUp = {
