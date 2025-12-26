@@ -1,0 +1,22 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/business/construction/page": "app/business/construction/page.js",
+  "/business/datacenter/page": "app/business/datacenter/page.js",
+  "/business/development/page": "app/business/development/page.js",
+  "/business/duediligence/page": "app/business/duediligence/page.js",
+  "/business/education/page": "app/business/education/page.js",
+  "/business/fs/page": "app/business/fs/page.js",
+  "/business/investment/page": "app/business/investment/page.js",
+  "/business/materials/page": "app/business/materials/page.js",
+  "/business/monitoring/page": "app/business/monitoring/page.js",
+  "/business/operation/page": "app/business/operation/page.js",
+  "/company/ci/page": "app/company/ci/page.js",
+  "/company/group/page": "app/company/group/page.js",
+  "/company/history/page": "app/company/history/page.js",
+  "/company/members/page": "app/company/members/page.js",
+  "/company/page": "app/company/page.js",
+  "/company/partners/page": "app/company/partners/page.js",
+  "/page": "app/page.js",
+  "/styleguide/page": "app/styleguide/page.js"
+}

@@ -7,6 +7,7 @@ import image2000 from "@public/company/history/3822d0b89171c27adf03fb26c67ef44cf
 import image1990 from "@public/company/history/86564f835a22586194816d8cdc93741a9f8fdf72.png";
 import { useRef, useEffect, useState } from "react";
 import { ImageWithFallback } from "@components/shared/ImageWithFallback";
+import { StaticImageData } from 'next/image';
 
 interface YearPeriod {
   id: string;
@@ -27,7 +28,11 @@ export function SetCompanyHistory() {
   const [visibleItems, setVisibleItems] = useState<Set<string>>(new Set());
   const [visibleImages, setVisibleImages] = useState<Set<string>>(new Set());
   const [mobileScrollProgress, setMobileScrollProgress] = useState(0);
+  
+
   const sectionsRef = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  
+
   const itemsRef = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const imagesRef = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const contentRef = useRef<HTMLDivElement>(null);
@@ -405,7 +410,7 @@ export function SetCompanyHistory() {
                 <article
                   key={period.id} 
                   id={period.id}
-                  ref={(el) => sectionsRef.current[period.id] = el}
+                  // ref={(el) => sectionsRef.current[period.id] = el} // TODO
                   className="scroll-mt-24">
                   {/* Section Title at Top */}
                   <h2 
@@ -415,7 +420,7 @@ export function SetCompanyHistory() {
 
                   {/* Section Image - Full Width on Mobile */}
                   <div 
-                    ref={(el) => imagesRef.current[period.id] = el}
+                    // ref={(el) => imagesRef.current[period.id] = el} // TODO
                     className="overflow-hidden mb-8 md:mb-16 transition-all duration-1000 ease-out aspect-[2.5/1] rounded-none relative w-full transition-all duration-500 md:w-[75%] lg:opacity-100 lg:translate-y-0 lg:scale-100">
 
                     <ImageWithFallback 
@@ -432,7 +437,7 @@ export function SetCompanyHistory() {
                       return (
                         <div 
                           key={index} 
-                          ref={(el) => itemsRef.current[itemKey] = el}
+                          // ref={(el) => itemsRef.current[itemKey] = el} // TODO
                           className="transition-all duration-700 ease-out transition-all duration-500 ${ isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[1.875rem]'}">
                           {/* Date */}
                           <div 
