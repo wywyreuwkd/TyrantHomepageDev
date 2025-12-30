@@ -94,7 +94,6 @@ export function SetRelationSiteList() {
           {/* Platform Grid - 3x3 */}
           <div className="platform-grid grid grid-cols-3 gap-0 border-t border-l border-gray-200">
             {platformData.map((platform, index) => {
-              const IconComponent = platform.icon;
               
               return (
                 <motion.div
@@ -133,16 +132,10 @@ export function SetRelationSiteList() {
                       ease: [0.4, 0, 0.2, 1]
                     }}
                   >
-                    {platform.logo ? (
-                      <ImageWithFallback 
+                    <ImageWithFallback 
                         className="w-full h-full object-contain pointer-events-none"
                         src={platform.logo.src} 
                         alt={platform.name} />
-                    ) : (
-                      <IconComponent 
-                        className="color-accent stroke-[1.5px]"
-                        size={40} />
-                    )}
                   </motion.a>
 
                   {/* Title */}
