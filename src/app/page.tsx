@@ -14,12 +14,12 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-primary color-white">
       <Hero />
-      <ServiceIntro />
+      {/* <ServiceIntro />
       <Process />
       <div className="hidden md:block">
         <RevenueComparison />
       </div>
-      <WhyNow />
+      <WhyNow /> */}
     </div>
   );
 }

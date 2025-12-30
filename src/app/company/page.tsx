@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ceoImage from "@public/company/931ff7bd1e494bf9b6b98c405914e772b588ac5a.png";
+import ceoImage from "@public/profile/profile_chief_cho.png";
 import heroImage from "@public/company/eff02c5235683e2fa8bbec8fa7d2ed43c96e825d.png";
 import { HeroSectionFeat } from "@components/shared/HeroSectionFeat";
 import { ImageWithFallback } from "@components/shared/ImageWithFallback";
@@ -46,32 +46,12 @@ export default function CompanyIntro() {
                       alt="CEO Image"
                       className="w-full h-full object-cover min-h-[500px] md:min-h-[800px]"/>
 
-                  {/* Blue Tech Overlay */}
-                  <div className="absolute inset-0 pointer-events-none bg-gradient-overlay"></div>
-
-                    {/* Thin Neon Lines */}
-                    <div className="absolute inset-0 pointer-events-none">
-                      {/* Top-left Corner */}
-                      <div className="absolute top-0 left-0 w-32 h-32">
-                        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#00D9FF] via-[#0080FF] to-transparent shadow-[0_0_10px_rgba(0,217,255,0.6)]"></div>
-                        <div className="absolute top-0 left-0 w-[2px] h-full bg-gradient-to-b from-[#00D9FF] via-[#0080FF] to-transparent shadow-[0_0_10px_rgba(0,217,255,0.6)]"></div>
-                      </div>
-
-                    {/* Bottom-right Corner */}
-                    <div className="absolute bottom-0 right-0 w-32 h-32">
-                      <div className="absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-l from-[#FF6B3D] via-[#FF8C3D] to-transparent shadow-[0_0_10px_rgba(255,107,61,0.6)]"></div>
-                      <div className="absolute bottom-0 right-0 w-[2px] h-full bg-gradient-to-t from-[#FF6B3D] via-[#FF8C3D] to-transparent shadow-[0_0_10px_rgba(255,107,61,0.6)]"></div>
-                    </div>
-                  </div>
-                  {/* Premium Border Glow */}
+                  {/* Subtle Overlay */}
+                  <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(135deg,_rgba(15,33,74,0.15)_0%,_rgba(0,100,200,0.05)_100%)]"></div>
+                  
+                  {/* Border */}
                   <div 
-                    className="absolute inset-0"
-                    style={{ 
-                      borderRadius: '24px',
-                      border: '1px solid rgba(0, 217, 255, 0.3)',
-                      boxShadow: '0 0 30px rgba(0, 217, 255, 0.15), inset 0 0 20px rgba(0, 128, 255, 0.1)'
-                    }}
-                  ></div>
+                    className="absolute inset-0 rounded-[20px] border border-white-10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]"></div>
                 </div>
               </div>
 
@@ -85,7 +65,7 @@ export default function CompanyIntro() {
                   className="
                     text-[32px] md:text-[40px] font-bold leading-[130%]
                     color-white mb-12 max-w-[650px]">
-                  대표 인사말
+                  회장 인사말
                 </h2>
 
                 {/* Message Content - Body: 19px / Regular / Line Height 175% / Paragraph Spacing: 20px */}

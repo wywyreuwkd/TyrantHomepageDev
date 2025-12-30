@@ -52,20 +52,21 @@ export function Hero() {
           {/* SOLAR O Logo - Left Side */}
           <div className="z-10">
             <div className="mb-8 drop-shadow-2xl">
-              <SolarOLogo size="responsiveLarge" />
+              {/* <SolarOLogo size="responsiveLarge" /> */}
+              <h1 className="text-[clamp(48px,14vw,140px)] font-bold color-white leading-[100%]">TYRANT</h1>
             </div>
             
             {/* Text below logo */}
             <div className="space-y-3">
-              <p className="color-white text-xl md:text-2xl drop-shadow-lg leading-[140%]">
-                산업단지/물류센터 수익공유형
+              <p className="color-white text-2xl md:text-3xl drop-shadow-lg leading-[140%]">
+                <span className="color-accent font-bold">혁신적</span>이고 <span className="color-accent font-bold">지속 가능한 에너지</span>를 활용하여
               </p>
-              <p className="color-white text-xl md:text-2xl drop-shadow-lg leading-[140%]">
-                태양광 무상설치 프로젝트 <span className="color-accent font-bold">솔라오</span>
+              <p className="color-white text-2xl md:text-3xl drop-shadow-lg leading-[140%]">
+                <span className="color-accent font-bold">깨끗한 미래</span>를 만들어 갑니다.
               </p>
               
               {/* Start button */}
-              <div className="mt-8 pt-4">
+              {/* <div className="mt-8 pt-4">
                 <button 
                   className="
                     bg-accent color-white hover:bg-accent-90 transition-all hover:scale-105 
@@ -76,7 +77,7 @@ export function Hero() {
                 >
                   시작하기
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

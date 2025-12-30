@@ -30,9 +30,9 @@ export function LogoItem({ src, alt, delay = 0, height = '70px' }: LogoItemProps
         transition: { duration: 0.3, ease: "easeOut" }
       }}>
       <ImageWithFallback
+        className="w-auto object-contain max-h-[${height / 16}rem] max-w-full"
         src={src}
-        alt={alt}
-        className="w-auto object-contain max-h-[${height / 16}rem] max-w-full"/>
+        alt={alt} />
     </motion.div>
   );
 }
@@ -54,17 +54,14 @@ export function PartnerGroup({ title, description, children }: PartnerGroupProps
         transition: { duration: 0.8, ease: "easeOut" }
       }}
       viewport={{ once: true, margin: "-80px" }}>
-      <h3 
-        className="mb-4 font-sans text-5xl font-bold text-[#0B1F3B]">
+      <h3 className="mb-4 font-sans text-5xl font-bold text-[#0B1F3B]">
         {title}
       </h3>
-      <p 
-        className="mb-8 font-['Pretendard',_-apple-system,_-bold_'Noto_Sans_KR',_sans-serif] text-[1.125rem] font-normal text-[#6B778C] leading-[1.6]">
+      <p className="mb-8 font-['Pretendard',_-apple-system,_-bold_'Noto_Sans_KR',_sans-serif] text-[1.125rem] font-normal text-[#6B778C] leading-[1.6]">
         {description}
       </p>
       {/* Divider Line */}
-      <div 
-        className="mb-16 w-full h-[0.0625rem] bg-[#E6EBF2]"/>
+      <div className="mb-16 w-full h-[0.0625rem] bg-[#E6EBF2]"/>
       {children}
     </motion.div>
   );

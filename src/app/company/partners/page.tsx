@@ -27,6 +27,7 @@ import wboKoreaLogo from "@public/company/partners/c74fe947b9cf1501fec920b3a7018
 import hmeLogo from "@public/company/partners/06d2298150be42f1194129370b61483c9952e6d6.png";
 import gaonLogo from "@public/company/partners/b7dd0ee746ddbb38044587bd78b71156325d3b9f.png";
 import songJeonLogo from "@public/company/partners/7d4559e09a2854cc60355543823199d7802333c8.png";
+import daeboLogo from "@public/company/partners/77ae5c25ad8857d4590c4626b00986f169929c7a.png";
 import heroImage from "@public/company/partners/5c40c3b8806d8e368a627607ec5ce36893ea1596.png";
 import { HeroSectionFeat } from "@components/shared/HeroSectionFeat";
 import { PartnerGroup, LogoItem } from "@components/sections/PartnerGroup"
@@ -46,14 +47,14 @@ export default function Partners() {
         backgroundImage={heroImage}/>
 
       {/* Partner Network Section */}
-      <section style={{ backgroundColor: '#FFFFFF', paddingTop: '160px', paddingBottom: '200px' }}>
+      <section className="bg-white pt-[160px] pb-[200px]">
         <div className="max-w-[1240px] mx-auto px-6">
           
           {/* 사업자문 */}
           <PartnerGroup
             title="사업자문"
             description="에너지 프로젝트 구조화 및 사업성 검증 전문 파트너">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5">
               <LogoItem
                 src={hangangLogo.src}
                 alt="HANGANG ASSET"
@@ -79,7 +80,7 @@ export default function Partners() {
           <PartnerGroup
             title="영업사"
             description="전국 사업 발굴 및 프로젝트 유치를 담당하는 네트워크">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">                          
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">                          
               <LogoItem
                 src={sgGlobalLogo.src}
                 alt="SG GLOBAL ENERGY KOREA"
@@ -100,6 +101,15 @@ export default function Partners() {
             </div>
           </PartnerGroup>
 
+          { /* EPC 총괄 */}
+          <PartnerGroup
+            title="EPC 총괄"
+            description="EPC 총괄 파트너">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-5">
+              <LogoItem src={daeboLogo.src} alt="대보에너지솔루션" delay={0} />
+            </div>
+          </PartnerGroup>
+
           {/* 시공사 */}
           <PartnerGroup
             title="시공사"
@@ -114,7 +124,7 @@ export default function Partners() {
               <LogoItem src={hmeLogo.src} alt="HME" delay={0.30} />
               <LogoItem src={gaonLogo.src} alt="GAON E&C" delay={0.35} />
               <LogoItem src={songJeonLogo.src} alt="송전" delay={0.40} />
-              <LogoItem src={hdesLogo.src} alt="HDES" delay={0.45} />
+              {/*<LogoItem src={hdesLogo.src} alt="HDES" delay={0.45} />*/}
               <LogoItem src={wonpickLogo.src} alt="원픽이앤씨" delay={0.50} />
               <LogoItem src={elmetechLogo.src} alt="ELMETECH" delay={0.55} />
             </div>

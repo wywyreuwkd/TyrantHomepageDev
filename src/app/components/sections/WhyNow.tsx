@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export function WhyNow() {
   const reasons = [
     {
-      title: "한전 계통용량, 언제달일지 아무도 모릅니다.",
+      title: "한전 계통용량, 언제 부족해질지 아무도 모릅니다.",
       description: "아무리 좋은 지붕도 연결되지 않으면 아무 소용없습니다. 이미 일부 지역은 6개월~1년 대기, 일부는 불가 통보가 나오고 있습니다."
     },
     {
@@ -15,7 +15,7 @@ export function WhyNow() {
       description: "투자비는 충분히 준비했지만, 예상보다 훨씬 더 많은 문의가 몰려서 먼저 하는 사람이 가져갑니다."
     },
     {
-      title: "타이런트매니저는 가장 빠르게 솔라오 사업을 연결합니다.",
+      title: "타이런트 매니저는 가장 빠르게 솔라오 사업을 연결합니다.",
       description: ""
     }
   ];
@@ -98,8 +98,13 @@ export function WhyNow() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
-          <motion.p 
+        <div className="text-center text-3xl font-bold">
+          <div className="color-accent">
+            기회는 곧, 사라집니다.
+            <br/>
+            지금 바로 타이런트와 함께 하세요.
+          </div>
+          {/* <motion.p 
             className="text-[#FF6B3D]"
             style={{
               fontSize: '36px',
@@ -118,7 +123,7 @@ export function WhyNow() {
             }}
           >
             기회는 곧, 사라집니다
-          </motion.p>
+          </motion.p> */}
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ import ciBasicGuide from "@public/company/ci/1e051337ae8b29d2bba2daebf6aecfa4ed6
 import ciBasicGuideClean from "@public/company/ci/25fbc3d89627a357c8a4cefc030a685b7196e85e.png";
 import ciBasicGuideNew from "@public/company/ci/4a024ff88715077c438b7cce09be1fa5819b3fe8.png";
 import prohibitIcon from "@public/company/ci/c32ac952f6a244c81d0e12a3fb974a41ff4f65db.png";
-import heroImage from "@public/company/ci/d5281f16428ffc18e72b68e4af3bd29c20e629bd.png";
+import heroImage from "@public/company/ci/0f40b7bf4f0ccd71a835eddba089cbcaa120cdd0.png";
 import { InteractiveLogoFrame } from "@components/sections/InteractiveLogoFrame";
 import { HeroSectionFeat } from "@components/shared/HeroSectionFeat";
 import { FadeInUpAnimate } from "@components/shared/FadeInUpAnimate";

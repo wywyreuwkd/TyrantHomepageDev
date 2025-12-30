@@ -7,14 +7,25 @@ import { usePathname } from "next/navigation";
 import { Logo } from "@components/shared/Logo";
 import { Button } from "@components/ui/button";
 
-const menuData = [
+interface MenuItem {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+interface MenuSection {
+  title: string;
+  items: MenuItem[];
+}
+
+const menuData: MenuSection[] = [
   {
     title: "회사소개",
     items: [
       { label: "타이런트", href: "/company" },
       { label: "CI소개", href: "/company/ci" },
       { label: "그룹사소개", href: "/company/group" },
-      { label: "연혁", href: "/company/history" },
+      // { label: "연혁", href: "/company/history" },
       { label: "핵심인력", href: "/company/members" },
       { label: "협력사소개", href: "/company/partners" },
     ],
@@ -22,14 +33,14 @@ const menuData = [
   {
     title: "사업영역",
     items: [
+      { label: "태양광 사업성분석", href: "/business/fs" },
       { label: "태양광 개발", href: "/business/development" },
+      { label: "태양광 기자재공급", href: "/business/materials" },
       { label: "태양광 시공", href: "/business/construction" },
       { label: "태양광 투자", href: "/business/investment" },
-      { label: "태양광 기자재공급", href: "/business/materials" },
-      { label: "태양광 사업성분석", href: "/business/fs" },
-      { label: "태양광 기술실사", href: "/business/duediligence" },
       { label: "태양광 관리운영", href: "/business/monitoring" },
       { label: "태양광 사무관리", href: "/business/operation" },
+      { label: "태양광 기술실사", href: "/business/duediligence" },
       // { label: "데이터센터", href: "/business/datacenter" },
       // { label: "태양광 교육", href: "/business/education" },
     ],
@@ -37,13 +48,14 @@ const menuData = [
   {
     title: "태양광상품소개",
     items: [
-      { label: "솔라오(지붕)", href: "#" },
+      { label: "솔라오 상품 소개", href: "/products/solaro" },
+      { label: "솔라오(지붕)", href: "/products/roof" },
       { label: "솔라오(그라운드)", href: "#" },
       { label: "솔라로지스리드(물류창고)", href: "#" },
       { label: "솔라워터(수상)", href: "#" },
       { label: "솔라파킹(주차장)", href: "#" },
-      { label: "모니터링", href: "#" },
-      { label: "FAQ", href: "#" },
+      // { label: "모니터링", href: "#" },
+      // { label: "FAQ", href: "#" },
     ]
   },
   {
@@ -53,41 +65,41 @@ const menuData = [
       { label: "표로보기", href: "#" },
     ]
   },
-  {
-    title: "사업접수 및 문의",
-    items: [
-      { label: "태양광 접수", href: "#" },
-      { label: "기자재 구매", href: "#" },
-      { label: "사업성 분석", href: "#" },
-      { label: "기술실사", href: "#" },
-      { label: "태양광 교육", href: "#" },
-      { label: "기타문의", href: "#" },
-    ]
-  },
+  // {
+  //   title: "사업접수 및 문의",
+  //   items: [
+  //     { label: "태양광 접수", href: "#" },
+  //     { label: "기자재 구매", href: "#" },
+  //     { label: "사업성 분석", href: "#" },
+  //     { label: "기술실사", href: "#" },
+  //     { label: "태양광 교육", href: "#" },
+  //     { label: "기타문의", href: "#" },
+  //   ]
+  // },
   {
     title: "회원사전용",
     items: [
-      { label: "영업사등록", href: "#" },
-      { label: "시공사등록", href: "#" },
-      { label: "인허가접수 관리시스템", href: "#" },
-      { label: "사무공간소개", href: "#" },
+      { label: "영업사등록", href: "https://project.tyrant.co.kr/register-by-one", external: true },
+      { label: "시공사등록", href: "https://project.tyrant.co.kr/register-by-one", external: true },
+      { label: "인허가접수 관리시스템", href: "https://project.tyrant.co.kr", external: true },
+      // { label: "사무공간소개", href: "#" },
     ]
   },
-  {
-    title: "모니터링",
-    items: [
-      { label: "발전시간 조회", href: "#" },
-      { label: "잔고조회", href: "#" },
-      { label: "관리운영 보고서", href: "#" },
-      { label: "자금관리 보고서", href: "#" },
-    ]
-  },
+  // {
+  //   title: "모니터링",
+  //   items: [
+  //     { label: "발전시간 조회", href: "#" },
+  //     { label: "잔고조회", href: "#" },
+  //     { label: "관리운영 보고서", href: "#" },
+  //     { label: "자금관리 보고서", href: "#" },
+  //   ]
+  // },
   {
     title: "고객센터",
     items: [
-      { label: "오시는 길", href: "#" },
-      { label: "사이트 맵", href: "#" },
-      { label: "사업관련 사이트", href: "#" },
+      { label: "오시는 길", href: "/customercenter/location" },
+      { label: "사이트 맵", href: "/customercenter/sitemap" },
+      { label: "사업관련 사이트", href: "/customercenter/relationsite" },
     ]
   },
 ]
@@ -159,6 +171,9 @@ export function Header() {
                 >
                   {menu.items.map((item, itemIndex) => {
                     const isActive = pathname === item.href;
+                    const linkProps = item.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {};
                     return (
                       <Link
                         key={itemIndex}
@@ -167,6 +182,7 @@ export function Header() {
                         className={`block color-white hover:color-white hover:bg-accent hover:font-semibold transition-all text-94 font-normal whitespace-nowrap leading-[44px] px-6 ${
                           isActive ? 'bg-[#FF6B2C]/20' : ''
                         }`}
+                        {...linkProps}
                       >
                         {item.label}
                       </Link>
@@ -265,6 +281,9 @@ export function Header() {
                 <div className="bg-white/5 py-2">
                   {menu.items.map((item, itemIndex) => {
                     const isActive = pathname === item.href;
+                    const linkProps = item.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {};
                     return (
                       <Link
                         key={itemIndex}
@@ -274,6 +293,7 @@ export function Header() {
                             ? 'color-accent bg-accent-10'
                             : 'color-white-90 hover:font-semibold hover:color-white hover:bg-white/5'
                         }`}
+                        {...linkProps}
                       >
                         {item.label}
                       </Link>

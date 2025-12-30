@@ -19,7 +19,7 @@ export default function Members() {
         backgroundImage={heroImage}/>
 
       {/* Board Members Section */}
-      <div className="mx-auto max-w px-6 md:px-10 my-[7.5rem] mx-auto">
+      <div className="mx-auto max-w px-6 md:px-10 my-[7.5rem]">
         <h2 className="font-['Pretendard,_-apple-system,_'Noto_Sans_KR',_sans-serif'] text-[clamp(2rem,5vw,3rem)] font-bold text-[#0E1C45] mb-6 leading-[1.3]">
           Leadership
         </h2>

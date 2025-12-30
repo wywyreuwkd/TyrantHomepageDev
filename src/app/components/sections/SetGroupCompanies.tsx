@@ -15,7 +15,7 @@ import { ArrowUpRight } from "lucide-react";
 const groupCompanies = [
   {
     name: "타이런트에이치",
-    nameEn: "TYRANT H",
+    nameEn: "TYRANT-H",
     fullName: "TYRANT-H Co., Ltd.",
     meaning: "Holdings",
     slogan: "타이런트 그룹의 전략 수립 및 그룹 운영 총괄",
@@ -27,7 +27,7 @@ const groupCompanies = [
   },
   {
     name: "타이런트아이",
-    nameEn: "TYRANT I",
+    nameEn: "TYRANT-I",
     fullName: "Tyrant-I Co., Ltd.",
     meaning: "Investments",
     slogan: "태양광 투자법인",
@@ -39,7 +39,7 @@ const groupCompanies = [
   },
   {
     name: "타이런트에스",
-    nameEn: "TYRANT S",
+    nameEn: "TYRANT-S",
     fullName: "Tyrant-S Co., Ltd.",
     meaning: "Service",
     slogan: "고객관리, 계약관리, 자금관리 및 원발사무업무",
@@ -51,7 +51,7 @@ const groupCompanies = [
   },
   {
     name: "타이런트이",
-    nameEn: "TYRANT E",
+    nameEn: "TYRANT-E",
     fullName: "Tyrant-E Co., Ltd.",
     meaning: "E & C (Engineering & Construction)",
     slogan: "태양광 개발, 시공, 관리운영, 기자재 공급",
@@ -63,7 +63,7 @@ const groupCompanies = [
   },
   {
     name: "타이런트씨",
-    nameEn: "TYRANT C",
+    nameEn: "TYRANT-C",
     fullName: "Tyrant-C Co., Ltd.",
     meaning: "Consulting",
     slogan: "태양광 사업성분석 및 금융자문",
@@ -75,11 +75,11 @@ const groupCompanies = [
   },
   {
     name: "타이런트에프",
-    nameEn: "TYRANT F",
+    nameEn: "TYRANT-F",
     fullName: "Tyrant-F Co., Ltd.",
     meaning: "Food & Beverage",
     slogan: "외식 사업부문",
-    description: "타이런트에프는 외식 및 식음료 사업을 담당하는 Food & Beverage 계열사로, 다양한 외식 브랜드 운영을 통해 그룹의 사업 영역을 확장하고 있습니다. 안정적인 운영 시스템과 차별화된 메뉴 경쟁력을 기반으로 지속적인 성장을 추구합니다.\n\n함박스테이크 전문점 타박스, 냉면 전문점 타냉, 장모님 감자탕 등 다양한 외식 브랜드를 운영하며, 식음료 산업 전반에서 새로운 가치 창출을 이어가고 있습니다.",
+    description: "타이런트에프는 외식 및 식음료 사업을 담당하는 Food & Beverage 계열사로, 다양한 외식 브랜드 운영을 통해 그룹의 사업 영역을 확장하고 있습니다. 안정적인 운영 시스템과 차별화된 메뉴 경쟁력을 기반으로 지속적인 성장을 추구합니다.\n\n함박스테이크 전문점 타박스, 냉면 전문점 타냉스, 장모님 감자탕 등 다양한 외식 브랜드를 운영하며, 식음료 산업 전반에서 새로운 가치 창출을 이어가고 있습니다.",
     color: "#152556",
     letter: "F",
     imageUrl: tyrantFImage,
@@ -113,7 +113,9 @@ export function SetGroupCompanies() {
                   color: selectedCompany === index ? '#FF6B3D' : '#0F214A',                  
                   borderColor: selectedCompany === index ? '#FF6B3D' : '#0F214A'           
                 }}>
-                {company.name}
+                {company.name} 
+                <br />
+                ({company.nameEn})
               </button>
             ))}
           </div>

@@ -216,7 +216,7 @@ export default function FSAnalysisPage() {
             </h2>
 
             {/* Quote Box */}
-            <div className="bg-[rgba(255,107,61,0.1)] border border-accent-30 rounded-2xl p-8 md:p-12 mb-12">
+            <div className="bg-primary-dark-2 border border-gray-400 rounded-2xl p-8 md:p-12 mb-12">
               <p className="text-lg md:text-xl color-white-90 leading-[180%] mb-6">
                 사업성 검토보고서를 작성하는 다수의 <span className="color-accent font-bold">회계법인</span>들은
                 <br className="hidden md:block" />

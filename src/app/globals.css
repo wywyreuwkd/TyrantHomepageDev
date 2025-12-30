@@ -57,45 +57,45 @@
   }
 
   H1 {
-    font-size: var(--font-size-56);
-    font-weight: var(--font-weight-700);
-    line-height: var(--line-height-70);
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 125%;
   }
 
   H2 {
-    font-size: var(--font-size-48);
-    font-weight: var(--font-weight-700);
-    line-height: var(--line-height-60);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 125%;
   }
 
   H3 {
-    font-size: var(--font-size-36);
-    font-weight: var(--font-weight-700);
-    line-height: var(--line-height-48);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 133%;
   }
 
   H4 {
-    font-size: var(--font-size-24);
-    font-weight: var(--font-weight-700);
-    line-height: var(--line-height-32);
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 700;
+    line-height: 150%;
   }
 
   H5 {
-    font-size: var(--font-size-20);
-    font-weight: var(--font-weight-700);
-    line-height: var(--line-height-30);
+    font-size: clamp(18px, 2vw, 20px);
+    font-weight: 700;
+    line-height: 150%;
   }
 
   P {
-    font-size: var(--font-size-18);
-    font-weight: var(--font-weight-400);
-    line-height: var(--line-height-28);
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 400;
+    line-height: 150%;
   }
 
   label,
   button {
-    font-size: var(--font-size-16);
-    font-weight: var(--font-weight-700);
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 700;
     line-height: auto;
   }
 }
@@ -119,20 +119,21 @@
   --header: #0A2A63;
   --footer: #1a2850;
 
-/* 스타일 가이드 정의 Color */
-  --primary: rgba(39, 59, 130, 1);
-  --primary-dark-1: rgba(15, 33, 74, 1);
-  --primary-dark-2: rgba(21, 48, 90, 1);
-  --primary-dark-3: rgba(14, 28, 69, 1);
-  --primary-dark-4: rgba(21, 37, 86, 1);
-  --accent: rgba(255, 107, 61, 1);
-  --accent-hover-1: rgba(229, 90, 53, 1);
-  --accent-hover-2: rgba(255, 124, 64, 1);
-  --gray-100: rgba(247, 250, 253, 1);
-  --gray-200: rgba(229, 231, 235, 1);
-  --gray-400: rgba(153, 153, 153, 1);
-  --gray-600: rgba(102, 102, 102, 1);
-  --gray-900: rgba(51, 51, 51, 1);
+  /* 스타일 가이드 정의 Color */
+  --primary: rgba(39, 59, 130, 1);  /* 메인 브랜드 컬러, 헤더, 주요 텍스트 #273B82 */
+  --primary-dark-1: rgba(15, 33, 74, 1);  /* 헤딩, 강조 텍스트, 다크 배경 #0F214A */
+  --primary-dark-2: rgba(21, 48, 90, 1);  /* 서브 배경, 카드 헤더 #15305A */
+  --primary-dark-3: rgba(14, 28, 69, 1);  /* 푸터, 깊은 배경 #0E1C45 */
+  --primary-dark-4: rgba(21, 37, 86, 1);  /* 호버 상태, 액센트 #152556 */
+  --primary-dark-5: rgba(10, 22, 40, 1);  /* 가장 어두운 배경 #0A1628 */
+  --accent: rgba(255, 107, 61, 1);  /* CTA 버튼, 중요 강조, 링크 #FF6B3D */
+  --accent-hover-1: rgba(229, 90, 53, 1);  /* 주 버튼 호버 상태(Hero, 주요 CTA) #E55A35 */
+  --accent-hover-2: rgba(255, 124, 64, 1);  /* 보조 버튼 호버 상태 (Group Companies) #FF7C40 */
+  --gray-100: rgba(247, 250, 253, 1); /* #F7FAFD */
+  --gray-200: rgba(229, 231, 235, 1); /* #E5E7EB */
+  --gray-400: rgba(153, 153, 153, 1); /* #999999 */
+  --gray-600: rgba(102, 102, 102, 1); /* #666666 */
+  --gray-900: rgba(51, 51, 51, 1); /* #333333 */
 
 
   --border-blue: #273b82;
@@ -145,6 +146,12 @@
 
   --color-white: rgba(255, 255, 255, 1);
   --color-white-90: rgba(255, 255, 255, 0.9);
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-white-70: rgba(255, 255, 255, 0.7);
+  --color-white-60: rgba(255, 255, 255, 0.6);
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-40: rgba(255, 255, 255, 0.4);
+  --color-white-30: rgba(255, 255, 255, 0.3);
   --color-white-20: rgba(255, 255, 255, 0.2);
   --color-white-10: rgba(255, 255, 255, 0.1);
   --color-accent: #FF6B2C;
@@ -169,7 +176,6 @@
   --font-size-20: 1.25rem; 
   --font-size-24: 1.5rem; 
   --font-size-36: 2.25rem; 
-  --font-size-40: 2.5rem;
   --font-size-48: 3rem; 
   --font-size-56: 3.5rem;
 
@@ -213,6 +219,7 @@
   --primary-dark-2: rgba(21, 48, 90, 1);
   --primary-dark-3: rgba(14, 28, 69, 1);
   --primary-dark-4: rgba(21, 37, 86, 1);
+  --primary-dark-5: rgba(10, 22, 40, 1);
   --accent: rgba(255, 107, 61, 1);
   --accent-hover-1: rgba(229, 90, 53, 1);
   --accent-hover-2: rgba(255, 124, 64, 1);
@@ -234,6 +241,11 @@
   --color-white: rgba(255, 255, 255, 1);
   --color-white-90: rgba(255, 255, 255, 0.9);
   --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-white-70: rgba(255, 255, 255, 0.7);
+  --color-white-60: rgba(255, 255, 255, 0.6);
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-40: rgba(255, 255, 255, 0.4);
+  --color-white-30: rgba(255, 255, 255, 0.3);
   --color-white-20: rgba(255, 255, 255, 0.2);
   --color-white-10: rgba(255, 255, 255, 0.1);
   --color-accent: #FF6B2C;
@@ -257,7 +269,6 @@
   --font-size-20: 1.25rem; 
   --font-size-24: 1.5rem; 
   --font-size-36: 2.25rem; 
-  --font-size-40: 2.5rem;
   --font-size-48: 3rem; 
   --font-size-56: 3.5rem;
 
@@ -346,7 +357,7 @@
     background: linear-gradient(135deg, rgba(15, 33, 74, 0.2) 0%, rgba(0, 100, 200, 0.1) 100%);
   }
   .bg-accent {
-    background-color: var(--accent); /* FF6B3D */
+    background-color: var(--accent);
   }
   .bg-accent-90 {
     background-color: var(--accent-90);
@@ -422,6 +433,27 @@
   .color-white-80 {
     color: var(--color-white-80);
   }
+  .color-white-70 {
+    color: var(--color-white-70);
+  }
+  .color-white-60 {
+    color: var(--color-white-60);
+  }
+  .color-white-50 {
+    color: var(--color-white-50);
+  }
+  .color-white-40 {
+    color: var(--color-white-40);
+  }
+  .color-white-30 {
+    color: var(--color-white-30);
+  }
+  .color-white-20 {
+    color: var(--color-white-20);
+  }
+  .color-white-10 {
+    color: var(--color-white-10);
+  }
   .color-gray-800 {
     color: rgba(31, 41, 55);
   }
@@ -440,125 +472,134 @@
 
   /* 스타일 가이드 정의 color */
   .color-primary {
-    color: var(--primary);
+    color: var(--primary); /* #273B82 */
   }
   .color-primary-dark-1 {
-    color: var(--primary-dark-1);
+    color: var(--primary-dark-1); /* #0F214A */
   }
   .color-primary-dark-2 {
-    color: var(--primary-dark-2);
+    color: var(--primary-dark-2); /* #15305A */
   }
   .color-primary-dark-3 {
     color: var(--primary-dark-3); /* #0E1C45 */
   }
   .color-primary-dark-4 {
-    color: var(--primary-dark-4);
+    color: var(--primary-dark-4); /* #152556 */
+  }
+  .color-primary-dark-5 {
+    color: var(--primary-dark-5); /* #0A1628 */
   }
   .color-accent {
     color: var(--accent); /* #FF6B3D */
   }
   .color-accent-hover-1 {
-    color: var(--accent-hover-1);
+    color: var(--accent-hover-1); /* #E55A35 */
   }
   .color-accent-hover-2 {
-    color: var(--accent-hover-2);
+    color: var(--accent-hover-2); /* #FF7C40 */
   }
   .color-gray-100 {
-    color: var(--gray-100);
+    color: var(--gray-100); /* #F7FAFD */
   }
   .color-gray-200 {
     color: var(--gray-200); /* #E5E7EB */
   }
   .color-gray-400 {
-    color: var(--gray-400);
+    color: var(--gray-400); /* #999999 */
   }
   .color-gray-600 {
-    color: var(--gray-600);
+    color: var(--gray-600); /* #666666 */
   }
   .color-gray-900 {
-    color: var(--gray-900);
+    color: var(--gray-900); /* #333333 */
   }
 
   /* 스타일 가이드 정의 background */
   .bg-primary {
-    background-color: var(--primary);
+    background-color: var(--primary); /* #273B82 */
   }
   .bg-primary-dark-1 {
-    background-color: var(--primary-dark-1);
+    background-color: var(--primary-dark-1); /* #0F214A */
   }
   .bg-primary-dark-2 {
-    background-color: var(--primary-dark-2);
+    background-color: var(--primary-dark-2); /* #15305A */
   }
   .bg-primary-dark-3 {
     background-color: var(--primary-dark-3); /* #0E1C45 */
   }
   .bg-primary-dark-4 {
-    background-color: var(--primary-dark-4);
+    background-color: var(--primary-dark-4); /* #152556 */
+  }
+  .bg-primary-dark-5 {
+    background-color: var(--primary-dark-5); /* #0A1628 */
   }
   .bg-accent {
     background-color: var(--accent); /* #FF6B3D */
   }
   .bg-accent-hover-1 {
-    background-color: var(--accent-hover-1);
+    background-color: var(--accent-hover-1); /* #E55A35 */
   }
   .bg-accent-hover-2 {
-    background-color: var(--accent-hover-2);
+    background-color: var(--accent-hover-2); /* #FF7C40 */
   }
   .bg-gray-100 {
-    background-color: var(--gray-100);
+    background-color: var(--gray-100); /* #F7FAFD */
   }
   .bg-gray-200 {
     background-color: var(--gray-200); /* #E5E7EB */
   }
   .bg-gray-400 {
-    background-color: var(--gray-400);
+    background-color: var(--gray-400); /* #999999 */
   }
   .bg-gray-600 {
-    background-color: var(--gray-600);
+    background-color: var(--gray-600); /* #666666 */
   }
   .bg-gray-900 {
-    background-color: var(--gray-900);
+    background-color: var(--gray-900); /* #333333 */
   }
 
   /* 스타일 가이드 정의 border */
   .border-primary {
-    border-color: var(--primary);
+    border-color: var(--primary); /* #273B82 */
   }
   .border-primary-dark-1 {
-    border-color: var(--primary-dark-1);
+    border-color: var(--primary-dark-1); /* #0F214A */
   }
   .border-primary-dark-2 {
-    border-color: var(--primary-dark-2);
+    border-color: var(--primary-dark-2); /* #15305A */
   }
   .border-primary-dark-3 {
     border-color: var(--primary-dark-3); /* #0E1C45 */
   }
   .border-primary-dark-4 {
-    border-color: var(--primary-dark-4);
+    border-color: var(--primary-dark-4); /* #152556 */
+  }
+  .border-primary-dark-5 {
+    border-color: var(--primary-dark-5); /* #0A1628 */
   }
   .border-accent {
     border-color: var(--accent); /* #FF6B3D */
   }
   .border-accent-hover-1 {
-    border-color: var(--accent-hover-1);
+    border-color: var(--accent-hover-1); /* #E55A35 */
   }
   .border-accent-hover-2 {
-    border-color: var(--accent-hover-2);
+    border-color: var(--accent-hover-2); /* #FF7C40 */
   }
   .border-gray-100 {
-    border-color: var(--gray-100);
+    border-color: var(--gray-100); /* #F7FAFD */
   }
-  .border-gray-200 {
+  .border-gray-200 { 
     border-color: var(--gray-200); /* #E5E7EB */
   }
   .border-gray-400 {
-    border-color: var(--gray-400);
+    border-color: var(--gray-400); /* #999999 */
   }
   .border-gray-600 {
-    border-color: var(--gray-600);
+    border-color: var(--gray-600); /* #666666 */
   }
   .border-gray-900 {
-    border-color: var(--gray-900);
+    border-color: var(--gray-900); /* #333333 */
   }
 
   
@@ -593,9 +634,6 @@
   }
   .text-4xl {
     font-size: var(--font-size-36);
-  }
-  .text-40 {
-    font-size: var(--font-size-40);
   }
   .text-5xl {
     font-size: var(--font-size-48);
@@ -652,7 +690,7 @@
 
   /* 스타일 가이드 정의 버튼 - ex) 다운로드 */
   .btn-download {
-    background-color: #FFFFFF;
+    background: #FFFFFF;
     color: #0E1C45;
     border: 1px solid #E5E7EB;
     border-radius: 12px;
@@ -684,6 +722,34 @@
   .hero-slide {
     opacity: 0;
     animation: hero-slide 9s infinite;
+  }
+
+  /* bullet-list-item */
+  .bullet-list-item {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+  .bullet-list-item::before {
+    content: '';
+    position: absolute;
+    left: 0.3em;
+    top: 0.6em;
+    width: 0.55rem;
+    height: 0.55rem;
+    background-color: var(--accent);
+    border-radius: 50%;
+  }
+
+  /* annotation-list-item */
+  .annotation-list-item {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .annotation-list-item::before {
+    content: '*';
+    position: absolute;
+    left: 0.5rem;
+    top: 0.1rem;
   }
 
   @keyframes hero-slide {

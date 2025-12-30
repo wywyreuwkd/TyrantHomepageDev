@@ -19,47 +19,42 @@ export function Footer() {
           {/* Quick Links - 2 columns */}
           <div className="grid grid-cols-2 gap-8">
             <div>
-              <h3 className="mb-4 color-white">서비스</h3>
+              <h5 className="mb-4 color-white">서비스</h5>
               <ul className="space-y-3">
                 <li>
-                  <a href="#company" className="color-muted hover:color-white transition-colors text-sm">
+                  <a href="/company" className="color-muted hover:color-white transition-colors text-sm">
                     회사소개
                   </a>
                 </li>
                 <li>
-                  <a href="#business" className="color-muted hover:color-white transition-colors text-sm">
+                  <a href="/business/development" className="color-muted hover:color-white transition-colors text-sm">
                     사업영역
                   </a>
                 </li>
                 <li>
-                  <a href="#products" className="color-muted hover:color-white transition-colors text-sm">
+                  <a href="/products/solaro" className="color-muted hover:color-white transition-colors text-sm">
                     태양광상품소개
-                  </a>
-                </li>
-                <li>
-                  <a href="#installation" className="color-muted hover:color-white transition-colors text-sm">
-                    태양광설치
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="mb-4 color-white">정보</h3>
+              <h5 className="mb-4 color-white">정보</h5>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="color-muted hover:color-white transition-colors text-sm">
+                  <a href="/footerInfo/termsOfService" className="color-muted hover:color-white transition-colors text-sm">
                     이용약관
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="color-muted hover:color-white transition-colors text-sm">
+                  <a href="/footerInfo/privacy" className="color-muted hover:color-white transition-colors text-sm">
                     개인정보처리방침
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="color-muted hover:color-white transition-colors text-sm">
-                    법적고지
+                  <a href="/footerInfo/emailPrivacy" className="color-muted hover:color-white transition-colors text-sm">
+                    이메일 무단수집거부
                   </a>
                 </li>
               </ul>
