@@ -67,7 +67,7 @@ const groupCompanies = [
     fullName: "Tyrant-C Co., Ltd.",
     meaning: "Consulting",
     slogan: "태양광 사업성분석 및 금융자문",
-    description: "타이런트씨는 태양광 사업 전반에 대한 전문 컨설팅을 제공하는 컨설팅 법인(Consulting)으로, 사업의 타당성과 수익성을 객관적으로 분석하여 성공적인 사업 추진을 지원합니다.\n\n태양광 사업성 분석(FS), 태양광 금융 자문(PF), 태양광 기술 실사, 태양광 교육 등 전문 컨설팅 서비스를 제공하며, 사업 초기 기획 단계부터 실행 단계까지 전반적인 의사결정을 지원하고 있습니다.",
+    description: "타이런트씨는 태양광 사업 전반에 대한 전문 컨설팅을 제공하는 컨설팅 법인(Consulting)으로, 사업의 타당성과 수익성을 객관적으로 분석하여 고객의 성공적인 사업 추진을 지원합니다. 또한 타이런트 솔라오 상품의 전반적인 금융조달 전략 수립 및 실행을 담당하고 있습니다.\n\n태양광 사업성 분석(FS), 태양광 금융 자문(PF), 태양광 기술 실사, 태양광 교육 등 전문 컨설팅 서비스를 제공하며, 사업 초기 기획 단계부터 실행 단계까지 전반적인 의사결정을 지원하고 있습니다.",
     color: "#0E1C45",
     letter: "C",
     imageUrl: tyrantCImage,
@@ -79,7 +79,7 @@ const groupCompanies = [
     fullName: "Tyrant-F Co., Ltd.",
     meaning: "Food & Beverage",
     slogan: "외식 사업부문",
-    description: "타이런트에프는 외식 및 식음료 사업을 담당하는 Food & Beverage 계열사로, 다양한 외식 브랜드 운영을 통해 그룹의 사업 영역을 확장하고 있습니다. 안정적인 운영 시스템과 차별화된 메뉴 경쟁력을 기반으로 지속적인 성장을 추구합니다.\n\n함박스테이크 전문점 타박스, 냉면 전문점 타냉스, 장모님 감자탕 등 다양한 외식 브랜드를 운영하며, 식음료 산업 전반에서 새로운 가치 창출을 이어가고 있습니다.",
+    description: "타이런트에프는 외식 및 식음료 사업을 담당하는 Food & Beverage 계열사로, 다양한 외식 브랜드 운영을 통해 그룹의 사업 영역을 확장하고 있습니다. 안정적인 운영 시스템과 차별화된 메뉴 경쟁력을 기반으로 지속적인 성장을 추구합니다.\n\n함박스테이크 전문점 타박스, 평양냉면 전문점 타냉스, 장모님 감자탕 등 다양한 외식 브랜드를 운영하며, 식음료 산업 전반에서 새로운 가치 창출을 이어가고 있습니다.",
     color: "#152556",
     letter: "F",
     imageUrl: tyrantFImage,
@@ -101,23 +101,49 @@ export function SetGroupCompanies() {
   return(
     <div className="min-h-screen bg-[#F7FAFD]">
       {/* Tab Navigation */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="mx-auto max-w py-10 px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {groupCompanies.map((company, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedCompany(index)}
-                className="relative transition-all duration-200 flex-1 text-center cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis font-pretendard text-[1.125rem] font-medium bg-white border border-[#0F214A] p-[1.25rem_1rem]"
-                style={{                  
-                  color: selectedCompany === index ? '#FF6B3D' : '#0F214A',                  
-                  borderColor: selectedCompany === index ? '#FF6B3D' : '#0F214A'           
-                }}>
-                {company.name} 
-                <br />
-                ({company.nameEn})
-              </button>
-            ))}
+      <div className="bg-white border-b border-gray-200 flex flex-col justify-center">
+        <div className="mx-auto max-w py-6 px-6 bg-gray-200 rounded-xl mt-10">
+          <button
+            key={0}
+            onClick={() => setSelectedCompany(0)}
+            className="relative transition-all duration-200 text-center cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis font-pretendard text-[1.125rem] font-medium bg-white border border-[#0F214A] p-[1.25rem_2rem]"
+            style={{                  
+              color: selectedCompany === 0 ? '#FF6B3D' : '#0F214A',                  
+              borderColor: selectedCompany === 0 ? '#FF6B3D' : '#0F214A'           
+            }}
+          >
+            {groupCompanies[0].name}
+            <br />
+            ({groupCompanies[0].nameEn})
+          </button>
+        </div>
+
+        <div className="mx-auto w-[4px] h-12 bg-gray-200" />
+      
+        <div className="mx-auto max-w py-6 px-6 bg-gray-200 rounded-xl mb-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+            {groupCompanies.slice(1).map((company, idx) => {
+              const index = idx + 1; // 실제 인덱스는 1부터 시작
+              return (
+                <button
+                  key={index}
+                  onClick={() => setSelectedCompany(index)}
+                  className="
+                    relative transition-all duration-200 flex-1 text-center cursor-pointer whitespace-nowrap overflow-hidden 
+                    text-ellipsis font-pretendard text-[1.125rem] font-medium bg-white border border-[#0F214A] 
+                    py-[1.25rem] px-[1rem] md:px-[2rem]
+                  "
+                  style={{                  
+                    color: selectedCompany === index ? '#FF6B3D' : '#0F214A',                  
+                    borderColor: selectedCompany === index ? '#FF6B3D' : '#0F214A'           
+                  }}
+                >
+                  {company.name} 
+                  <br />
+                  ({company.nameEn})
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -170,8 +196,7 @@ export function SetGroupCompanies() {
                   e.currentTarget.style.background = '#0F214A';
                 }}
                 onClick={() => {
-                  // TODO: 각 그룹사 웹사이트로 연결
-                  console.log(`Navigate to ${currentCompany.name} website`);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}>
                 <ArrowUpRight size={24} color="white" strokeWidth={2} />
               </button>

@@ -7,7 +7,7 @@ import { WhyNow } from "@components/sections/WhyNow";
 
 export const metadata: Metadata = {
   title: "홈",
-  description: "태양광 발전 전문 기업 타이런트. 수익공유형 무상설치 모델을 통해 기업과 함께 성장하며 탄소중립 사회 실현에 기여합니다.",
+  description: "태양광 발전 전문 기업 타이런트. 수익공유형 무상설치 모델을 통해 고객(기업)과 함께 성장하며 탄소중립 사회 실현에 기여합니다.",
 };
 
 export default function HomePage() {

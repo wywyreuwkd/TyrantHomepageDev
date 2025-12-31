@@ -56,7 +56,7 @@ export default function Location() {
               src={locationIcon.src} 
               alt="위치" />
             <p className="font-['Pretendard',_-apple-system,_'Noto_Sans_KR',_sans-serif] text-lg text-white/80 m-0 leading-[1.6]">
-              경기도 과천시 과천대로7길 74 타이런트빌딩 10층
+              경기도 과천시 과천대로7길 74, 메가존산학연센터 B동 3층 302호
             </p>
           </div>
 
@@ -100,10 +100,10 @@ export default function Location() {
                   지하철 이용
                 </h5>
                 <p className="font-['Pretendard',_-apple-system,_'Noto_Sans_KR',_sans-serif] text-lg leading-[1.7] text-white/85 m-0 tracking-[-0.2px]">
-                  지하철 4호선 인덕원역 하차<br />
-                  3번 출구 앞 버스정류장에서 441, 502, 540번 버스로 환승<br />
-                  → 과천푸르지오라비엔오 정류장 하차<br />
-                  → 도보 약 12분
+                  지하철 4호선 정부과천청사역 하차<br />
+                  3번 출구 앞 버스정류장에서 3번 마을버스로 환승<br />
+                  (임시)가일 정류장 하차<br />
+                  → 도보 약 5분
                 </p>
               </div>
 
@@ -112,10 +112,11 @@ export default function Location() {
                   버스 이용
                 </h5>
                 <p className="font-['Pretendard',_-apple-system,_'Noto_Sans_KR',_sans-serif] text-lg leading-[1.7] text-white/85 m-0 tracking-[-0.2px]">
-                  지하철 4호선 정부과천청사역 하차<br />
-                  3번 출구 앞 버스정류장에서 441, 502, 540, 1-1, 11-2, 11-3, 11-5번 버스 이용<br />
-                  → 과천지식정보타운 정류장 하차<br />
-                  → 도보 약 10분
+                  찬우물 정류장 하차(441, 502, 540, 541번 버스 이용)<br />
+                  과천지식정보타운 정류장 하차(441, 502, 540, 541번 버스 이용)<br />
+                  → 도보 약 15분<br />
+                  (임시)가일 정류장(3번 마을버스 이용)<br />
+                  → 도보 약 5분
                 </p>
               </div>
             </div>
@@ -141,7 +142,9 @@ export default function Location() {
                   자동차로 오시는 길
                 </h5>
                 <p className="font-['Pretendard',_-apple-system,_'Noto_Sans_KR',_sans-serif] text-lg leading-[1.7] text-white/85 m-0 tracking-[-0.2px]">
-                  내비게이션에 "경기도 과천시 과천대로7길 74"를 입력하시면 됩니다.
+                  내비게이션에 "경기도 과천시 과천대로7길 74" 
+                  <br />
+                  또는 "타이런트아이"로 검색하시면 됩니다.
                 </p>
               </div>
 

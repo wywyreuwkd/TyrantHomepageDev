@@ -15,7 +15,7 @@ export default function GroupCompanies() {
         badge="GROUP COMPANIES"
         title={<>그룹사 소개</>}
         description={<>타이런트그룹은 Renewable Energy Total Solutions을 제공하기 위하여 태양광 밸류체인의 A부터 Z까지<br className="hidden md:block" /> 모든 영역에서 전문 서비스를 제공합니다.
-              <br className="hidden md:block" /> 고객의 특정한Needs를 신속하고 정확하게 해결하기 위하여 그에 맞는 전문회사를 별도로 설립하였습니다.</>}
+              <br className="hidden md:block" /> 고객의 특정한 Needs를 신속하고 정확하게 해결하기 위하여 그에 맞는 전문회사를 별도로 설립하였습니다.</>}
         backgroundImage={heroImage}/>
 
       <SetGroupCompanies />

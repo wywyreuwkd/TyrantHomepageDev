@@ -22,6 +22,7 @@ import jayeonEnergyLogo from "@public/company/partners/7221a6fa4d66a8ff691e2240a
 import dainsLogo from "@public/company/partners/5e441f5e38a50b4384d1a4ba2e7717142f33e4b4.png";
 import rstDevelopLogo from "@public/company/partners/4d17a46e9fcef1eb70e3e88557c76a21bf2c6edf.png";
 import dyUwellssiLogo from "@public/company/partners/0cf875c41d6e7eab0141a9ff4d88f5eec594ee88.png";
+import dyEnergyLogo from "@public/company/partners/dyenergylogo.png";
 import hsrEnergyLogo from "@public/company/partners/be1f81879e9faf36770ce90da14e7f6028bba7ff.png";
 import wboKoreaLogo from "@public/company/partners/c74fe947b9cf1501fec920b3a7018dc9baa157e2.png";
 import hmeLogo from "@public/company/partners/06d2298150be42f1194129370b61483c9952e6d6.png";
@@ -118,7 +119,7 @@ export default function Partners() {
               <LogoItem src={jayeonEnergyLogo.src} alt="자연에너지" delay={0} />
               <LogoItem src={dainsLogo.src} alt="DAINS" delay={0.05} />
               <LogoItem src={rstDevelopLogo.src} alt="RST develop" delay={0.10} />
-              <LogoItem src={dyUwellssiLogo.src} alt="DY유웰씨" delay={0.15} />
+              <LogoItem src={dyEnergyLogo.src} alt="DY에너지" delay={0.15} />
               <LogoItem src={hsrEnergyLogo.src} alt="HSR 한솔에너지" delay={0.20} />
               <LogoItem src={wboKoreaLogo.src} alt="WBO KOREA" delay={0.25} />
               <LogoItem src={hmeLogo.src} alt="HME" delay={0.30} />
@@ -133,7 +134,7 @@ export default function Partners() {
           {/* 자문사 */}
           <PartnerGroup
             title="자문사"
-            description="법률·회계·기술 자문을 제공하는 전문 파트너">
+            description="법률·회계·기술·보험 자문을 제공하는 전문 파트너">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
               <LogoItem src={locktonLogo.src} alt="Lockton" delay={0} />
               <LogoItem src={egiLogo.src} alt="EGI" delay={0.05} />

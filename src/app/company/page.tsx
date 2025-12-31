@@ -8,7 +8,7 @@ import { FadeInUpAnimate } from "@components/shared/FadeInUpAnimate"
 
 export const metadata: Metadata = {
   title: "회사소개",
-  description: "타이런트는 태양광 발전 전문 기업으로, 수익공유형 무상설치 모델을 통해 기업과 함께 성장하며 탄소중립 사회 실현에 기여합니다.",
+  description: "타이런트는 태양광 발전 전문 기업으로, 수익공유형 무상설치 모델을 통해 고객(기업)과 함께 성장하며 탄소중립 사회 실현에 기여합니다.",
 };
 
 export default function CompanyIntro() {
@@ -21,12 +21,12 @@ export default function CompanyIntro() {
           <>
             타이런트는 태양광 발전 전문 기업으로, 수익공유형 무상설치 모델을 통해
             <br className="hidden md:block" />
-            기업과 함께 성장하며 탄소중립 사회 실현에 기여하고 있습니다.
+            고객(기업)과 함께 성장하며 탄소중립 사회 실현에 기여하고 있습니다.
           </>
         }
         backgroundImage={heroImage}/>
 
-      {/* CEO Message Section - Tech Style */}
+      {/* CHAIRMAN Message Section - Tech Style */}
       <section className="relative bg-primary overflow-hidden">
         {/* Simple Background */}
         <div className="absolute inset-0 opacity-5">
@@ -38,12 +38,12 @@ export default function CompanyIntro() {
           <FadeInUpAnimate
             contents={
               <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-16 md:gap-20 items-start">
-                {/* Left: CEO Image -45% */}
+                {/* Left: CHAIRMAN Image -45% */}
                 <div className="lg:sticky lg:top-32">
                   <div className="relative overflow-hidden rounded-3xl h-full">
                     <ImageWithFallback
                       src={ceoImage.src}
-                      alt="CEO Image"
+                      alt="CHAIRMAN Image"
                       className="w-full h-full object-cover min-h-[500px] md:min-h-[800px]"/>
 
                   {/* Subtle Overlay */}
@@ -57,8 +57,8 @@ export default function CompanyIntro() {
 
               {/* Right: Message Content - 55% */}
               <div className="lg:pl-8">
-                {/* Label: CEO MESSAGE */}
-                <LabelAccent label="CEO MESSAGE" />
+                {/* Label: CHAIRMAN MESSAGE */}
+                <LabelAccent label="CHAIRMAN MESSAGE" />
 
                 {/* Title - H2: 40px / Bold */}
                 <h2
@@ -95,7 +95,7 @@ export default function CompanyIntro() {
                     <p className="mb-5">
                       또한 스마트 모니터링, 예측 기반 운영관리, 안전 시스템 고도화 등<br />
                       미래 에너지 시장을 선도할 수 있는 핵심 기술을 연구하며,<br />
-                      고객이 안심하고 사용할 수 있는 <span className="color-white font-bold">전기간 토탈 솔루션</span>을 구축하고 있습니다.
+                      고객이 안심하고 사용할 수 있는 <span className="color-white font-bold">신재생 토탈 솔루션</span>을 구축하고 있습니다.
                     </p>
 
                     <p className="mb-5">

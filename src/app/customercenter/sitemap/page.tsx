@@ -17,7 +17,7 @@ export default function SiteMap() {
         description={<>타이런트 웹사이트의 전체 구조를 한눈에 확인하세요.</>}
         backgroundImage={heroImage}/>
 
-        <GridSiteMapList />
+      <GridSiteMapList />
     </div>
     );
 }

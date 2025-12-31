@@ -61,8 +61,8 @@ const menuData: MenuSection[] = [
   {
     title: "태양광실적",
     items: [
-      { label: "지도로보기", href: "#" },
-      { label: "표로보기", href: "#" },
+      { label: "지도로보기", href: "/performance/onthemap" },
+      { label: "표로보기", href: "/performance/onthetable" },
     ]
   },
   // {
@@ -206,7 +206,7 @@ export function Header() {
 
 
           {/* 스타일 가이드 버튼 (데스크탑만) */}
-          <Link href="/styleguide">
+          {/* <Link href="/styleguide">
             <button 
               className="hidden xl:flex items-center gap-2 px-5 py-2.5 border-2 border-[#FF6B2C]/30 text-[#FF6B2C] hover:bg-[#FF6B2C] hover:text-white transition-all hover:scale-105"
               style={{
@@ -218,13 +218,15 @@ export function Header() {
               <div className="w-1.5 h-1.5 bg-[#FF6B2C] rounded-full"></div>
               STYLE GUIDE
             </button>
-          </Link>          
+          </Link>           */}
 
-          <Button
-            className="hidden sm:flex items-center justify-center bg-accent hover:bg-accent-90 color-white transition-all hover:scale-105 shadow-md font-semibold rounded-full py-3 px-[26px] text-base leading-none"
-          >
-            빠른 상담
-          </Button>
+          <Link href="/consultation">
+            <Button
+              className="hidden sm:flex items-center justify-center bg-accent hover:bg-accent-90 color-white transition-all hover:scale-105 shadow-md font-semibold rounded-full py-3 px-[26px] text-base leading-none"
+            >
+              상담 문의
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -306,11 +308,13 @@ export function Header() {
 
           {/* 모바일 빠른 상담 버튼 */}
           <div className="px-6 py-6">
-            <Button
-              className="w-full bg-accent hover:bg-accent-90 color-white transition-all shadow-md font-semibold rounded-full py-3 text-base"
-            >
-              빠른 상담
-            </Button>
+            <Link href="/consultation">
+              <Button
+                className="w-full bg-accent hover:bg-accent-90 color-white transition-all shadow-md font-semibold rounded-full py-3 text-base"
+              >
+                상담 문의
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

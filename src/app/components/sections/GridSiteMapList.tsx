@@ -132,7 +132,7 @@ export function GridSiteMapList() {
                     <li key={sectionIndex + itemIndex}>
                     	<Link href={item.href}>                    	
                       <button
-                        className="w-full text-left group/item font-['Pretendard',_-apple-system,_'Noto_Sans_KR',_sans-serif] text-[1.125rem] font-normal leading-[1.75rem] text-[rgba(255,255,255,0.7)] bg-none border-none py-[8px] px-0 cursor-pointer transition-all duration-300 ease relative text-left block"                        
+                        className="w-full text-left group/item font-['Pretendard',_-apple-system,_'Noto_Sans_KR',_sans-serif] text-[1.125rem] font-normal leading-[1rem] text-[rgba(255,255,255,0.7)] bg-none border-none py-[4px] px-0 cursor-pointer transition-all duration-300 ease relative block"                        
                         onMouseEnter={(e) => {
                           e.currentTarget.style.color = '#FF6B3D';
                         }}

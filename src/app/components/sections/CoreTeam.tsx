@@ -12,7 +12,12 @@ import parkchanghoon from "@public/profile/profile_parkchanghoon.png";
 import yoondoohwan from "@public/profile/profile_yoondoohwan.png";
 import leekyungkun from "@public/profile/profile_leekyungkun.png";
 import bangyousung from "@public/profile/profile_bangyousung.png";
-import profile_kongyunbae from "@public/profile/profile_kongyunbae.png";
+import kongyunbae from "@public/profile/profile_kongyunbae.png";
+import parkhyungjun from "@public/profile/profile_parkhyungjun.png";
+import jungyongook from "@public/profile/profile_jungyongook.png";
+import shinjungcheol from "@public/profile/profile_shinjungcheol.png";
+import leenaun from "@public/profile/profile_leenaun.png";
+
 
 import profile_temp1 from "@public/profile/profile_temp1.png";
 import profile_temp2 from "@public/profile/profile_temp2.png";
@@ -41,6 +46,7 @@ interface TeamMember {
   capabilities?: string[];
   projects?: string[];
   comments?: string[];
+  portfolio?: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -53,7 +59,7 @@ const teamMembers: TeamMember[] = [
     bio: "타이런트그룹 회장 및 타이런트에이치 대표이사로서 회사의 전반적인 경영을 총괄하고 있습니다.",
     email: "solaro@tyrant.co.kr",
     badge: "회장/대표이사",
-    organization: "타이런트 그룹",
+    organization: "TYRANT Group",
     careers: [
       "현) 타이런트 그룹 회장",
       "현) 타이런트에이치 대표이사",
@@ -80,31 +86,37 @@ const teamMembers: TeamMember[] = [
     name: "정용욱",
     position: "타이런트씨 대표이사",
     company: "",
-    photo: profile_temp1.src,
-    bio: "타이런트씨 대표이사로서 사업 전략 수립 및 실행을 주도하고 있습니다.",
+    photo: jungyongook.src,
+    bio: "타이런트씨 대표이사로서 당사 태양광상품의 금융조달 전반에 대한 전략 수립 및 실행을 주도하고 있으며 태양광사업성분석(FS), 기술실사 등 태양광과 관련된 전반적인 자문을 수행합니다.",
     email: "solaro@tyrant.co.kr",
     badge: "대표이사",
     organization: "TYRANT-C Co., Ltd.",
     careers: [
-      "타이런트씨 대표이사",
-      "태양광 컨설팅 분야 15년 경력",
-      "금융기관 프로젝트 파이낸싱 자문",
-      "사업성 분석 전문가",
-      "태양광 교육 프로그램 개발"
-    ],
-    capabilities: [
-      "태양광 사업성 분석 (FS)",
-      "프로젝트 파이낸싱 (PF) 자문",
-      "기술 실사 (Technical Due Diligence)",
-      "금융 모델링",
-      "태양광 교육 및 컨설팅"
+      "현) 타이런트씨 대표이사",
+      "현) (주)제이엔제이금융자문 대표이사",
+      "한화자산운용 대체투자사업본부 상무이사",
+      "대한생명 대체투자사업부",
+      "대한생명 증권부(채권운용역)",
+      "PIMAC(KDI 공공투자관리센터) 민간투자사업 평가위원",
+      "경찰공제회 외부 심사위원",
     ],
     projects: [
-      "국내 주요 태양광 발전소 사업성 분석",
-      "금융기관 태양광 PF 자문 수행",
-      "태양광 발전사업 기술 실사",
-      "신재생에너지 투자 포트폴리오 구성",
-      "태양광 전문가 교육 프로그램 운영"
+      "제주가시리 태양광 외 태양광프로젝트 72건",
+      "탐라해상풍력사업 : 국내 최초 해상풍력사업, 30MW",
+      "제2영동고속도로 민간투자사업: 광주-원주간도로, BTO, 주무관청 국토부",
+      "제3경인고속도로 민간투자사업: 시흥-남동간도로, BTO, 주무관청 경기도",
+      "경기고속도로 민간투자사업: 서수원~오산~평택간도로, BTO, 주무관청 국토부",
+      "서울-문산고속도로 민간투자사업: BTO, 주무관청 국토부",
+      "지하철9호선 민간투자사업: 9호선 1단계사업, 주무관청 서울시",
+      "제주해양과학관 민간투자사업 : 아쿠아리움, BOT, 주무관청 제주도",
+      "부산영화박물관 외 BTL 민간투자사업 20건",
+      "시흥상공휴게소 : 외곽순환도로 휴게소",
+    ],
+    education: [
+      "한국외국어대학교 무역학과 졸업",
+      "사회기반시설 투자자산운용사",
+      "부동산 투자자산운용사",
+      "금융투자상품 투자자산운용사",
     ],
     comments: [
       "태양광 사업의 성패는 설비가 아니라 숫자와 구조, 그리고 판단의 정확성에서 결정됩니다.",
@@ -119,6 +131,7 @@ const teamMembers: TeamMember[] = [
     position: "타이런트에스 대표이사",
     company: "",
     photo: parkchanghoon.src,
+    portfolio: "/projectPortfolio/portfolio_parkchanghoon.pdf",
     bio: "타이런트에스 대표이사로서 솔라오 사업의 프로젝트 사무관리를 총괄하고 있습니다.",
     email: "chpark@tyrant.co.kr",
     badge: "대표이사",
@@ -135,7 +148,7 @@ const teamMembers: TeamMember[] = [
       "확인영어 호남권 영업 총괄 관리 (토익 만점 강사)",
       "플레이소프트 코딩학원 호남, 제주본부 총괄 관리",
     ],
-    projects: [
+    capabilities: [
       "상장 및 비상장 기업의 사업지원서비스에 20년 종사한 IR 자료 관련 자문 및 컨설팅 전문가",
       "M&A 대상업체 및 신규사업 서치 및 투자관련 자문업무",
       "대부업(대부업등록증 보유) 운영 경력을 통한 복잡한 금융구조 전문가",
@@ -163,8 +176,8 @@ const teamMembers: TeamMember[] = [
     position: "타이런트이 대표이사",
     company: "",
     photo: leekyungkun.src,
-    bio: "타이런트이 대표이사로서 솔라오 사업의 프로젝트 관리를 총괄하고 있습니다.",
-    email: "gunsi@tyrant.co.kr",
+    bio: "타이런트이 대표이사로서 솔라오 사업의 프로젝트 관리 및 기자재 구매 관리를 총괄하고 있습니다.",
+    email: "guns@tyrant.co.kr",
     badge: "대표이사",
     organization: "TYRANT-E Co., Ltd.",
     careers: [
@@ -199,6 +212,7 @@ const teamMembers: TeamMember[] = [
     position: "타이런트아이 대표이사",
     company: "",
     photo: choijaehwang.src,
+    portfolio: "/projectPortfolio/portfolio_choijaehwang.pdf",
     bio: "타이런트아이 대표이사로서 솔라오 사업을 총괄하고 있습니다.",
     email: "cj.choi@tyrant.co.kr",
     badge: "대표이사",
@@ -206,7 +220,6 @@ const teamMembers: TeamMember[] = [
     careers: [
       "현) 타이런트아이 대표이사",
       "현) 유클릭 Energy Service Group Leader(전무)",
-      "현) 지알에너지 대표이사",
       "한강에셋자산운용 인프라사업본부 신재생에너지팀 상무",
       "한화자산운용 인프라사업본부 신재생에너지파트 파트장",
       "한화에너지 태양광 IPP사업팀",
@@ -214,7 +227,7 @@ const teamMembers: TeamMember[] = [
       "SDN (불가리아 주재원)",
       "한영회계법인 감사본부"
     ],
-    projects: [
+    capabilities: [
       "태양광 분야에만 18년 종사한 국내 최고 태양광 전문가",
       "국내최초 공인회계사 및 전기관련 자격증(3종) 보유",
       "국내최초 해외태양광 국내 PF 성공(불가리아 RES, ASM프로젝트 42MW)",
@@ -244,8 +257,8 @@ const teamMembers: TeamMember[] = [
     name: "신정철",
     position: "타이런트아이 영업총괄",
     company: "",
-    photo: profile_temp2.src,
-    bio: "타이런트아이 영업총괄로서 고객 관계 관리 및 영업 전략을 수립하고 있습니다.",
+    photo: shinjungcheol.src,
+    bio: "타이런트아이 영업총괄로서 영업사 및 고객사를 관리하며 솔라오 사업이 시장에 자리잡을 수 있게 전국적인 네트워크 조직을 관리 및 운영하고 있습니다.",
     email: "jungchul.shin@tyrant.co.kr",
     badge: "영업총괄",
     organization: "TYRANT-I Co., Ltd.",
@@ -277,7 +290,7 @@ const teamMembers: TeamMember[] = [
     position: "타이런트아이 CSO",
     company: "",
     photo: yoondoohwan.src,
-    bio: "타이런트아이 CSO(Chief Strategy Officer)로서 회사의 전략적 방향을 설정하고 있습니다.",
+    bio: "타이런트아이 CSO(Chief Strategy Officer)로서 솔라오 사업의 마케팅을 총괄하고 있으며 회사의 전략적 방향을 설정하고 있습니다.",
     email: "shine.yoon@tyrant.co.kr",
     badge: "CSO",
     organization: "TYRANT-I Co., Ltd.",
@@ -288,7 +301,7 @@ const teamMembers: TeamMember[] = [
       "한화투자증권 IB본부 Infra금융팀 / 해외사업팀",
       "저서 ‘시크릿캡슐’ (ISBN 978-89-92404-46-13190)",
       "실용신안 출원: 2중밀봉형 타임캡슐의 구조",
-      "Mensa(IQ 156) : IUI-06222",
+      "Mensa(IQ 156): IUI-06222",
       "Life Ownership Training 개발",
       "Cross Cultural Consultant(Culture Link Germany)",
     ],
@@ -327,13 +340,13 @@ const teamMembers: TeamMember[] = [
     position: "타이런트아이 CTO",
     company: "",
     photo: hongkeumpyo.src,
-    bio: "타이런트아이 CTO(Chief Technology Officer)로서 기술 개발 및 혁신을 이끌고 있습니다.",
+    bio: "타이런트아이 CTO(Chief Technology Officer)로서 인허가접수 관리시스템 개발을 비롯하여 타이런트 그룹의 AI기반 ERP구축 및 업무효율화를 위한 혁신을 이끌고 있습니다.",
     email: "kphong@tyrant.co.kr",
     badge: "CTO",
     organization: "TYRANT-I Co., Ltd.",
     careers: [
       "현) 타이런트아이 CTO",
-      "현) 유클릭 Energy Service Group",
+      "현) 유클릭 Energy Service Group 이사",
       "현) 프로그래밍 언어로 기획하는 재무모델링 강사(기업 및 공공기관 등 출강)",
       "스타트업, 경영데이터 관리 및 분석 시스템 개발 총괄",
       "KB증권, 부동산 프로젝트 파이낸싱팀",
@@ -378,20 +391,6 @@ const additionalAdvisory: TeamMember[] = [
       "국내외 학술 논문 발표",
       "기술 특허 다수 보유"
     ],
-    // capabilities: [
-    //   "태양광 기술 연구 개발",
-    //   "신재생에너지 융합 기술",
-    //   "발전 효율 향상 기술",
-    //   "에너지 저장 시스템",
-    //   "스마트 그리드 기술"
-    // ],
-    // projects: [
-    //   "고효율 태양광 모듈 개발",
-    //   "AI 기반 발전량 예측 시스템",
-    //   "태양광-ESS 연계 기술 개발",
-    //   "신재생에너지 최적화 알고리즘",
-    //   "차세대 태양전지 연구"
-    // ]
   },
   {
     id: 10,
@@ -410,20 +409,6 @@ const additionalAdvisory: TeamMember[] = [
       "전력 변환 효율 최적화",
       "시스템 통합 및 테스트"
     ],
-    // capabilities: [
-    //   "전력전자 설계 및 개발",
-    //   "인버터 시스템 최적화",
-    //   "MPPT 알고리즘 개발",
-    //   "전력 품질 관리",
-    //   "시스템 성능 분석"
-    // ],
-    // projects: [
-    //   "고효율 인버터 개발 프로젝트",
-    //   "태양광 발전 최적화 시스템",
-    //   "ESS 전력변환장치 개발",
-    //   "스마트 인버터 기술 개발",
-    //   "분산전원 연계 시스템"
-    // ]
   },
   {
     id: 11,
@@ -459,11 +444,39 @@ const additionalAdvisory: TeamMember[] = [
   },
   {
     id: 12,
+    name: "박형준",
+    position: "타이런트 세무자문",
+    company: "",
+    photo: parkhyungjun.src,
+    bio: "타이런트 세무자문으로서 세무 계획 및 세무 컴플라이언스를 담당하고 있습니다.",
+    email: "solaro@tyrant.co.kr",
+    badge: "세무사",
+    organization: "세무사",
+    careers: [
+      "현) 나우회계법인",
+      "현) 국가보조금 회계감사 및 검증기관(기획재정부, 행정안전부)",
+      "국세청(서대문세무서) 납세자보호위원",
+      "중소기업 경영지원단 자문위원(중소벤처기업부)",
+    ],
+    projects: [
+      "제조업체 회계감사: 삼성물산, 코리아나화장품, 신라교역, 에스디엔, 대영초음파, 소프트아이텍, 에스앤티시 등 다수 기업에 대하여 감사 업무 수행",
+      "에스디엔 불가리아 발전소 매각 자문",
+      "태양광발전소 사무처리업무 대행",
+      "BC카드, 라이나생명보험 및 중소기업 경영지원단 등 경영자문업무",
+    ],
+    education: [
+      "전남대학교 경영학부 회계학 전공",
+      "공인회계사(경력20년), 세무사, 공인중개사",
+      "회계감사, 재무실사, 경영자문, 세무기장 및 결산 업무 경험",
+    ]
+  },
+  {
+    id: 13,
     name: "이나운",
     position: "타이런트 인허가자문",
     company: "",
-    photo: profile_temp6.src,
-    bio: "타이런트 인허가자문으로서 각종 인허가 절차 및 행정 업무를 지원하고 있습니다.",
+    photo: leenaun.src,
+    bio: "타이런트 인허가자문으로서 각종 인허가 관련된 환경 및 재해영향 등 개발행위허가 전반에 대한 자문 업무를 수행하고 있습니다.",
     email: "solaro@tyrant.co.kr",
     badge: "자문위원",
     organization: "인허가자문",
@@ -484,7 +497,7 @@ const additionalAdvisory: TeamMember[] = [
     ]
   },
   {
-    id: 13,
+    id: 14,
     name: "김태훈",
     position: "타이런트 보험자문",
     company: "",
@@ -524,22 +537,6 @@ const additionalAdvisory: TeamMember[] = [
     ]
   },
   {
-    id: 14,
-    name: "박형준",
-    position: "타이런트 세무자문",
-    company: "",
-    photo: profile_temp8.src,
-    bio: "타이런트 세무자문으로서 세무 신고 및 절세 전략을 담당하고 있습니다.",
-    email: "solaro@tyrant.co.kr",
-    badge: "세무사",
-    organization: "세무사",
-    careers: [
-      "타이런트 세무 자문위원",
-      "종합소득세 및 양도소득세 전문 14년 경력",
-      "개인 및 법인 세무 자문",
-    ],
-  },
-  {
     id: 15,
     name: "방유성",
     position: "타이런트아이 부동산자문",
@@ -567,7 +564,7 @@ const additionalAdvisory: TeamMember[] = [
     name: "공윤배",
     position: "타이런트아이 전담주치의",
     company: "",
-    photo: profile_kongyunbae.src,
+    photo: kongyunbae.src,
     bio: "타이런트아이 전담주치의로서 임직원들의 건강 관리 및 진단을 담당하고 있습니다.",
     email: "solaro@tyrant.co.kr",
     badge: "자문위원",
@@ -701,7 +698,7 @@ export function CoreTeam({ advisory }: CoreTeamProps) {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6"
           onClick={() => setSelectedMember(null)}>
           <div
-            className="relative bg-white max-w-[56.25rem] w-full max-h-[90vh] rounded-[1.5rem] overflow-hidden shadow-[0_1.5rem_3rem_rgba(0,0,0,0.25)] flex flex-row"            
+            className="relative bg-white max-w-[60rem] w-full max-h-[90vh] rounded-[1.5rem] overflow-hidden shadow-[0_1.5rem_3rem_rgba(0,0,0,0.25)] flex flex-row"            
             onClick={(e) => e.stopPropagation()}>
             {/* Close Button */}
             <button
@@ -720,7 +717,7 @@ export function CoreTeam({ advisory }: CoreTeamProps) {
 
             {/* Left Side - Photo (40% width) */}
             <div className="w-[40%] bg-[linear-gradient(135deg,#0F214A_0%,#273b82_100%)] flex flex-col items-center justify-center py-[3.75rem] px-[2.5rem] relative min-h-[37.5rem]">
-              <div className="w-full max-w-[17.5rem] pb-[140%] relative bg-gradient-to-br from-[#E8EEF7] to-[#D4E1F5] border-[4px] border-white rounded-[1rem] shadow-[0_12px_32px_rgba(0,0,0,0.2)] overflow-hidden">
+              <div className="w-full max-w-[18.5rem] pb-[140%] relative bg-gradient-to-br from-[#E8EEF7] to-[#D4E1F5] border-[4px] border-white rounded-[1rem] shadow-[0_12px_32px_rgba(0,0,0,0.2)] overflow-hidden">
                 {selectedMember.photo ? (
                   <img
                     src={selectedMember.photo}
@@ -734,7 +731,7 @@ export function CoreTeam({ advisory }: CoreTeamProps) {
                 )}
               </div>
               {selectedMember.comments && selectedMember.comments.length > 0 && (
-                <div className="color-gray-200 mt-2">
+                <div className="color-gray-200 mt-2 max-h-[300px] overflow-y-auto pr-2">
                   {selectedMember.comments.map((comment, index) => (
                     <div key={index} className="flex gap-2 mt-2">
                       {/* <span className="color-white font-normal text-xl tracking-wider font-signature-nanum-pen-script"> */}
@@ -814,7 +811,7 @@ export function CoreTeam({ advisory }: CoreTeamProps) {
                 {selectedMember.capabilities && selectedMember.capabilities.length > 0 && (
                   <div className="mb-8">
                     <h3 className="font-['Pretendard',_-apple-system,_-'Noto_Sans_KR',_sans-serif] text-[1.125rem] font-bold text-[#0F214A] leading-[1.4] mb-4">
-                      ■ 주요 업무 분야
+                      ■ 전문 역량
                     </h3>
                     <div className="ml-4">
                       {selectedMember.capabilities.map((capability, index) => (
@@ -845,6 +842,25 @@ export function CoreTeam({ advisory }: CoreTeamProps) {
                         </div>
                       ))}
                     </div>
+                  </div>
+                )}
+
+                {/* Portfolio (수행 프로젝트 다운로드) */}
+                {selectedMember.portfolio && (
+                  <div className="mb-8">
+                    <h3 className="font-sans text-[1.125rem] font-bold text-[#0F214A] leading-[1.4] mb-4">
+                      ■ 수행 프로젝트
+                    </h3>
+                    <a
+                      href={selectedMember.portfolio}
+                      download
+                      className="inline-flex items-center gap-2 px-5 bg-accent/10 hover:bg-accent/20 text-accent font-semibold rounded-lg transition-all hover:scale-[1.02]"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      상세 수행 프로젝트 내역 다운로드
+                    </a>
                   </div>
                 )}
 
@@ -1004,7 +1020,7 @@ export function CoreTeam({ advisory }: CoreTeamProps) {
                 {selectedMember.capabilities && selectedMember.capabilities.length > 0 && (
                   <div className="mb-6">
                     <h3 className="font-['Pretendard',_-apple-system,_'Noto_Sans_KR',_sans-serif] text-[1rem] font-bold text-[#0F214A] leading-[1.4] mb-[0.75rem]">
-                      ■ 주요 업무 분야
+                      ■ 전문 역량
                     </h3>
                     <div className="pl-3">
                       {selectedMember.capabilities.map((capability, index) => (
@@ -1031,6 +1047,25 @@ export function CoreTeam({ advisory }: CoreTeamProps) {
                           <span className="text-[#FF6B3D] shrink-0">-</span>
                           <p className="font-['Pretendard',_-apple-system,_-apple-system,_'Noto_Sans_KR',_sans-serif] text-[0.8125rem] font-normal text-gray-600 leading-[1.6] m-0">
                             {project}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Education (학력 및 전문자격) */}
+                {selectedMember.education && selectedMember.education.length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="font-['Pretendard,_-apple-system,_Noto_Sans_KR,_sans-serif'] text-[1rem] font-bold text-[#0F214A] leading-[1.4] mb-[0.75rem]">
+                      ■ 학력 및 전문자격
+                    </h3>
+                    <div className="pl-3">
+                      {selectedMember.education.map((education, index) => (
+                        <div key={index} className="mb-2 flex gap-2">
+                          <span className="text-[#FF6B3D] shrink-0">-</span>
+                          <p className="font-['Pretendard',_-apple-system,_-apple-system,_'Noto_Sans_KR',_sans-serif] text-[0.8125rem] font-normal text-gray-600 leading-[1.6] m-0">
+                            {education}
                           </p>
                         </div>
                       ))}

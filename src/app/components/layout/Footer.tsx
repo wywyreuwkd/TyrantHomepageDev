@@ -12,7 +12,7 @@ export function Footer() {
           <div className="space-y-4">
             <img src={logo.src} alt="TYRANT Logo" className="h-12 object-contain" />
             <p className="color-muted text-sm max-w-xs">
-              타이런트는 태양광 발전 전문 기업으로, 수익공유형 무상설치 모델을 통해 기업과 함께 성장하며 탄소중립 사회 실현에 기여합니다.
+              타이런트는 태양광 발전 전문 기업으로, 수익공유형 무상설치 모델을 통해 고객(기업)과 함께 성장하며 탄소중립 사회 실현에 기여합니다.
             </p>
           </div>
 
