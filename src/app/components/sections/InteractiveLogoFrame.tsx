@@ -5,30 +5,36 @@ import logoWhiteNew from "@public/company/ci/interactive_logo_white.png";
 import { ImageWithFallback } from "@components/shared/ImageWithFallback";
 import { Download, Sun, Moon } from "lucide-react";
 import { useState } from "react";
+import React from "react";
+import Link from "next/link";
 
 export function InteractiveLogoFrame() {
 	const [isDark, setIsDark] = useState(false);
+
+	const imageUrl = "/company/ci/tyrant_ci_logo.png"; // 다운로드 대상 이미지 파일은 public/company/ci 에 위치해야 함
+	const imageName = "tyrant_ci_logo.png";
+
+	const aiUrl = "/company/ci/tyrant_ci_logo.ai"; // 다운로드 대상 일러스트 파일은 public/company/ci 에 위치해야 함
+	const aiName = "tyrant_ci_logo.ai";
 
 	return(
 		<section className="bg-white px-[1.5rem] flex justify-center md:px-[7.5rem]">
         	<div className="max-w m-0 m-auto w-full">          
 				{/* CI Download 버튼 - 로고 프레임 위 오른쪽 정렬 */}
           		<div className="flex flex-col justify-end gap-3 mb-4 md:flex-row">            
-            		{/* AI 다운로드 */}            
-            		<button className="btn-download">
-              			<Download size={18} />
-              			AI 다운로드
-            		</button>
+            		<Link href={aiUrl} download={aiName}>         
+            			<button className="btn-download py-[16px] pl-[32px] w-full md:py-[16px] md:px-[32px]">
+              				<Download size={18} />
+              				AI 다운로드
+            			</button>
+            		</Link>
 
-            		<button className="btn-download">
-              			<Download size={18} />
-              			PDF 다운로드
-            		</button>
-
-            		<button className="btn-download">
-              			<Download size={18} />
-              			PNG 다운로드
-            		</button>
+            		<Link href={imageUrl} download={imageName}>
+            			<button className="btn-download py-[16px] pl-[32px] w-full md:py-[16px] md:px-[32px]">
+              				<Download size={18} />
+              				PNG 다운로드
+            			</button>
+            		</Link>
           		</div>  
 
           		{/* 인터랙티브 로고 프레임 */}    

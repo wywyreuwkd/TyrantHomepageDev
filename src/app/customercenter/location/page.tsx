@@ -4,6 +4,7 @@ import busIcon from "@public/customercenter/location/6b35e2f0b4fcf1fdd71aa819bd6
 import parkingIcon from "@public/customercenter/location/591cb68a1d56ac4fb32ee56e200d69855a3828f9.png";
 import locationIcon from "@public/customercenter/location/37adc1f67b540059d7c38a56ceacf3ab1f860704.png";
 import navigationIcon from "@public/customercenter/location/e8db3b50657909c451416f1861dea754059bf6ad.png";
+import mapImage from "@public/customercenter/location/2a6ee4d924b1968157795cbc405f6e6895a1fb1f.png"
 import { HeroSectionFeat } from "@components/shared/HeroSectionFeat";
 import { ImageWithFallback } from "@components/shared/ImageWithFallback";
 
@@ -67,7 +68,16 @@ export default function Location() {
 
       {/* 지도 섹션 */}
       <section className="bg-primary-dark-1 p-0">
-        <div className="md:!h-[600px] w-full h-[400px] relative">
+        <div className="mx-auto px-6 md:px-10 max-w">
+          <div className="w-full rounded-[20px] overflow-hidden border border-white/10 shadow-[0_2px_12px_rgba(0,0,0,0.15)]">
+            <ImageWithFallback 
+              className="w-full h-auto block"
+              src={mapImage.src}
+              alt="타이런트 위치 지도" />
+          </div>          
+        </div>
+
+        {/*<div className="md:!h-[600px] w-full h-[400px] relative">
           <iframe
             className="w-[100%] h-[100%] border-0"
             src="https://map.naver.com/p/search/경기도%20과천시%20과천대로7길%2074/address/14135086.0710843,4497460.2519721,경기도%20과천시%20과천대로7길%2074?c=15.25,0,0,0,dh&isCorrectAnswer=true"
@@ -76,7 +86,7 @@ export default function Location() {
             referrerPolicy="no-referrer-when-downgrade"
             title="타이런트 위치"
           />
-        </div>
+        </div>*/}
 
         {/* 교통편 카드 2개 - 지도 바로 아래 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-10 py-12 bg-primary-dark-1 max-w mx-auto">

@@ -693,8 +693,7 @@
     background: #FFFFFF;
     color: #0E1C45;
     border: 1px solid #E5E7EB;
-    border-radius: 12px;
-    padding: 16px 32px;
+    border-radius: 12px;    
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-600);
     display: flex;
