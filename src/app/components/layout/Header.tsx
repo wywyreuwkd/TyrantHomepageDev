@@ -20,7 +20,7 @@ interface MenuSection {
 
 const menuData: MenuSection[] = [
   {
-    title: "회사소개",
+    title: "회사소개개개",
     items: [
       { label: "타이런트", href: "/company" },
       { label: "CI소개", href: "/company/ci" },
