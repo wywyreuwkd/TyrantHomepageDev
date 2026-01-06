@@ -12,7 +12,7 @@ export default function Greetings() {
       <div className="w-full max-w-4xl mx-auto mb-10 flex-shrink-0 mt-8 md:mt-20">
         <img
           src={tyrant_greetings.src}
-          alt="타이런트 2025 새해 인사"
+          alt="타이런트 2026 새해 인사"
           className="w-full h-auto rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
         />
       </div>

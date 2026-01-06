@@ -5,6 +5,7 @@ import { X, Briefcase, Mail, Phone, Eye, ArrowLeft } from "lucide-react";
 
 import chiefCho from "@public/profile/profile_chief_cho_2.png";
 import choijaehwang from "@public/profile/profile_choijaehwang.png";
+import choijaehwang2 from "@public/profile/profile_choijaehwang2.png";
 import hongkeumpyo from "@public/profile/profile_hongkeumpyo.png";
 import kimkilhong from "@public/profile/profile_kimkilhong.png";
 import kimtaehoon from "@public/profile/profile_kimtaehoon.png";
@@ -17,6 +18,7 @@ import parkhyungjun from "@public/profile/profile_parkhyungjun.png";
 import jungyongook from "@public/profile/profile_jungyongook.png";
 import shinjungcheol from "@public/profile/profile_shinjungcheol.png";
 import leenaun from "@public/profile/profile_leenaun.png";
+import limincheol from "@public/profile/profile_limincheol.png";
 
 
 import profile_temp1 from "@public/profile/profile_temp1.png";
@@ -211,7 +213,7 @@ const teamMembers: TeamMember[] = [
     name: "최재황",
     position: "타이런트아이 대표이사",
     company: "",
-    photo: choijaehwang.src,
+    photo: choijaehwang2.src,
     portfolio: "/projectPortfolio/portfolio_choijaehwang.pdf",
     bio: "타이런트아이 대표이사로서 솔라오 사업을 총괄하고 있습니다.",
     email: "cj.choi@tyrant.co.kr",
@@ -379,17 +381,31 @@ const additionalAdvisory: TeamMember[] = [
     name: "임인철",
     position: "타이런트 기술연구소",
     company: "",
-    photo: profile_temp3.src,
+    photo: limincheol.src,
     bio: "타이런트 기술연구소에서 신기술 연구 및 개발을 담당하고 있습니다.",
     email: "solaro@tyrant.co.kr",
     badge: "연구소장",
     organization: "타이런트 기술연구소",
     careers: [
-      "타이런트 기술연구소 연구소장",
-      "신재생에너지 연구 개발 20년 경력",
-      "태양광 기술 혁신 프로젝트 수행",
-      "국내외 학술 논문 발표",
-      "기술 특허 다수 보유"
+      "지산홀딩스 대표이사 (2012 - 현재)",
+      "SDN 부사장 및 R&D센터장 (2003 - 2012)",
+      "CATech 대표이사 (2001 - 2003)",
+      "한국에너지공단(KEMCO) 부장 (1996 - 2000)",
+    ],
+    projects: [
+      "국내외 200여개 태양광 프로젝트 감사 및 평가 수행",
+      "국내 최초 태양광 발전소 리파워링 사업 모델 개발",
+      "국내 23MW(100개 사이트) 태양광 발전소 구축",
+      "불가리아 47MW(3개 사이트) 태양광 발전소 구축",
+      "국내 최초 프로젝트 파이낸싱 태양광 발전소 실행 (1,650kW)",
+      "산업자원부 1MW 태양광 필드 테스트 R&D 총괄 (100억원 규모)",
+      "70MW 모듈 제조공장 건설 (85% 자체 설계 및 개발)",
+      "국내 특허 17건, PCT 특허 1건 보유",
+    ],
+    education: [
+      "조지아 공과대학교 공학 박사 (한국정부 국비장학생)",
+      "조지아 공과대학교 기계공학 석사",
+      "서울대학교 항공우주공학 학사",
     ],
   },
   {
@@ -450,8 +466,8 @@ const additionalAdvisory: TeamMember[] = [
     photo: parkhyungjun.src,
     bio: "타이런트 세무자문으로서 세무 계획 및 세무 컴플라이언스를 담당하고 있습니다.",
     email: "solaro@tyrant.co.kr",
-    badge: "세무사",
-    organization: "세무사",
+    badge: "공인회계사/세무사",
+    organization: "나우회계법인",
     careers: [
       "현) 나우회계법인",
       "현) 국가보조금 회계감사 및 검증기관(기획재정부, 행정안전부)",
@@ -539,7 +555,7 @@ const additionalAdvisory: TeamMember[] = [
   {
     id: 15,
     name: "방유성",
-    position: "타이런트아이 부동산자문",
+    position: "타이런트 부동산자문",
     company: "",
     photo: bangyousung.src,
     bio: "타이런트아이 부동산자문으로서 부동산 개발 및 관리 측면에서의 자문을 담당하고 있습니다.",
@@ -562,7 +578,7 @@ const additionalAdvisory: TeamMember[] = [
   {
     id: 16,
     name: "공윤배",
-    position: "타이런트아이 전담주치의",
+    position: "타이런트 전담주치의",
     company: "",
     photo: kongyunbae.src,
     bio: "타이런트아이 전담주치의로서 임직원들의 건강 관리 및 진단을 담당하고 있습니다.",

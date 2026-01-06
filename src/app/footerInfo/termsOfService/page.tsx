@@ -23,7 +23,7 @@ export default function TermsOfServicePage() {
               이용약관
             </h1>
             <p className="text-lg color-white-70 mt-4">
-              시행일: 2025년 1월 1일
+              시행일: 2025년 10월 22일
             </p>
           </div>
 
