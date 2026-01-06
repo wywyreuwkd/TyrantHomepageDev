@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import heroImage from "@public/company/partners/5c40c3b8806d8e368a627607ec5ce36893ea1596.png";
 import { HeroSectionFeat } from "@components/shared/HeroSectionFeat";
-import { NavigationTab, PartnerGroup, LogoItem } from "@components/sections/PartnerGroup"
+import { PartnerGroup } from "@components/sections/PartnerGroup"
 
 export const metadata: Metadata = {
   title: "파트너사",
