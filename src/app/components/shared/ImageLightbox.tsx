@@ -42,7 +42,7 @@ export function ImageLightbox({ src, onClose }: ImageLightboxProps) {
 
       {/* 사용 안내 텍스트 */}
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-white text-sm opacity-70 text-center">
-        클릭하여 닫기 • 핀치로 확대/축소 가능
+        클릭하여 닫기
       </div>
     </motion.div>
   );
