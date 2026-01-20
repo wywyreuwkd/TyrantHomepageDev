@@ -560,8 +560,8 @@ export default function SolarOProduct() {
           <div className="grid lg:grid-cols-2 gap-6">
             {/* 솔라오 상품설명서 */}
             <a
-              href="/productProposal/[타이런트] 솔라오(Solar O)_상품설명서.pdf"
-              download
+              href="/productProposal/solaro_product_guide.pdf"
+              download="솔라오 상품설명서.pdf"
               className="group flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-2xl hover:border-accent/30 hover:bg-gray-200 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-gray-200 border border-primary flex items-center justify-center flex-shrink-0 group-hover:bg-gray-100 transition-colors duration-300">
@@ -576,9 +576,9 @@ export default function SolarOProduct() {
             </a>
 
             {/* 산단 태양광 무상설치지원사업 핵심요약서 */}
-            <a
-              href="/productProposal/1. 산단 태양광발전소 무상설치지원사업 핵심 요약서.pdf"
-              download
+            {/* <a
+              href="/productProposal/solar_summary_full.pdf"
+              download="산단 태양광 무상설치지원사업 핵심요약서.pdf"
               className="group flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-2xl hover:border-accent/30 hover:bg-gray-200 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-gray-200 border border-primary flex items-center justify-center flex-shrink-0 group-hover:bg-gray-100 transition-colors duration-300">
@@ -590,12 +590,12 @@ export default function SolarOProduct() {
                 </h3>
                 <p className="text-sm color-primary-dark-2 truncate">PDF 다운로드</p>
               </div>
-            </a>
+            </a> */}
 
             {/* 산단 태양광 무상설치지원사업 핵심요약서(1장) */}
-            <a
-              href="/productProposal/2. 산단 태양광발전소 무상설치지원사업 핵심 요약서_1장.pdf"
-              download
+            {/* <a
+              href="/productProposal/solar_summary_onepage.pdf"
+              download="산단 태양광 무상설치지원사업 핵심요약서(1장).pdf"
               className="group flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-2xl hover:border-accent/30 hover:bg-gray-200 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-gray-200 border border-primary flex items-center justify-center flex-shrink-0 group-hover:bg-gray-100 transition-colors duration-300">
@@ -607,12 +607,12 @@ export default function SolarOProduct() {
                 </h3>
                 <p className="text-sm color-primary-dark-2 truncate">PDF 다운로드</p>
               </div>
-            </a>
+            </a> */}
 
             {/* 산단 태양광 무상설치지원사업 금융상품소개 */}
-            <a
-              href="/productProposal/3. 산단 태양광발전소 금융상품 (한강에셋자산운용).pdf"
-              download
+            {/* <a
+              href="/productProposal/solar_finance_product.pdf"
+              download="산단 태양광 무상설치지원사업 금융상품소개.pdf"
               className="group flex items-center gap-4 p-6 bg-white border border-gray-300 rounded-2xl hover:border-accent/30 hover:bg-gray-200 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-gray-200 border border-primary flex items-center justify-center flex-shrink-0 group-hover:bg-gray-100 transition-colors duration-300">
@@ -624,7 +624,7 @@ export default function SolarOProduct() {
                 </h3>
                 <p className="text-sm color-primary-dark-2 truncate">PDF 다운로드</p>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
       </section>

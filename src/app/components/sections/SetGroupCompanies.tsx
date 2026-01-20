@@ -105,7 +105,7 @@ export function SetGroupCompanies() {
         <div className="mx-auto max-w py-6 px-6 bg-gray-200 rounded-xl mt-10">
           <button
             key={0}
-            onClick={() => setSelectedCompany(0)}
+            onClick={() => { setSelectedCompany(0); document.getElementById('company-description')?.scrollIntoView({ behavior: 'smooth' }); }}
             className="relative transition-all duration-200 text-center cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis font-pretendard text-[1.125rem] font-medium bg-white border border-[#0F214A] p-[1.25rem_2rem]"
             style={{                  
               color: selectedCompany === 0 ? '#FF6B3D' : '#0F214A',                  
@@ -127,7 +127,7 @@ export function SetGroupCompanies() {
               return (
                 <button
                   key={index}
-                  onClick={() => setSelectedCompany(index)}
+                  onClick={() => { setSelectedCompany(index); document.getElementById('company-description')?.scrollIntoView({ behavior: 'smooth' }); }}
                   className="
                     relative transition-all duration-200 flex-1 text-center cursor-pointer whitespace-nowrap overflow-hidden 
                     text-ellipsis font-pretendard text-[1.125rem] font-medium bg-white border border-[#0F214A] 
@@ -174,7 +174,7 @@ export function SetGroupCompanies() {
       </section>
 
       {/* Company Description Section */}
-      <section className="bg-white">
+      <section id="company-description" className="bg-white">
         <div key={selectedCompany} className="max-w mx-auto px-6 md:px-10 py-16 md:py-24">
           <div className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-16">
             {/* Left: Company Name & Button */}
@@ -196,7 +196,7 @@ export function SetGroupCompanies() {
                   e.currentTarget.style.background = '#0F214A';
                 }}
                 onClick={() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  window.scrollTo({ top: 300, behavior: 'smooth' });
                 }}>
                 <ArrowUpRight size={24} color="white" strokeWidth={2} />
               </button>
