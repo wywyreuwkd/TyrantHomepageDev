@@ -6,8 +6,8 @@ import { Footer } from "@components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "조&김",
-    template: "%s | 조&김",
+    default: "대한민카",
+    template: "%s | 대한민카",
   },
   description: "",
   keywords: [],
