@@ -1,7 +1,8 @@
 "use client"
 
-import logoColor from "@public/company/ci/interactive_logo_color.png";
-import logoWhiteNew from "@public/company/ci/interactive_logo_white.png";
+import logoColor from "@public/company/ci/436b391b7a678cb00618457189548cdda58372bd.png";
+import logoWhiteNew from "@public/company/ci/35db215e673dfa3a0511fca9188a7a56d7bc303a.png";
+
 import { ImageWithFallback } from "@components/shared/ImageWithFallback";
 import { Download, Sun, Moon } from "lucide-react";
 import { useState } from "react";

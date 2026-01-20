@@ -73,46 +73,10 @@ export default function CIIntro() {
           </FadeInUpAnimate>
         </div>
       </section>
-
-      {/* Logotype 섹션 */}
-      <section className="bg-white pt-[60px] pb-[60px] px-5 md:pt-[120px] md:pb-[120px] px-6">
-        <div className="max-w mx-auto px-5 md:px-10">
-          {/* 상단 가로선 */}
-          <div className="w-full h-px bg-[#D1D5DB] mb-10 md:mb-20" />
-
-          <div className="relative">
-            {/* 세로선 - 독립된 Line 요소 */}            
-            <div className="md:absolute md:left-[calc(280px+24px)] md:top-[-80px] md:bottom-[-320px] md:w-px md:bg-[#D1D5DB] md:pointer-events-none md:z-[1]" />
-
-            <div className="flex flex-col gap-8 md:flex-row md:gap-20 items-start relative z-[2]">
-              {/* 왼쪽: 고정 폭 텍스트 컬럼 */}
-              <div className="w-full md:w-[280px] shrink-0">
-                <h2 className="text-[32px] mb-6 md:text-[60px] md:mb-20 font-bold text-[#0E1C45] text-left leading-[1.2] w-full">
-                  Logotype
-                </h2>
-                
-                <p className="text-[15px] leading-[1.7] md:text-lg md:leading-[1.8] text-[#4B5563] text-left w-full m-0">
-                  타이런트의 로고는 기존의 과도한 심볼의 크기로 상대적으로 작아질 수 밖에 없는 레터마크(사명)의 크기에서 오는 사명의 낮은 시인성과, 균형의 붕괴, 그리고 로고가 작아질 수록 사명과 설명글이 뭉개지기 쉬운 단점을 보강한 결과물입니다.
-                </p>
-              </div>
-
-              {/* 오른쪽: 이미지 */}
-              <div className="flex-1 sm:w-full sm:max-w-full">
-                <ImageWithFallback src={logotypeNew.src} alt="Logotype" className="w-full h-auto rounded-2xl block mb-6 md:mb-10"/>
-                
-                {/* 로고타입 변형 이미지 - 가운데 정렬 */}
-                <div className="flex justify-center w-full">
-                  <ImageWithFallback src={logotypeVariationSmall.src} alt="Logotype Variations" className="w-4/5 h-auto rounded-2xl block"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       
       {/* Minimum Size 섹션 */}
       <section className="bg-white pt-[60px] pb-[60px] px-5 md:pt-[120px] md:pb-[120px] md:px-6">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-10">
+        <div className="max-w mx-auto px-5 md:px-10">
           {/* 상단 가로선 */}
           <div className="w-full h-px bg-[#D1D5DB] mb-10 md:mb-20" />
 
@@ -143,7 +107,7 @@ export default function CIIntro() {
 
       {/* Logotype Reversed 섹션 */}
       <section className="bg-white pt-[60px] pb-[60px] px-5 md:pt-[120px] md:pb-[120px] md:px-6">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-10">
+        <div className="max-w mx-auto px-5 md:px-10">
           {/* 상단 가로선 */}
           <div className="w-full h-px bg-[#D1D5DB] mb-10 md:mb-20" />
 
@@ -175,7 +139,7 @@ export default function CIIntro() {
 
       {/* Logotype Clear Space 섹션 */}
       <section className="bg-white pt-[60px] pb-[60px] px-5 md:pt-[120px] md:pb-[120px] md:px-6">
-        <div className="max-w-[1280px] mx-auto px-5 md:px-10">
+        <div className="max-w mx-auto px-5 md:px-10">
           {/* 상단 가로선 */}
           <div className="w-full h-px bg-[#D1D5DB] mb-10 md:mb-20" />
 
