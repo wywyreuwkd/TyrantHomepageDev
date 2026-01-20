@@ -1,7 +1,5 @@
 import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
 import { cn } from "./utils";
 
 const buttonVariants = cva(
@@ -31,8 +29,12 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  },
+  }
 );
+
+interface ButtonProps extends React.ComponentProps<"button">, VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
 
 function Button({
   className,
@@ -40,14 +42,10 @@ function Button({
   size,
   asChild = false,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) {
-  const Comp = asChild ? Slot : "button";
-
+}: ButtonProps) {
+  // asChild는 @radix-ui/react-slot에 의존하므로 제거하고 항상 button을 사용
   return (
-    <Comp
+    <button
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}

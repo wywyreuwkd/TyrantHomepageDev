@@ -1,325 +1,228 @@
 "use client"
 
-import { useState, useEffect } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import React from 'react';
+import {Suspense} from "react";
+import { Menu, X } from 'lucide-react';
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
+import { Button } from '@components/ui/button';
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Logo } from "@components/shared/Logo";
-import { Button } from "@components/ui/button";
+import { ImageWithFallback } from '@components/shared/ImageWithFallback';
 
-interface MenuItem {
-  label: string;
-  href: string;
-  external?: boolean;
-}
+import logoFull from '@public/logo_full.png';
 
-interface MenuSection {
-  title: string;
-  items: MenuItem[];
-}
+import hyundaiLogo from '@public/logo/logo_hyundai.png';
+import kiaLogo from '@public/logo/logo_kia.png';
+import benzLogo from '@public/logo/logo_benz.png';
+import genesisLogo from '@public/logo/logo_genesis.png';
+import chevroletLogo from '@public/logo/logo_chevrolet.png';
+import bmwLogo from '@public/logo/logo_bmw.png';
 
-const menuData: MenuSection[] = [
-  {
-    title: "회사소개",
-    items: [
-      { label: "타이런트", href: "/company" },
-      { label: "CI소개", href: "/company/ci" },
-      { label: "그룹사소개", href: "/company/group" },
-      // { label: "연혁", href: "/company/history" },
-      { label: "핵심인력", href: "/company/members" },
-      { label: "협력사소개", href: "/company/partners" },
-    ],
-  },
-  {
-    title: "사업영역",
-    items: [
-      { label: "태양광 사업성분석", href: "/business/fs" },
-      { label: "태양광 개발", href: "/business/development" },
-      { label: "태양광 기자재공급", href: "/business/materials" },
-      { label: "태양광 시공", href: "/business/construction" },
-      { label: "태양광 투자", href: "/business/investment" },
-      { label: "태양광 관리운영", href: "/business/monitoring" },
-      { label: "태양광 사무관리", href: "/business/operation" },
-      { label: "태양광 기술실사", href: "/business/duediligence" },
-      // { label: "데이터센터", href: "/business/datacenter" },
-      // { label: "태양광 교육", href: "/business/education" },
-    ],
-  },
-  {
-    title: "태양광상품소개",
-    items: [
-      { label: "솔라오 상품 소개", href: "/products/solaro" },
-      { label: "솔라오(지붕)", href: "/products/roof" },
-      { label: "솔라오(그라운드)", href: "#" },
-      { label: "솔라로지스리드(물류창고)", href: "#" },
-      { label: "솔라워터(수상)", href: "#" },
-      { label: "솔라파킹(주차장)", href: "#" },
-      // { label: "모니터링", href: "#" },
-      // { label: "FAQ", href: "#" },
-    ]
-  },
-  {
-    title: "태양광실적",
-    items: [
-      { label: "지도로보기", href: "/performance/onthemap" },
-      { label: "표로보기", href: "/performance/onthetable" },
-    ]
-  },
-  // {
-  //   title: "사업접수 및 문의",
-  //   items: [
-  //     { label: "태양광 접수", href: "#" },
-  //     { label: "기자재 구매", href: "#" },
-  //     { label: "사업성 분석", href: "#" },
-  //     { label: "기술실사", href: "#" },
-  //     { label: "태양광 교육", href: "#" },
-  //     { label: "기타문의", href: "#" },
-  //   ]
-  // },
-  {
-    title: "회원사전용",
-    items: [
-      { label: "영업사등록", href: "https://project.tyrant.co.kr/register-by-one", external: true },
-      { label: "시공사등록", href: "https://project.tyrant.co.kr/register-by-one", external: true },
-      { label: "인허가접수 관리시스템", href: "https://project.tyrant.co.kr", external: true },
-      // { label: "사무공간소개", href: "#" },
-    ]
-  },
-  // {
-  //   title: "모니터링",
-  //   items: [
-  //     { label: "발전시간 조회", href: "#" },
-  //     { label: "잔고조회", href: "#" },
-  //     { label: "관리운영 보고서", href: "#" },
-  //     { label: "자금관리 보고서", href: "#" },
-  //   ]
-  // },
-  {
-    title: "고객센터",
-    items: [
-      { label: "오시는 길", href: "/customercenter/location" },
-      { label: "사이트 맵", href: "/customercenter/sitemap" },
-      { label: "사업관련 사이트", href: "/customercenter/relationsite" },
-    ]
-  },
-]
+const brands = [
+  { name: '현대', icon: 'H', logo: hyundaiLogo, type: 'image', page: '2' as const },
+  { name: '기아', icon: 'KIA', logo: kiaLogo, type: 'image', page: '3' as const },
+  { name: '제네시스', icon: 'G', logo: genesisLogo, type: 'image', page: '4' as const },
+  { name: '쉐보레', icon: '⚡', logo: chevroletLogo, type: 'image', page: '5' as const },
+  { name: '벤츠', icon: '★', logo: benzLogo, type: 'image', page: '8' as const },
+  { name: 'BMW', icon: 'BMW', logo: bmwLogo, type: 'image', page: '9' as const },
+];
 
-export function Header() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [expandedMobileMenu, setExpandedMobileMenu] = useState<number | null>(null);
-  const pathname = usePathname();
+// interface HeaderProps {
+//   currentPage?: string;
+//   onNavigate?: (page: string, brand?: string) => void;
+// }
 
-  // 모바일 메뉴가 열렸을 때 스크롤 방지
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [mobileMenuOpen]);
+export function Header() {  
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const router = useRouter()
+  const pathName = usePathname()
+  const searchParams = useSearchParams();
+  const brandPage = searchParams.get("page")
 
-  // 경로 변경 시 모바일 메뉴 닫기
-  useEffect(() => {
-    setMobileMenuOpen(false);
-    setExpandedMobileMenu(null);
-  }, [pathname]);
-
-  const toggleMobileSubmenu = (index: number) => {
-    setExpandedMobileMenu(expandedMobileMenu === index ? null : index);
+  // 브랜드 선택으로 차량가격 화면으로 이동
+  const handleNavigation = (page: string) => {
+    router.push(`/pages/Cost?page=${page}`);
+    setMobileMenuOpen(false)
   };
 
-  return (
-    <header className="bg-header shadow-sm">
-      <div className="mx-auto px-4 flex items-center justify-between h-20 max-w-[1600px]">
-        <div className="flex items-left py-12">
-          <Link href="/" className="flex-shrink-0 cursor-pointer">
-            <Logo size="medium" />
-          </Link>
-        </div>
-        
-        <nav className="hidden xl:flex items-center gap-3 flex-1 justify-center h-20">
-          {menuData.map((menu, index) => (
-            <div
-              key={index}
-              className="relative h-full flex items-center"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div
-                className="color-white hover:color-accent transition-colors flex items-center gap-1 relative cursor-pointer text-sm font-medium px-2 whitespace-nowrap"
-                style={{
-                  fontFamily: 'Pretendard -apple-system, "Noto Sans KR", sans-serif',
-                }}
-              >
-                {menu.title}
-                <ChevronDown size={14} className={`transition-transform ${hoveredIndex === index ? 'rotate-180' : 'rotate-0'}`} />
-
-                {/* Hover 밑줄 */}
-                <span
-                  className={`absolute bottom-0 left-0 right-0 h-0.5 bg-accent transition-opacity mx-2 rounded-sm ${
-                    hoveredIndex === index ? 'opacity-100' : 'opacity-0'
-                  }`}
-                />
-              </div>
-
-              {/* Dropdown Menu */}
-              {hoveredIndex === index && (
-                <div
-                  className="absolute left-0 top-full bg-secondary-95 backdrop-blur-sm border border-clear min-w-[220px] rounded-[10px] py-4 shadow-[0_4px_16px_rgba(0,0,0,0.18)] mt-0"
-                >
-                  {menu.items.map((item, itemIndex) => {
-                    const isActive = pathname === item.href;
-                    const linkProps = item.external
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {};
-                    return (
-                      <Link
-                        key={itemIndex}
-                        href={item.href}
-                        onClick={() => setHoveredIndex(null)}
-                        className={`block color-white hover:color-white hover:bg-accent hover:font-semibold transition-all text-94 font-normal whitespace-nowrap leading-[44px] px-6 ${
-                          isActive ? 'bg-[#FF6B2C]/20' : ''
-                        }`}
-                        {...linkProps}
-                      >
-                        {item.label}
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-4">
-          {/* 햄버거 메뉴 버튼 - xl 미만에서만 표시 */}
-          <button
-            className="xl:hidden color-white hover:color-accent transition-colors p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="메뉴 열기"
+  if (pathName === "/pages/Admin/Login") {
+    return (<div />);
+  } else if (pathName === "/pages/Admin/Main") {
+    return (<div />);
+  } else {
+    return (
+      <Suspense fallback={<>Loading...</>}>
+    <header className="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+      {/* 메인 헤더 */}
+      <div className="max-w-[1280px] mx-auto px-4 md:px-10">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div 
+            className="flex items-center gap-2 md:gap-3 cursor-pointer hover:opacity-70 transition-opacity active:scale-95" 
+            onClick={() => router.push('/')}
           >
-            <Menu size={28} />
-          </button>
+            <ImageWithFallback 
+              src={logoFull.src}
+              alt="대한민카 로고"
+              className="h-12 md:h-14 object-cover rounded-lg"
+            />
+          </div>
 
-
-          {/* 스타일 가이드 버튼 (데스크탑만) */}
-          {/* <Link href="/styleguide">
-            <button 
-              className="hidden xl:flex items-center gap-2 px-5 py-2.5 border-2 border-[#FF6B2C]/30 text-[#FF6B2C] hover:bg-[#FF6B2C] hover:text-white transition-all hover:scale-105"
-              style={{
-                fontFamily: 'Pretendard, -apple-system, "Noto Sans KR", sans-serif',
-                fontWeight: '600',
-                borderRadius: '100px',
-                fontSize: '15px'
-              }}>
-              <div className="w-1.5 h-1.5 bg-[#FF6B2C] rounded-full"></div>
-              STYLE GUIDE
-            </button>
-          </Link>           */}
-
-          <Link href="/consultation">
-            <Button
-              className="hidden sm:flex items-center justify-center bg-accent hover:bg-accent-90 color-white transition-all hover:scale-105 shadow-md font-semibold rounded-full py-3 px-[26px] text-base leading-none"
-            >
-              상담 문의
-            </Button>
-          </Link>
-        </div>
-      </div>
-
-      {/* 모바일 메뉴 오버레이 */}
-      <div
-        className={`fixed inset-0 bg-black/50 z-40 xl:hidden transition-opacity duration-300 ${
-          mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setMobileMenuOpen(false)}
-      />
-
-      {/* 모바일 메뉴 패널 */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[320px] max-w-[85vw] bg-primary z-50 xl:hidden transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        {/* 모바일 메뉴 헤더 */}
-        <div className="flex items-center justify-between h-20 px-6 border-b border-white/10">
-          <span className="color-white font-semibold text-lg">메뉴</span>
-          <button
-            className="color-white hover:color-accent transition-colors p-2"
-            onClick={() => setMobileMenuOpen(false)}
-            aria-label="메뉴 닫기"
-          >
-            <X size={28} />
-          </button>
-        </div>
-
-        {/* 모바일 메뉴 내용 */}
-        <div className="overflow-y-auto h-[calc(100%-80px)] py-4">
-          {menuData.map((menu, index) => (
-            <div key={index} className="border-b border-white/5">
-              {/* 메뉴 타이틀 */}
-              <button
-                className="w-full flex items-center justify-between px-6 py-4 color-white hover:bg-white/5 transition-colors"
-                onClick={() => toggleMobileSubmenu(index)}
-              >
-                <span className="font-medium">{menu.title}</span>
-                <ChevronDown
-                  size={20}
-                  className={`transition-transform duration-200 ${
-                    expandedMobileMenu === index ? 'rotate-180' : ''
-                  }`}
-                />
-              </button>
-
-              {/* 서브메뉴 */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  expandedMobileMenu === index ? 'max-h-[500px]' : 'max-h-0'
+          {/* Right side container */}
+          <div className="flex items-center gap-4 md:gap-12">
+            {/* Navigation - Desktop */}
+            <nav className="hidden md:flex items-center space-x-12">              
+              <Link
+                href="/pages/Admin/Login" 
+                className={`text-base transition-all font-semibold px-3 py-2 rounded-lg ${
+                  pathName === '/pages/Admin'
+                    ? 'text-gray-900 bg-gray-100 scale-105'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 hover:scale-110 active:scale-95'
                 }`}
               >
-                <div className="bg-white/5 py-2">
-                  {menu.items.map((item, itemIndex) => {
-                    const isActive = pathname === item.href;
-                    const linkProps = item.external
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {};
-                    return (
-                      <Link
-                        key={itemIndex}
-                        href={item.href}
-                        className={`block px-8 py-3 text-sm transition-colors ${
-                          isActive
-                            ? 'color-accent bg-accent-10'
-                            : 'color-white-90 hover:font-semibold hover:color-white hover:bg-white/5'
-                        }`}
-                        {...linkProps}
-                      >
-                        {item.label}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          ))}
+                관리자페이지(임시이동)
+              </Link>
+              
+              <Link 
+                href="/" 
+                className={`text-base transition-all font-semibold px-3 py-2 rounded-lg ${
+                  pathName === '/'
+                    ? 'text-gray-900 bg-gray-100 scale-105'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 hover:scale-110 active:scale-95'
+                }`}
+              >대한민카</Link>
+              
+              <Link 
+                href="/pages/RentLease" 
+                className={`text-base transition-all font-semibold px-3 py-2 rounded-lg ${
+                  pathName === '/pages/RentLease'
+                    ? 'text-gray-900 bg-gray-100 scale-105'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 hover:scale-110 active:scale-95'
+                }`}
+              >렌트/리스</Link>
 
-          {/* 모바일 빠른 상담 버튼 */}
-          <div className="px-6 py-6">
-            <Link href="/consultation">
-              <Button
-                className="w-full bg-accent hover:bg-accent-90 color-white transition-all shadow-md font-semibold rounded-full py-3 text-base"
-              >
-                상담 문의
-              </Button>
-            </Link>
+              <Link 
+                href="/pages/Cost?page=1" 
+                className={`text-base transition-all font-semibold px-3 py-2 rounded-lg ${
+                  pathName === '/pages/Cost' || pathName === '/pages/Cost/Detail'
+                    ? 'text-gray-900 bg-gray-100 scale-105'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 hover:scale-110 active:scale-95'
+                }`}
+              >차량가격</Link>
+            </nav>
+
+            {/* CTA Button - Desktop only */}
+            <Button 
+              className="hidden md:flex bg-blue-600 hover:bg-blue-700 hover:shadow-lg hover:scale-105 active:scale-95 text-white px-8 py-5 text-base font-semibold rounded-full transition-all"
+              onClick={() => router.push('/pages/Counsel')}
+            >상담신청</Button>
+
+            {/* Hamburger Menu Button - Mobile only */}
+            <button
+              className="md:hidden p-2 text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="메뉴"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200">
+          <div className="max-w-[1280px] mx-auto px-4 py-4">
+            <nav className="flex flex-col space-y-2">
+              <Link
+                href="/pages/Admin/Login" 
+                className={`text-base transition-all font-semibold px-3 py-2 rounded-lg ${
+                  pathName === '/pages/Admin'
+                    ? 'text-gray-900 bg-gray-100'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                관리자페이지(임시이동)
+              </Link>
+              <Link 
+                href="/" 
+                className={`text-base font-semibold px-4 py-3 rounded-lg transition-all ${ 
+                  pathName === '/'
+                    ? 'text-gray-900 bg-gray-100'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                대한민카
+              </Link>
+              <Link 
+                href="/pages/RentLease" 
+                className={`text-base font-semibold px-4 py-3 rounded-lg transition-all ${ 
+                  pathName === '/pages/RentLease'
+                    ? 'text-gray-900 bg-gray-100'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                렌트/리스
+              </Link>
+              <Link 
+                href="/pages/Cost?page=1" 
+                className={`text-base font-semibold px-4 py-3 rounded-lg transition-all ${ 
+                  pathName === '/pages/Cost' || pathName === '/pages/Cost/Detail'
+                    ? 'text-gray-900 bg-gray-100'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                차량가격
+              </Link>
+              
+              <Link href="/pages/Counsel">                  
+                <Button 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 text-base font-semibold rounded-lg transition-all w-full mt-2"
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                  상담신청
+                </Button>
+              </Link>                              
+            </nav>
+          </div>
+        </div>
+      )}
+
+      {/* 브랜드 필터 섹션 */}
+      <div className="w-full bg-gray-50 border-t border-gray-200">
+        <div className="max-w-[1280px] mx-auto px-4 md:px-10">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-2 py-4">
+            {brands.map((brand) => (
+              <button
+                key={brand.page}
+                onClick={() => 
+                  handleNavigation(brand.page)
+                  // router.push('/pages/Cost?page=${brand.page}')
+                }
+                // className={`flex items-center justify-center gap-1 md:gap-2 px-2 md:px-4 py-2.5 rounded-full transition-all text-xs md:text-sm`}
+
+                className={`flex items-center justify-center gap-1 md:gap-2 px-2 md:px-4 py-2.5 rounded-full transition-all text-xs md:text-sm ${
+                  brandPage === brand.page
+                    ? 'bg-gray-200 text-gray-900'
+                    : 'bg-white text-gray-900 hover:bg-gray-200'
+                }`}
+              >
+                {brand.type === 'image' ? (
+                  <img src={brand.logo.src} alt={brand.name} className="w-[22px] h-[22px] md:w-7 md:h-7" />
+                ) : (
+                  <span className="font-medium text-xs md:text-sm">{brand.icon}</span>
+                )}
+                <span className="text-xs md:text-sm">{brand.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>      
     </header>
-  )
+    </Suspense>
+  );
+  }
 }
