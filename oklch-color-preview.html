@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OKLCH Color Preview</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .color-box {
+      display: inline-block;
+      width: 200px;
+      height: 150px;
+      margin: 10px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .color-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 8px;
+      font-size: 12px;
+      border-radius: 0 0 6px 6px;
+    }
+    h2 {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>OKLCH Color Preview</h1>
+  
+  <h2>Light Mode Colors</h2>
+  <div class="color-box" style="background: oklch(.145 0 0);">
+    <div class="color-info">--foreground: oklch(.145 0 0)</div>
+  </div>
+  <div class="color-box" style="background: oklch(1 0 0);">
+    <div class="color-info">--popover: oklch(1 0 0)</div>
+  </div>
+  <div class="color-box" style="background: oklch(.95 .0058 264.53);">
+    <div class="color-info">--secondary: oklch(.95 .0058 264.53)</div>
+  </div>
+  <div class="color-box" style="background: oklch(.708 0 0);">
+    <div class="color-info">--ring: oklch(.708 0 0)</div>
+  </div>
+
+  <h2>Dark Mode Colors</h2>
+  <div class="color-box" style="background: oklch(.145 0 0);">
+    <div class="color-info">--background: oklch(.145 0 0)</div>
+  </div>
+  <div class="color-box" style="background: oklch(.985 0 0);">
+    <div class="color-info">--foreground: oklch(.985 0 0)</div>
+  </div>
+  <div class="color-box" style="background: oklch(.269 0 0);">
+    <div class="color-info">--secondary: oklch(.269 0 0)</div>
+  </div>
+  <div class="color-box" style="background: oklch(.708 0 0);">
+    <div class="color-info">--muted-foreground: oklch(.708 0 0)</div>
+  </div>
+  <div class="color-box" style="background: oklch(.396 .141 25.723);">
+    <div class="color-info">--destructive: oklch(.396 .141 25.723)</div>
+  </div>
+  <div class="color-box" style="background: oklch(.439 0 0);">
+    <div class="color-info">--ring: oklch(.439 0 0)</div>
+  </div>
+
+  <h2>OKLCH 값 설명</h2>
+  <ul>
+    <li><strong>L (Lightness)</strong>: 0 (검은색) ~ 1 (흰색)</li>
+    <li><strong>C (Chroma)</strong>: 0 (무채색) ~ 0.4 (고채도)</li>
+    <li><strong>H (Hue)</strong>: 0 ~ 360 (색상각)</li>
+  </ul>
+  <p>예: <code>oklch(.145 0 0)</code> = 밝기 14.5%, 채도 0 (회색), 색상 0</p>
+</body>
+</html>
+
