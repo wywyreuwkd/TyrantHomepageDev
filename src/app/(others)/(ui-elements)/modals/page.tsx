@@ -11,14 +11,14 @@ export const metadata: Metadata = {
 export default function Modals() {
   
   return (
-    <div className="py-6 md:px-6">
+    <div className="contents-layout">
       {/* Page Header */}
       <div className="flex items-start justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-[24px] md:text-[28px] font-bold tracking-tight text-gray-900 dark:text-gray-50">
+          <h1 className="contents-title font-bold tracking-tight text-gray-900 dark:text-gray-50">
             Modals
           </h1>
-          <p className="text-[14px] mt-1 text-gray-600 dark:text-gray-400">
+          <p className="contents-sub-title mt-2 text-gray-600 dark:text-gray-400">
             사용자 흐름을 일시 중단하는 모달 시스템과 카테고리
           </p>
         </div>
@@ -29,17 +29,17 @@ export default function Modals() {
             <div className="flex items-center gap-1.5 cursor-pointer">
               <Home className="text-gray-400 dark:text-gray-600"
                 size={14}/>
-              <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+              <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
                 홈
               </span>
             </div>
           </Link>
           <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+          <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
             UI Elements
           </span>
           <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
+          <span className="contents-breadcrumb font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
             Modals
           </span>
         </nav>

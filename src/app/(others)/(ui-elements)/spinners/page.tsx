@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   description: "타이런트 관리자 Spinners 페이지",
 };
 
-const BRAND_PRIMARY = '#243c84';
-
 interface SpinnerDesignBlockProps {
   title: string;
   description: string;
@@ -33,9 +31,9 @@ function SpinnerDesignBlock({
   children
 }: SpinnerDesignBlockProps) {
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-7 md:p-5 bg-white dark:bg-gray-800 spinner-design-block">
+    <div className="border border-gray-200 dark:border-gray-700 rounded-xl p-5 md:p-7 bg-white dark:bg-gray-800">
       {/* 상단 설계 헤더 */}
-      <div className="mb-6 spinner-header">
+      <div className="mb-6 block md:flex md:justify-between md:items-start">
         <div className="flex-1 mb-3 md:mb-0">
           <h3 className="text-base font-semibold text-gray-900 dark:text-gray-50 mb-2">
             {title}
@@ -50,24 +48,24 @@ function SpinnerDesignBlock({
       </div>
 
       {/* 중단 구조 예시 영역 */}
-      <div className="bg-gray-50 dark:bg-gray-900 rounded-[10px] mb-6 flex flex-col gap-5 spinner-preview">
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-[10px] mb-6 flex flex-col gap-5 py-6 px-4 md:py-10 md:px-10">
         {children}
       </div>
 
       {/* 하단 설계 스펙 영역 */}
       <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-5 mb-4 border border-gray-100 dark:border-gray-700">
-        <div className="spinner-spec-grid">
-          <div className="text-gray-600 dark:text-gray-400 font-medium">사용 위치 기준</div>
-          <div className="text-gray-700 dark:text-gray-300">{positionRule}</div>
+        <div className="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-3 md:gap-3.5 text-sm">
+          <div className="text-gray-600 dark:text-gray-400 font-medium md:font-normal">사용 위치 기준</div>
+          <div className="text-gray-700 dark:text-gray-300 -mt-2 md:mt-0">{positionRule}</div>
 
-          <div className="text-gray-600 dark:text-gray-400 font-medium">화면 차단 여부</div>
-          <div className="text-gray-700 dark:text-gray-300">{screenBlocking}</div>
+          <div className="text-gray-600 dark:text-gray-400 font-semibold md:font-medium">화면 차단 여부</div>
+          <div className="text-gray-700 dark:text-gray-300 -mt-2 md:mt-0">{screenBlocking}</div>
 
-          <div className="text-gray-600 dark:text-gray-400 font-medium">텍스트 병행 여부</div>
-          <div className="text-gray-700 dark:text-gray-300">{textAccompaniment}</div>
+          <div className="text-gray-600 dark:text-gray-400 font-semibold md:font-medium">텍스트 병행 여부</div>
+          <div className="text-gray-700 dark:text-gray-300 -mt-2 md:mt-0">{textAccompaniment}</div>
 
-          <div className="text-gray-600 dark:text-gray-400 font-medium">최대 노출 시간 권장값</div>
-          <div className="text-gray-700 dark:text-gray-300">{maxDuration}</div>
+          <div className="text-gray-600 dark:text-gray-400 font-semibold md:font-medium">최대 노출 시간 권장값</div>
+          <div className="text-gray-700 dark:text-gray-300 -mt-2 md:mt-0">{maxDuration}</div>
         </div>
       </div>
 
@@ -77,61 +75,6 @@ function SpinnerDesignBlock({
           {guideText}
         </div>
       )}
-      
-      <style>{`
-        @media (max-width: 768px) {
-          .spinner-design-block {
-            padding: 20px !important;
-          }
-          
-          .spinner-header {
-            display: block !important;
-          }
-          
-          .spinner-preview {
-            padding: 24px 16px !important;
-          }
-          
-          .spinner-spec-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            font-size: 14px;
-          }
-          
-          .spinner-spec-grid > div:nth-child(odd) {
-            font-weight: 600;
-            margin-bottom: -8px;
-          }
-        }
-        
-        @media (min-width: 769px) {
-          .spinner-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-          }
-          
-          .spinner-header > div:first-child {
-            margin-bottom: 0 !important;
-          }
-          
-          .spinner-header > div:last-child {
-            margin-left: 16px;
-          }
-          
-          .spinner-preview {
-            padding: 40px !important;
-          }
-          
-          .spinner-spec-grid {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 14px;
-            font-size: 14px;
-          }
-        }
-      `}</style>
     </div>
   );
 }
@@ -139,14 +82,14 @@ function SpinnerDesignBlock({
 export default function Spinners() {
   
   return (
-    <div className="py-6 md:px-6">
+    <div className="contents-layout">
       {/* Page Header */}
       <div className="flex items-start justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-[24px] md:text-[28px] font-bold tracking-tight text-gray-900 dark:text-gray-50">
+          <h1 className="contents-title font-bold tracking-tight text-gray-900 dark:text-gray-50">
             Spinners
           </h1>
-          <p className="text-[14px] mt-1 text-gray-600 dark:text-gray-400">
+          <p className="contents-sub-title mt-2 text-gray-600 dark:text-gray-400">
             비동기 처리 상태 표현 설계 가이드
           </p>
         </div>
@@ -157,17 +100,17 @@ export default function Spinners() {
             <div className="flex items-center gap-1.5 cursor-pointer">
               <Home className="text-gray-400 dark:text-gray-600"
                 size={14}/>
-              <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+              <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
                 홈
               </span>
             </div>
           </Link>
           <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+          <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
             UI Elements
           </span>
           <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
+          <span className="contents-breadcrumb font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
             Spinners
           </span>
         </nav>
@@ -392,17 +335,6 @@ export default function Spinners() {
         </SpinnerDesignBlock>
 
       </div>
-
-      <style>{`
-        @keyframes spin {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
     </div>
   );
 }

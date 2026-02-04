@@ -55,14 +55,14 @@ export default function ParticipationCondition() {
   ];
   
   return (
-    <div className="py-6 md:px-6">
+    <div className="contents-layout">
       {/* Page Header */}
       <div className="flex items-start justify-between gap-4 mb-12">
         <div className="flex-1">
-          <h1 className="text-[24px] md:text-[28px] font-bold tracking-[-0.02em] text-gray-900 dark:text-gray-50">
+          <h1 className="contents-title font-bold tracking-[-0.02em] text-gray-900 dark:text-gray-50">
             시공 참여 조건
           </h1>
-          <p className="text-[14px] max-md:text-[13px] mt-2 text-gray-500 dark:text-gray-400">
+          <p className="contents-sub-title mt-2 text-gray-500 dark:text-gray-400">
             협력 시공사 계약 조건 및 공사비 지급 안내
           </p>
         </div>
@@ -73,17 +73,17 @@ export default function ParticipationCondition() {
             <div className="flex items-center gap-1.5 cursor-pointer">
               <Home className="flex-shrink-0 text-gray-400 dark:text-gray-500"
                 size={14}/>
-              <span className="text-[13px] font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
+              <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
                 홈
               </span>
             </div>
           </Link>
           <ChevronRight size={12} className="flex-shrink-0 text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
+          <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
             협력사 가이드라인
           </span>
           <ChevronRight size={12} className="flex-shrink-0 text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
+          <span className="contents-breadcrumb font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
             시공 참여 조건
           </span>
         </nav>

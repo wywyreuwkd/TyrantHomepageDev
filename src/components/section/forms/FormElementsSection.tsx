@@ -4,11 +4,6 @@ import Link from "next/link";
 import { Eye, EyeOff, Home, ChevronRight, Upload, Download, MapPin, X } from 'lucide-react';
 import { useState } from 'react';
 
-// Brand Colors
-const BRAND_PRIMARY = '#243c84';
-const BRAND_PRIMARY_HOVER = '#1d3069';
-const BRAND_ACCENT = '#d8442c';
-
 export function FormElementsSection() {
 
 	const [showPassword, setShowPassword] = useState(false);

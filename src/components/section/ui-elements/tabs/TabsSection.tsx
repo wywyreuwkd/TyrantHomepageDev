@@ -3,9 +3,6 @@
 import { LayoutDashboard, Settings, Users, FileText, BarChart3, Bell, Calendar, Package, Zap, Clock, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 
-const BRAND_PRIMARY = '#243c84';
-const BRAND_ACCENT = '#d8442c';
-
 export function TabsSection() {
 
 	const [underlineTab, setUnderlineTab] = useState('overview');
@@ -283,7 +280,7 @@ export function TabsSection() {
 						{[
 							{ id: 'active', label: '활성', icon: Zap, color: '#10B981' },
 							{ id: 'pending', label: '보류', icon: Clock, color: '#F59E0B' },
-							{ id: 'error', label: '오류', icon: AlertCircle, color: BRAND_ACCENT }
+							{ id: 'error', label: '오류', icon: AlertCircle, color: '#d8442c' }
 						].map((tab) => {
 							const Icon = tab.icon;
 							return (

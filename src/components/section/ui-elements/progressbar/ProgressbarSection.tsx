@@ -3,9 +3,6 @@
 import { Home, ChevronRight, CheckCircle2, Upload, Download, Server, Zap, Package } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const BRAND_PRIMARY = '#243c84';
-const BRAND_ACCENT = '#d8442c';
-
 export function ProgressbarSection() {
 	const [progress1, setProgress1] = useState(0);
 	const [progress2, setProgress2] = useState(45);
@@ -35,7 +32,7 @@ export function ProgressbarSection() {
 					<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[10px] p-5">
 						<div className="flex items-center justify-between mb-3">
 							<div className="flex items-center gap-2">
-								<Zap size={16} style={{ color: BRAND_PRIMARY }} />
+								<Zap className="text-[#243c84]" size={16} />
 								<span className="text-sm font-medium text-gray-900 dark:text-gray-50">
 									자동 진행 중
 								</span>
@@ -69,7 +66,7 @@ export function ProgressbarSection() {
 					<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[10px] p-5">
 						<div className="flex items-center justify-between mb-3">
 							<div className="flex items-center gap-2">
-								<CheckCircle2 size={16} style={{ color: '#10B981' }} />
+								<CheckCircle2 className="text-[#10B981]" size={16} />
 								<span className="text-sm font-medium text-gray-900 dark:text-gray-50">
 									빌드 완료
 								</span>
@@ -133,7 +130,7 @@ export function ProgressbarSection() {
 					<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[10px] p-5">
 						<div className="flex items-start gap-3">
 							<div className="w-10 h-10 flex items-center justify-center bg-green-100 dark:bg-green-950 rounded-lg">
-								<CheckCircle2 size={18} style={{ color: '#10B981' }} />
+								<CheckCircle2 className="text-[#10B981]" size={18} />
 							</div>
 							<div className="flex-1 min-w-0">
 								<div className="flex items-center justify-between mb-1">
@@ -155,7 +152,7 @@ export function ProgressbarSection() {
 					<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[10px] p-5">
 						<div className="flex items-start gap-3">
 							<div className="w-10 h-10 flex items-center justify-center bg-red-100 dark:bg-red-950 rounded-lg">
-								<Upload size={18} style={{ color: BRAND_ACCENT }} />
+								<Upload className="text-[#243c84]" size={18} />
 							</div>
 							<div className="flex-1 min-w-0">
 								<div className="flex items-center justify-between mb-1">
@@ -236,7 +233,7 @@ export function ProgressbarSection() {
 					<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[10px] p-5">
 						<div className="flex items-center justify-between mb-3">
 							<div className="flex items-center gap-2">
-								<Server size={16} style={{ color: BRAND_PRIMARY }} />
+								<Server className="text-[#243c84]" size={16} />
 								<span className="text-sm font-medium text-gray-900 dark:text-gray-50">
 									스토리지 사용량
 								</span>
@@ -257,7 +254,7 @@ export function ProgressbarSection() {
 					<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[10px] p-5">
 						<div className="flex items-center justify-between mb-3">
 							<div className="flex items-center gap-2">
-								<Package size={16} style={{ color: '#F59E0B' }} />
+								<Package className="text-[#F59E0B]" size={16} />
 								<span className="text-sm font-medium text-gray-900 dark:text-gray-50">
 									API 호출 한도
 								</span>
@@ -278,7 +275,7 @@ export function ProgressbarSection() {
 					<div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-[10px] p-5">
 						<div className="flex items-center justify-between mb-3">
 							<div className="flex items-center gap-2">
-								<Download size={16} style={{ color: BRAND_ACCENT }} />
+								<Download className="text-[#243c84]" size={16} />
 								<span className="text-sm font-medium text-gray-900 dark:text-gray-50">
 									대역폭 사용량
 								</span>

@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -188,6 +191,26 @@
   --color-f9fafb-dark-374151: #374151;
   --color-ffffff-dark-1f2937: #1f2937;
   --color-e5e7eb-dark-374151: #374151;
+}
+
+/* 컨텐츠 패딩 크기 */
+@utility contents-layout {
+  @apply py-6 md:px-6
+}
+
+/* 컨텐츠 제목 크기 */
+@utility contents-title {
+  @apply text-[24px] md:text-[28px]
+}
+
+/* 컨텐츠 서브 제목 크기 */
+@utility contents-sub-title {
+  @apply text-[14px]
+}
+
+/* 컨텐츠 네비게이션 댑스 크기 */
+@utility contents-breadcrumb {
+  @apply text-[13px]
 }
 
 /*

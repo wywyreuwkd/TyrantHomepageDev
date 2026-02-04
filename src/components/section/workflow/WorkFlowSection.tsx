@@ -93,10 +93,8 @@ function StageCard({ stageNumber, stageTitle, children }: StageCardProps) {
                   PHASE
                 </span>
               </div>
-              <div 
-                className="flex-1 h-0.5" 
-                style={{ background: `linear-gradient(to right, #E5E7EB, transparent) dark:linear-gradient(to right, #374151, transparent)` }} // TODO 라인 작업 확인 필요
-              />
+              <div className="flex-1 h-0.5" 
+                style={{ background: `linear-gradient(to right, #E5E7EB, transparent) dark:linear-gradient(to right, #374151, transparent)` }} />              
             </>
           )}
         </div>

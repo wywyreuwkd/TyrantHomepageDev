@@ -3,10 +3,6 @@
 import { X, CheckCircle2, Info, AlertTriangle, AlertCircle } from "lucide-react";
 import { useState } from "react";
 
-// Brand Colors
-const BRAND_PRIMARY = '#243c84';
-const BRAND_SECONDARY = '#d8442c';
-
 export function ModalsSection() {
 	const [openModal, setOpenModal] = useState<string | null>(null);
 	const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -15,7 +11,7 @@ export function ModalsSection() {
 
   	// Modal Overlay Component
 	const ModalOverlay = ({ children, onClose }: { children: React.ReactNode; onClose: () => void }) => (
-		<div className="fixed inset-0 bg-black/50 dark:bg-black/70 flex items-center justify-center z-[1000] p-5"
+		<div className="fixed inset-0 bg-black/50 dark:bg-black/70 flex items-center justify-center z-[var(--z-index-99999)] p-5"
 			onClick={onClose}>
 			<div onClick={(e) => e.stopPropagation()}>
 				{children}
@@ -248,7 +244,7 @@ export function ModalsSection() {
 							<div className="flex items-center justify-between p-3 px-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700">
 								<div className="flex items-center gap-3">
 									<div className="w-8 h-8 rounded-md bg-[#EFF6FF] flex items-center justify-center">
-										<Info size={18} color={BRAND_PRIMARY} />
+										<Info size={18} color="#243c84" />
 									</div>
 									<div>
 										<div className="text-sm font-semibold text-gray-900 dark:text-gray-50">Info</div>
@@ -411,7 +407,7 @@ export function ModalsSection() {
             			{/* Header */}
 						<div className="pt-8 px-6 pb-4">
 							<div className="w-12 h-12 rounded-full bg-[#EFF6FF] flex items-center justify-center mx-auto mb-4">
-								<Info size={24} color={BRAND_PRIMARY} />
+								<Info size={24} color="#243c84" />
 							</div>
 							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 m-0 mb-2">
 								중요한 안내
@@ -499,7 +495,7 @@ export function ModalsSection() {
 
       		{/* 4. Full Screen Modal */}
 			{openModal === 'fullscreen' && (
-				<div className="fixed inset-0 bg-white dark:bg-gray-900 z-[1000] overflow-auto">
+				<div className="fixed inset-0 bg-white dark:bg-gray-900 z-[var(--z-index-99999)] overflow-auto">
           			{/* Header */}
 					<div className="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between sticky top-0 bg-white dark:bg-gray-900 z-10">
 						<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 m-0">
@@ -537,7 +533,7 @@ export function ModalsSection() {
 								작업이 성공적으로 처리되었습니다.
 							</p>
 						</div>
-						<div className="pt-0 px-6 pb-8">
+						<div className="pt-4 px-6 pb-8">
 							<button className="bg-[#495f35] text-white text-sm font-semibold px-5 py-2.5 rounded-lg border-0 cursor-pointer w-full"
 								onClick={closeModal}>
 								확인
@@ -553,7 +549,7 @@ export function ModalsSection() {
 					<div className="bg-white dark:bg-gray-800 rounded-xl w-[400px] max-w-[90vw] text-center">
 						<div className="pt-8 px-6">
 							<div className="w-12 h-12 rounded-full bg-[#EFF6FF] flex items-center justify-center mx-auto mb-4">
-								<Info size={24} color={BRAND_PRIMARY} />
+								<Info size={24} color="#243c84" />
 							</div>
 							<h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 m-0 mb-2">
 								시스템 안내
@@ -562,7 +558,7 @@ export function ModalsSection() {
 								시스템 업데이트가 예정되어 있습니다.
 							</p>
 						</div>
-						<div className="pt-0 px-6 pb-8">
+						<div className="pt-4 px-6 pb-8">
 							<button className="bg-[#243c84] text-white text-sm font-semibold px-5 py-2.5 rounded-lg border-0 cursor-pointer w-full"
 								onClick={closeModal}>
 								확인
@@ -587,7 +583,7 @@ export function ModalsSection() {
 								계속 진행하기 전에 확인해주세요.
 							</p>
 						</div>
-						<div className="pt-0 px-6 pb-8">
+						<div className="pt-4 px-6 pb-8">
 							<button className="bg-[#F59E0B] text-white text-sm font-semibold px-5 py-2.5 rounded-lg border-0 cursor-pointer w-full"
 								onClick={closeModal}>
 								확인
@@ -612,7 +608,7 @@ export function ModalsSection() {
 								이 작업은 되돌릴 수 없습니다.
 							</p>
 						</div>
-						<div className="pt-0 px-6 pb-8 flex gap-3">
+						<div className="pt-4 px-6 pb-8 flex gap-3">
 							<button className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold px-5 py-2.5 rounded-lg border-0 cursor-pointer flex-1"
 								onClick={closeModal}>
 								취소

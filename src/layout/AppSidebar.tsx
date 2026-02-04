@@ -352,12 +352,12 @@ const AppSidebar: React.FC = () => {
             <Link href="/main">
               {isExpanded || isHovered ? (
                 <>
-                <Image className="dark:hidden"
+                <Image className="dark:hidden mr-4"
                   src={logoBlue.src}
                   alt="Logo"
                   width={170}
                   height={54}/>
-                <Image className="hidden dark:block"
+                <Image className="hidden dark:block mr-4"
                   src={logoWhite.src}
                   alt="Logo"
                   width={170}

@@ -4,9 +4,6 @@ import Link from "next/link";
 import { CheckCircle2, Info, AlertTriangle, AlertCircle, X, Bell, Shield } from "lucide-react";
 import { useState } from "react";
 
-const BRAND_PRIMARY = '#243c84';
-const BRAND_ACCENT = '#d8442c';
-
 interface Alert {
  	id: string;
   	type: 'success' | 'info' | 'warning' | 'error';
@@ -106,11 +103,11 @@ export function AlertsSection() {
             			{alert.action && (
               				<>
                 				{' '}
-                				<a className="font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity"
+                				<Link className="font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity"
                   					href={alert.action.href}                  
                   					style={{ color: getAlertIconColor(alert.type) }}>
                   					{alert.action.label} →
-                				</a>
+                				</Link>
               				</>
             			)}
           			</div>

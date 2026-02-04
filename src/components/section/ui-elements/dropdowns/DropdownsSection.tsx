@@ -4,9 +4,6 @@ import Link from "next/link";
 import { ChevronDown, Check } from "lucide-react";
 import { useState } from "react";
 
-// Brand Colors
-const BRAND_PRIMARY = '#243c84';
-
 export function DropdownsSection() {
 	const [basicOpen, setBasicOpen] = useState(false);
   	const [basicSelected, setBasicSelected] = useState('');

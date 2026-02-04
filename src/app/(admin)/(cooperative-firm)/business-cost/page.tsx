@@ -37,14 +37,14 @@ export default function BusinessCost() {
   ];
 
   return (
-    <div className="py-6 md:px-6">
+    <div className="contents-layout">
       {/* Page Header */}
       <div className="flex items-start justify-between gap-4 mb-12">
         <div>
-          <h1 className="text-[24px] md:text-[28px] font-bold tracking-[-0.02em] text-gray-900 dark:text-gray-50">
+          <h1 className="contents-title font-bold tracking-[-0.02em] text-gray-900 dark:text-gray-50">
             사업비 안내
           </h1>
-          <p className="text-[14px] mt-2 text-gray-500 dark:text-gray-400">
+          <p className="contents-sub-title mt-2 text-gray-500 dark:text-gray-400">
             프로젝트 예산 및 비용 구성 안내
           </p>
         </div>
@@ -55,17 +55,17 @@ export default function BusinessCost() {
             <div className="flex items-center gap-1.5 cursor-pointer">
               <Home className="text-gray-400 dark:text-gray-500"
                 size={14} />
-              <span className="text-[13px] font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
+              <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
                 홈
               </span>
             </div>
           </Link>
           <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
+          <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
             협력사 가이드라인
           </span>
           <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
+          <span className="contents-breadcrumb font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
             사업비 안내
           </span>
         </nav>

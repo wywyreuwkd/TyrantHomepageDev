@@ -7,20 +7,17 @@ export const metadata: Metadata = {
   description: "타이런트 관리자 Links 페이지",
 };
 
-// Brand Colors
-const BRAND_PRIMARY = '#243c84';
-
 export default function Links() {
   
   return (
-    <div className="py-6 md:px-6">
+    <div className="contents-layout">
       {/* Page Header */}
       <div className="flex items-start justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-[24px] md:text-[28px] font-bold tracking-tight text-gray-900 dark:text-gray-50">
+          <h1 className="contents-title font-bold tracking-tight text-gray-900 dark:text-gray-50">
             Links
           </h1>
-          <p className="text-[14px] mt-1 text-gray-600 dark:text-gray-400">
+          <p className="contents-sub-title mt-2 text-gray-600 dark:text-gray-400">
             서비스 전반에서 사용되는 링크 스타일과 상호작용 규칙
           </p>
         </div>
@@ -31,17 +28,17 @@ export default function Links() {
             <div className="flex items-center gap-1.5 cursor-pointer">
               <Home className="text-gray-400 dark:text-gray-600"
                 size={14}/>
-              <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+              <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
                 홈
               </span>
             </div>
           </Link>
           <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+          <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
             UI Elements
           </span>
           <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-          <span className="text-[13px] font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
+          <span className="contents-breadcrumb font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
             Links
           </span>
         </nav>
@@ -205,7 +202,7 @@ export default function Links() {
               <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Default Link</h4>
               <ul className="text-[13px] leading-[1.8] text-gray-600 dark:text-gray-400 pl-5">
                 <li>Font Size: 14px / Medium</li>
-                <li>Color: {BRAND_PRIMARY}</li>
+                <li>Color: #243c84</li>
                 <li>Hover: Underline</li>
                 <li>Active: Opacity 80%</li>
               </ul>
@@ -222,7 +219,7 @@ export default function Links() {
               <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Inline Link</h4>
               <ul className="text-[13px] leading-[1.8] text-gray-600 dark:text-gray-400 pl-5">
                 <li>Font Size: 14px / Medium</li>
-                <li>Color: {BRAND_PRIMARY}</li>
+                <li>Color: #243c84</li>
                 <li>Underline: Always On</li>
                 <li>Underline Offset: 2px</li>
                 <li>Hover: Opacity 85%</li>

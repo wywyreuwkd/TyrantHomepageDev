@@ -41,12 +41,12 @@ export default function NotificationDropdown() {
             fill="currentColor"/>
         </svg>
       </button>
-      <Dropdown className="absolute -right-[240px] mt-[17px] flex h-[480px] w-[350px] flex-col rounded-2xl border border-gray-200 bg-white p-3 shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark sm:w-[361px] lg:right-0"
+      <Dropdown className="absolute -right-[240px] mt-[17px] flex h-[480px] w-[350px] flex-col rounded-2xl border border-gray-200 bg-white p-3 shadow-lg dark:border-gray-800 dark:bg-gray-dark sm:w-[361px] lg:right-0"
         isOpen={isOpen}
         onClose={closeDropdown}>
         <div className="flex items-center justify-between pb-3 mb-3 border-b border-gray-100 dark:border-gray-700">
           <h5 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-            Notification
+            알림
           </h5>
           <button className="text-gray-500 transition dropdown-toggle dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
             onClick={toggleDropdown}>
@@ -69,29 +69,27 @@ export default function NotificationDropdown() {
             <DropdownItem className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
               onItemClick={closeDropdown}>
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
-                <Image className="w-full overflow-hidden rounded-full"
-                  width={40}
-                  height={40}
-                  src="/images/user/user-02.jpg"
-                  alt="User"/>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold text-white bg-[#243c84]">
+                    김
+                </div>
                 <span className="absolute bottom-0 right-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-success-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
-                <span className="mb-1.5 space-x-1 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 space-x-1 block text-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Terry Franci
+                    김일번
                   </span>
-                  <span>requests permission to change</span>
+                  <span>프로젝트 접수 요청</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Project - Nganter App
+                    
                   </span>
                 </span>
 
-                <span className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
-                  <span>Project</span>
+                <span className="flex items-center gap-2 text-gray-500 text-xs dark:text-gray-400">
+                  <span>신규 프로젝트 접수</span>
                   <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>5 min ago</span>
+                  <span>5분 전</span>
                 </span>
               </span>
             </DropdownItem>
@@ -101,29 +99,27 @@ export default function NotificationDropdown() {
             <DropdownItem className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
               onItemClick={closeDropdown}>
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
-                <Image className="w-full overflow-hidden rounded-full"
-                  width={40}
-                  height={40}
-                  src="/images/user/user-03.jpg"
-                  alt="User"/>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold text-white bg-[#1e40af]">
+                    이
+                </div>
                 <span className="absolute bottom-0 right-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-success-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block space-x-1  text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block space-x-1  text-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Alena Franci
+                    이이번
                   </span>
-                  <span> requests permission to change</span>
+                  <span>공지사항 등록</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Project - Nganter App
+                    
                   </span>
                 </span>
 
-                <span className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
-                  <span>Project</span>
+                <span className="flex items-center gap-2 text-gray-500 text-xs dark:text-gray-400">
+                  <span>공지사항</span>
                   <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>8 min ago</span>
+                  <span>8분 전</span>
                 </span>
               </span>
             </DropdownItem>
@@ -134,29 +130,27 @@ export default function NotificationDropdown() {
               onItemClick={closeDropdown}              
               href="#">
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
-                <Image className="w-full overflow-hidden rounded-full"
-                  width={40}
-                  height={40}
-                  src="/images/user/user-04.jpg"
-                  alt="User"/>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold text-white bg-[#2563eb]">
+                    박
+                </div>
                 <span className="absolute bottom-0 right-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-success-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
-                <span className="mb-1.5 block space-x-1 text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 block space-x-1 text-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Jocelyn Kenter
+                    박삼번
                   </span>
-                  <span>requests permission to change</span>
+                  <span>프로젝트 정보수정</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Project - Nganter App
+                    
                   </span>
                 </span>
 
-                <span className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
-                  <span>Project</span>
+                <span className="flex items-center gap-2 text-gray-500 text-xs dark:text-gray-400">
+                  <span>프로젝트 정보조회</span>
                   <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>15 min ago</span>
+                  <span>15분 전</span>
                 </span>
               </span>
             </DropdownItem>
@@ -167,29 +161,27 @@ export default function NotificationDropdown() {
               onItemClick={closeDropdown}              
               href="#">
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
-                <Image className="w-full overflow-hidden rounded-full"
-                  width={40}
-                  height={40}
-                  src="/images/user/user-05.jpg"
-                  alt="User"/>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold text-white bg-[#3b82f6]">
+                    최
+                </div>
                 <span className="absolute bottom-0 right-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-error-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
-                <span className="mb-1.5 space-x-1 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 space-x-1 block text-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Brandon Philips
+                    최사번
                   </span>
-                  <span> requests permission to change</span>
+                  <span>시공사 배정 완료</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Project - Nganter App
+                    
                   </span>
                 </span>
 
-                <span className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
-                  <span>Project</span>
+                <span className="flex items-center gap-2 text-gray-500 text-xs dark:text-gray-400">
+                  <span>프로젝트 진행관리</span>
                   <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>1 hr ago</span>
+                  <span>1시간 전</span>
                 </span>
               </span>
             </DropdownItem>
@@ -199,29 +191,27 @@ export default function NotificationDropdown() {
             <DropdownItem className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
               onItemClick={closeDropdown}>
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
-                <Image className="w-full overflow-hidden rounded-full"
-                  width={40}
-                  height={40}
-                  src="/images/user/user-02.jpg"
-                  alt="User"/>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold text-white bg-[#0891b2]">
+                    정
+                </div>
                 <span className="absolute bottom-0 right-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-success-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
-                <span className="mb-1.5 space-x-1 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 space-x-1 block text-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Terry Franci
+                    정오번
                   </span>
-                  <span>requests permission to change</span>
+                  <span>프로젝트 접수 요청</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Project - Nganter App
+                    
                   </span>
                 </span>
 
-                <span className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
-                  <span>Project</span>
+                <span className="flex items-center gap-2 text-gray-500 text-xs dark:text-gray-400">
+                  <span>신규 프로젝트 접수</span>
                   <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>5 min ago</span>
+                  <span>3시간 전</span>
                 </span>
               </span>
             </DropdownItem>
@@ -231,29 +221,27 @@ export default function NotificationDropdown() {
             <DropdownItem className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
               onItemClick={closeDropdown}>
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
-                <Image className="w-full overflow-hidden rounded-full"
-                  width={40}
-                  height={40}
-                  src="/images/user/user-03.jpg"
-                  alt="User"/>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold text-white bg-[#0ea5e9]">
+                    강
+                </div>
                 <span className="absolute bottom-0 right-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-success-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
-                <span className="mb-1.5 space-x-1 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 space-x-1 block text-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Alena Franci
+                    강육번
                   </span>
-                  <span>requests permission to change</span>
+                  <span>공지사항 등록</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Project - Nganter App
+                    
                   </span>
                 </span>
 
-                <span className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
-                  <span>Project</span>
+                <span className="flex items-center gap-2 text-gray-500 text-xs dark:text-gray-400">
+                  <span>공지사항</span>
                   <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>8 min ago</span>
+                  <span>8시간 전</span>
                 </span>
               </span>
             </DropdownItem>
@@ -263,29 +251,27 @@ export default function NotificationDropdown() {
             <DropdownItem className="flex gap-3 rounded-lg border-b border-gray-100 p-3 px-4.5 py-3 hover:bg-gray-100 dark:border-gray-800 dark:hover:bg-white/5"
               onItemClick={closeDropdown}>
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
-                <Image className="w-full overflow-hidden rounded-full"
-                  width={40}
-                  height={40}
-                  src="/images/user/user-04.jpg"
-                  alt="User"/>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold text-white bg-[#06b6d4]">
+                    윤
+                </div>
                 <span className="absolute bottom-0 right-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-success-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
-                <span className="mb-1.5 space-x-1 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 space-x-1 block text-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Jocelyn Kenter
+                    윤칠번
                   </span>
-                  <span>requests permission to change</span>
+                  <span>PF요청승인</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Project - Nganter App
+                    
                   </span>
                 </span>
 
-                <span className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
-                  <span>Project</span>
+                <span className="flex items-center gap-2 text-gray-500 text-xs dark:text-gray-400">
+                  <span>프로젝트 진행관리</span>
                   <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>15 min ago</span>
+                  <span>1일 전</span>
                 </span>
               </span>
             </DropdownItem>
@@ -296,29 +282,27 @@ export default function NotificationDropdown() {
               onItemClick={closeDropdown}              
               href="#">
               <span className="relative block w-full h-10 rounded-full z-1 max-w-10">
-                <Image className="overflow-hidden rounded-full"
-                  width={40}
-                  height={40}
-                  src="/images/user/user-05.jpg"
-                  alt="User"/>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-[15px] font-semibold text-white bg-[#1d4ed8]">
+                    한
+                </div>
                 <span className="absolute bottom-0 right-0 z-10 h-2.5 w-full max-w-2.5 rounded-full border-[1.5px] border-white bg-error-500 dark:border-gray-900"></span>
               </span>
 
               <span className="block">
-                <span className="mb-1.5 space-x-1 block text-theme-sm text-gray-500 dark:text-gray-400">
+                <span className="mb-1.5 space-x-1 block text-sm text-gray-500 dark:text-gray-400">
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Brandon Philips
+                    한팔번
                   </span>
-                  <span>requests permission to change</span>
+                  <span>운영개시</span>
                   <span className="font-medium text-gray-800 dark:text-white/90">
-                    Project - Nganter App
+                    
                   </span>
                 </span>
 
-                <span className="flex items-center gap-2 text-gray-500 text-theme-xs dark:text-gray-400">
-                  <span>Project</span>
+                <span className="flex items-center gap-2 text-gray-500 text-xs dark:text-gray-400">
+                  <span>프로젝트 진행관리</span>
                   <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
-                  <span>1 hr ago</span>
+                  <span>2일 전</span>
                 </span>
               </span>
             </DropdownItem>
@@ -326,8 +310,9 @@ export default function NotificationDropdown() {
           {/* Add more items as needed */}
         </ul>
         <Link className="block px-4 py-2 mt-3 text-sm font-medium text-center text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700"
-          href="/">
-          View All Notifications
+          href="#"
+          onClick={closeDropdown}>
+          전체 보기
         </Link>
       </Dropdown>
     </div>

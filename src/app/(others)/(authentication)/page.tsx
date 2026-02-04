@@ -15,10 +15,10 @@ export default function SignIn() {
       {/* Page Header */}
       <div className="flex items-start justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-[28px] max-md:text-[22px] font-bold tracking-tight text-gray-900 dark:text-gray-50">
+          <h1 className="contents-title font-bold tracking-tight text-gray-900 dark:text-gray-50">
             Sign In
           </h1>
-          <p className="text-[14px] max-md:text-[13px] mt-1 text-gray-600 dark:text-gray-400">
+          <p className="contents-sub-title mt-1 text-gray-600 dark:text-gray-400">
             회원사 전용 시스템 로그인
           </p>
         </div>        

@@ -40,10 +40,10 @@ export default function Main() {
   ];
 
   return (
-    <div className="py-6 md:px-6">
+    <div className="contents-layout">
       {/* Page Header */}
       <div className="mb-16 max-md:mb-12">
-        <h1 className="text-[24px] md:text-[28px] font-bold mb-3 tracking-[-0.02em] text-gray-900 dark:text-gray-50">
+        <h1 className="contents-title font-bold mb-3 tracking-[-0.02em] text-gray-900 dark:text-gray-50">
           협력사 관리 시스템
         </h1>
         <p className="text-[15px] max-md:text-[14px] text-gray-600 dark:text-gray-400">

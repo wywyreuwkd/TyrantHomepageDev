@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 export default function ProjectManagement() {
 
   return (
-  	<div className="py-6 md:px-6">
+  	<div className="contents-layout">
       {/* Page Header */}
       <div className="mb-12">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
           {/* Mobile: Title + Back Button */}
           <div className="md:hidden flex items-start justify-between w-full">
-            <h1 className="text-[24px] font-bold tracking-[-0.02em] leading-[1.25] text-gray-900 dark:text-gray-50">
+            <h1 className="contents-title font-bold tracking-[-0.02em] leading-[1.25] text-gray-900 dark:text-gray-50">
               프로젝트 진행관리
             </h1>
             <Link href="/project-list">
@@ -29,10 +29,10 @@ export default function ProjectManagement() {
 
           {/* Desktop: Title + Subtitle */}
           <div className="hidden md:block">
-            <h1 className="text-[28px] font-bold tracking-[-0.02em] mb-2 leading-[1.25] text-gray-900 dark:text-gray-50">
+            <h1 className="contents-title font-bold tracking-[-0.02em] mb-2 leading-[1.25] text-gray-900 dark:text-gray-50">
               프로젝트 진행관리
             </h1>
-            <p className="text-[14px] text-gray-600 dark:text-gray-400">
+            <p className="contents-sub-title text-gray-600 dark:text-gray-400">
               프로젝트 진행 현황 및 정보를 관리합니다
             </p>
           </div>
@@ -43,23 +43,23 @@ export default function ProjectManagement() {
               <div className="flex items-center gap-1.5 cursor-pointer">
                 <Home className="text-gray-400 dark:text-gray-600"
                   size={14}/>
-                <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+                <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
                   홈
                 </span>
               </div>
             </Link>
             <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-            <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+            <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
               프로젝트 관리
             </span>            
             <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />            
-            <span className="text-[13px] font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
+            <span className="contents-breadcrumb font-medium whitespace-nowrap text-gray-600 dark:text-gray-400">
               <Link href="/project-list">
                 프로젝트 조회
               </Link>
             </span>            
             <ChevronRight size={12} className="text-gray-300 dark:text-gray-600" />
-            <span className="text-[13px] font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
+            <span className="contents-breadcrumb font-semibold whitespace-nowrap text-gray-900 dark:text-gray-50">
               프로젝트 진행관리
             </span>
           </nav>
