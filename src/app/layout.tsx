@@ -1,17 +1,14 @@
-import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
 import "./globals.css";
-import { Suspense } from 'react'
-import { Header } from "@components/layout/Header";
-import { Footer } from "@components/layout/Footer";
+import "swiper/swiper-bundle.css";
+import "simplebar-react/dist/simplebar.min.css";
+import "flatpickr/dist/flatpickr.css";
+import { SidebarProvider } from "@/context/SidebarContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
-export const metadata: Metadata = {
-  title: {
-    default: "대한민카",
-    template: "%s | 대한민카",
-  },
-  description: "",
-  keywords: [],
-};
+const outfit = Outfit({
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
@@ -19,13 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body>      
-        <Suspense>  
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </Suspense>
+    <html lang="en">
+      <body className={`${outfit.className} dark:bg-gray-900`}>
+        <ThemeProvider>
+          <SidebarProvider>{children}</SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
