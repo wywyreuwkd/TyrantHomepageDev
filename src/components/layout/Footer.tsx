@@ -44,11 +44,11 @@ export function Footer() {
                   개인정보보호책임자: 강준호
                 </p>
                 <p className="font-['Pretendard',sans-serif] font-medium text-xs text-gray-400 leading-[1.7] md:text-[14px] md:leading-[1.6]">
-                  사업자등록번호: 123-45-67890
+                  사업자등록번호: 440-86-02535
                 </p>
-                <p className="font-['Pretendard',sans-serif] font-medium text-xs text-gray-400 leading-[1.7] md:text-[14px] md:leading-[1.6]">
+                {/*<p className="font-['Pretendard',sans-serif] font-medium text-xs text-gray-400 leading-[1.7] md:text-[14px] md:leading-[1.6]">
                   통신판매업 신고번호: 제2025-서울강남-12345호
-                </p>
+                </p>*/}
               </div>
             </div>
 

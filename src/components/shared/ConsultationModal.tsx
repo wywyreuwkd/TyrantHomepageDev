@@ -126,12 +126,12 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
             {/* Phone Input */}
             <div>
               <label className="block mb-2 text-gray-700 text-xs md:text-sm font-semibold tracking-[-0.01em]">
-                연락처 *
+                휴대폰 *
               </label>
               <div className="flex gap-2">
                 <input
                   type="tel"
-                  placeholder="010-0000-0000"
+                  placeholder="- 없이 입력해 주세요."
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   required
