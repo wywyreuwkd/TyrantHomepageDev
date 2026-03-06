@@ -78,41 +78,37 @@ export function LiveConsultSection() {
             className={`px-2 md:px-4 ${isAnimating ? 'transition-transform duration-[600ms] ease-in-out -translate-y-[116px]' : 'translate-y-0'}`}
           >
             {visibleItems.map((item, index) => (
-              <div
-                key={item.key}
-                className="mb-5"
-              >
-                <div className="bg-white border-2 border-[#1a5dab] py-6 px-8 flex items-center justify-between gap-6 shadow-[0_4px_12px_rgba(26,93,171,0.15)] h-24">
+              <div className="mb-5"
+                key={item.key}>
+                <div className="bg-white border-2 border-[#1a5dab] py-6 px-2 md:px-8 flex items-center justify-between gap-6 shadow-[0_4px_12px_rgba(26,93,171,0.15)] h-24">
                   {/* Left Section - Name & Location */}
-                  <div className="flex items-center gap-4 min-w-[160px]">
-                    <div
-                      className={`w-12 h-12 flex items-center justify-center font-['Pretendard',sans-serif] text-base font-bold text-white ${
+                  <div className="flex items-center gap-2 md:gap-4 min-w-[40px] md:min-w-[120px]">
+                    <div className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center font-['Pretendard',sans-serif] text-sm md:text-base font-bold text-white ${
                         item.type === '상담중' ? 'bg-[#bb0305]' : 'bg-[#1a5dab]'
-                      }`}
-                    >
+                      }`}>
                       {item.name}
                     </div>
-                    <div>
+                    {/*<div>
                       <div className="font-['Pretendard',sans-serif] text-[15px] font-medium text-[#666666]">
                         {item.location}
                       </div>
-                    </div>
+                    </div>*/}
                   </div>
 
                   {/* Middle Section - Car Info */}
                   <div className="flex-1">
-                    <div className="font-['Pretendard',sans-serif] text-lg font-semibold text-[#1a1a1a]">
+                    <div className="font-['Pretendard',sans-serif] text-sm md:text-lg font-semibold text-[#1a1a1a]">
                       {item.car}
                     </div>
                   </div>
 
                   {/* Right Section - Time & Status */}
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2 md:gap-4">
                     <div className="font-['Pretendard',sans-serif] text-sm font-medium text-[#999999]">
                       {item.time}
                     </div>
                     <div
-                      className={`py-2 px-5 font-['Pretendard',sans-serif] text-sm font-bold text-white whitespace-nowrap ${
+                      className={`py-2 px-2 md:px-5 font-['Pretendard',sans-serif] text-sm font-bold text-white whitespace-nowrap ${
                         item.type === '상담중' ? 'bg-[#bb0305]' : 'bg-[#1a5dab]'
                       }`}
                     >
