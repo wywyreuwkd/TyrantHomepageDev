@@ -253,7 +253,7 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
               전화 상담 문의
             </p>
             <a className="inline-block hover:scale-105 transition-transform text-2xl md:text-4xl font-['Pretendard',sans-serif] font-bold text-[#1a5dab] tracking-[0.02em] leading-none"
-              href="tel:1800-0000">
+              href="tel:1660-2587">
               1660-2587
             </a>
           </div>
