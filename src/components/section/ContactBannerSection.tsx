@@ -4,12 +4,12 @@ import { Phone, MessageCircle, ChevronRight } from "lucide-react";
 
 export function ContactBannerSection() {
   const handlePhoneClick = () => {
-    window.location.href = 'tel:1800-6301';
+    window.location.href = 'tel:1660-2587';
   };
 
   const handleKakaoClick = () => {
     // 카카오톡 채널 링크로 연결
-    window.open('https://pf.kakao.com/_your_channel_id', '_blank');
+    window.open('http://pf.kakao.com/_QjEzX/chat', '_blank');
   };
 
   return (
@@ -30,7 +30,7 @@ export function ContactBannerSection() {
                   전화 한 통으로 빠른 상담을 받아보세요
                 </p>
                 <p className="font-['Nexon_Lv1_Gothic_OTF',sans-serif] text-[clamp(24px,5vw,42px)] font-black text-[#1a5dab] tracking-[0.02em] leading-none">
-                  1800-6301
+                  1660-2587
                 </p>
               </div>
             </div>
