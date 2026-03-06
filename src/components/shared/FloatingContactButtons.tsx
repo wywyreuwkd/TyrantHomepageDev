@@ -32,7 +32,7 @@ export function FloatingContactButtons() {
           
           {/* Tooltip - Desktop only */}
           <div className="hidden md:block absolute right-full mr-4 px-4 py-2 bg-gray-900 text-white text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none rounded-md font-['Pretendard',sans-serif] font-semibold">
-            1800-6301
+            1660-2587
             <div className="absolute top-1/2 -right-1 w-2 h-2 bg-gray-900 transform -translate-y-1/2 rotate-45" />
           </div>
         </button>
