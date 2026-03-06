@@ -48,7 +48,7 @@ export default function Main() {
       <LongTermRentalSection />
 
       {/* Lease Advantages Section */}
-      <LeaseAdvantagesSection />
+      {/*<LeaseAdvantagesSection />*/}
 
       {/* Honest Promise Section */}
       <HonestPromiseSection />
