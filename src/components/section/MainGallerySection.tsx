@@ -4,34 +4,36 @@ import React from "react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "@/components/shared/ImageWithFallback";
 import { ExternalLink, Phone } from "lucide-react";
+import Link from "next/link";
+
+import SampleImage1 from "@/public/sample_image_field_1.jpeg"
+import SampleImage2 from "@/public/sample_image_field_2.jpeg"
+// import SampleImage3 from "https://images.unsplash.com/photo-1768396747921-5a18367415d2?w=600&h=450&fit=crop"
+// import SampleImage4 from "https://images.unsplash.com/photo-1761400025076-8fec91f620f2?w=600&h=450&fit=crop"
 
 export function MainGallerySection() {
 
   const recentGalleryPhotos = [
     {
-      image:
-        "https://images.unsplash.com/photo-1768396747921-5a18367415d2?w=600&h=450&fit=crop",
-      title: "2026 봄맞이 친선대회",
-      date: "2026.03.15",
+      image: "/sample_image_field_1.jpeg",
+      title: "제2회 마포구협회장배 골프대회",
+      date: "2026.04.15",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1761400025076-8fec91f620f2?w=600&h=450&fit=crop",
+      image: "/sample_image_field_2.jpeg",
+      title: "제2회 마포구협회장배 골프대회",
+      date: "2026.04.20",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1768396747921-5a18367415d2?w=600&h=450&fit=crop",
       title: "정기 월례회",
-      date: "2026.02.20",
+      date: "2026.05.20",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1761141987961-ed96a841fe21?w=600&h=450&fit=crop",
-      title: "신년 하례회",
-      date: "2026.01.10",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1761074936575-e04432667eaf?w=600&h=450&fit=crop",
-      title: "가을 정기대회",
-      date: "2025.10.22",
-    },
+      image: "https://images.unsplash.com/photo-1761400025076-8fec91f620f2?w=600&h=450&fit=crop",
+      title: "여름 정기대회",
+      date: "2025.9.22",
+    }
   ];
 
   return (
@@ -71,12 +73,18 @@ export function MainGallerySection() {
                 whileHover={{ y: -8 }}
                 className="relative group cursor-pointer"
               >
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+
+
+                <Link href="/gallery" className="flex items-center gap-3 group">
+
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">  
+
                   <ImageWithFallback
-                    src={photo.image}
-                    alt={photo.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
+                        src={photo.image}                
+                        alt={photo.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      />                                
+                  
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                       <h3 className="font-display font-semibold text-lg mb-1">
@@ -88,6 +96,8 @@ export function MainGallerySection() {
                     </div>
                   </div>
                 </div>
+              </Link>
+
               </motion.div>
             ))}
           </div>

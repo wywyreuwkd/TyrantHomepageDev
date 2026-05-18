@@ -20,7 +20,7 @@ export function Header() {
     { path: "/gallery", label: "포토갤러리" },
     { path: "/calendar", label: "일정캘린더" },
     { path: "/officers", label: "운영진소개" },
-    { path: "/partners", label: "참여협력사" },
+    { path: "/partners", label: "협력기업" },
   ];
 
   return (

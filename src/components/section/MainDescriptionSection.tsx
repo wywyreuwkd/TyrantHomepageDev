@@ -4,6 +4,9 @@ import React from "react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "@/components/shared/ImageWithFallback";
 
+import SampleImage1 from "@/public/sample_image_event_1.jpeg"
+import SampleImage2 from "@/public/sample_image_event_2.jpeg"
+
 export function MainDescriptionSection() {
 
   return (
@@ -70,7 +73,7 @@ export function MainDescriptionSection() {
                   className="aspect-square rounded-3xl overflow-hidden"
                 >
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1775326376274-2ef7f5f9de8f?w=400&h=400&fit=crop"
+                    src={SampleImage2.src}
                     alt="Golf"
                     className="w-full h-full object-cover"
                   />
@@ -80,7 +83,7 @@ export function MainDescriptionSection() {
                   className="aspect-square rounded-3xl overflow-hidden mt-12"
                 >
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1620578986840-7d2e90fac0e4?w=400&h=400&fit=crop"
+                    src={SampleImage1.src}
                     alt="Golf"
                     className="w-full h-full object-cover"
                   />
@@ -90,7 +93,7 @@ export function MainDescriptionSection() {
                   className="aspect-square rounded-3xl overflow-hidden -mt-12"
                 >
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1692195400719-81a66b4fde89?w=400&h=400&fit=crop"
+                    src="https://images.unsplash.com/photo-1775326376274-2ef7f5f9de8f?w=400&h=400&fit=crop"
                     alt="Golf"
                     className="w-full h-full object-cover"
                   />
@@ -100,7 +103,7 @@ export function MainDescriptionSection() {
                   className="aspect-square rounded-3xl overflow-hidden"
                 >
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1763917379121-91130139aca0?w=400&h=400&fit=crop"
+                    src="https://images.unsplash.com/photo-1692195400719-81a66b4fde89?w=400&h=400&fit=crop"
                     alt="Golf"
                     className="w-full h-full object-cover"
                   />

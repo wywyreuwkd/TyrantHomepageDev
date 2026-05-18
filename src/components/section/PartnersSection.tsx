@@ -1,16 +1,12 @@
 "use client"
 
-import React from "react";
 import { motion } from "motion/react";
-import { useRef } from "react";
-import { ImageWithFallback } from "@/components/shared/ImageWithFallback";
-import { ExternalLink, Phone } from "lucide-react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useState } from "react";
+import { ExternalLink, MapPin, Phone, Globe } from "lucide-react";
 
-export function MainPartnersSection() {
-  const partnersSliderRef = useRef<Slider>(null);
+export function PartnersSection() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 15;
 
   const partners = [
     {
@@ -348,133 +344,142 @@ export function MainPartnersSection() {
     },
   ];
 
-  const partnersSliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 5000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
-    pauseOnHover: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const totalPages = Math.ceil(partners.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentPartners = partners.slice(startIndex, endIndex);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block px-4 py-2 bg-[var(--accent-gold)]/10 rounded-full mb-6">
-              <span className="font-body text-[var(--accent-gold)] font-semibold text-sm">
-                PARTNERS
-              </span>
-            </div>
-            <h2 className="font-display font-bold text-5xl lg:text-6xl text-[var(--text-primary)] mb-6">
-              협력 기업
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--accent-gold)] to-transparent mx-auto mb-6"></div>
-            <p className="font-body text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              마포구 골프협회 회원들과 함께 하는 협력 기업
-            </p>
-          </motion.div>
+    <div className="min-h-screen py-24 px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <h1 className="font-display font-bold text-6xl text-[var(--text-primary)] mb-6">
+            협력 기업
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--accent-gold)] to-transparent mx-auto mb-6"></div>
+          <p className="font-body text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+            마포구 골프협회 회원들과 함께 하는 협력 기업을 소개합니다.
+          </p>
+        </motion.div>
 
-          <div className="partners-slider">
-            <Slider
-              ref={partnersSliderRef}
-              {...partnersSliderSettings}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {currentPartners.map((partner, index) => (
+            <motion.div
+              key={startIndex + index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              whileHover={{ y: -8 }}
+              className="relative group"
             >
-              {partners.map((partner, index) => (
-                <div key={index} className="px-3">
-                  <motion.div
-                    whileHover={{ y: -4 }}
-                    className="bg-white border-2 border-[var(--border-gold)]/30 rounded-2xl p-6 hover:border-[var(--accent-gold)] hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[var(--accent-green)] to-[var(--accent-green-dark)] rounded-xl flex items-center justify-center flex-shrink-0">
-                        <span className="font-display font-bold text-xl text-white">
-                          {partner.name.charAt(0)}
-                        </span>
-                      </div>
-                      <span className="px-3 py-1 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] font-body text-xs font-semibold rounded-full">
-                        {partner.category}
-                      </span>
-                    </div>
-                    <h3 className="font-display font-semibold text-xl text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-gold)] transition-colors">
+              <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-gold)]/20 to-[var(--accent-green)]/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+              <div className="relative bg-[var(--bg-card)] rounded-3xl overflow-hidden border border-[var(--border-gold)]/30 hover:border-[var(--accent-gold)] transition-all duration-300">
+                <div className="h-48 bg-gradient-to-br from-[var(--accent-green)] to-[var(--accent-green-dark)] relative overflow-hidden p-8 flex items-end">
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--accent-gold)] rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+                  </div>
+                  <div className="relative">
+                    <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm text-white font-body font-semibold text-sm rounded-full mb-3">
+                      {partner.category}
+                    </span>
+                    <h3 className="font-display font-bold text-3xl text-white">
                       {partner.name}
                     </h3>
-                    <div className="flex items-center gap-2 font-body text-sm text-[var(--text-secondary)]">
-                      <Phone size={14} />
+                  </div>
+                </div>
+
+                <div className="p-8">
+                  <p className="font-body text-[var(--text-secondary)] leading-relaxed mb-6">
+                    {partner.description}
+                  </p>
+
+                  {/*<div className="bg-gradient-to-r from-[var(--accent-gold)]/10 to-[var(--accent-gold)]/5 rounded-xl p-4 mb-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-2 h-2 bg-[var(--accent-gold)] rounded-full"></div>
+                      <span className="font-body font-semibold text-sm text-[var(--text-primary)]">
+                        회원 혜택
+                      </span>
+                    </div>
+                    <p className="font-body text-[var(--accent-gold)] font-semibold">
+                      {partner.benefits}
+                    </p>
+                  </div>*/}
+
+                  <div className="space-y-3 border-t border-[var(--border-gold)]/30 pt-6">
+                    <div className="flex items-center gap-3 font-body text-sm text-[var(--text-secondary)]">
+                      <MapPin size={16} className="flex-shrink-0" />
+                      {partner.location}
+                    </div>
+                    <div className="flex items-center gap-3 font-body text-sm text-[var(--text-secondary)]">
+                      <Phone size={16} className="flex-shrink-0" />
                       {partner.phone}
                     </div>
-                  </motion.div>
+                    <a
+                      href={`https://${partner.website}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 font-body text-sm text-[var(--accent-gold)] hover:text-[var(--accent-gold-dark)] transition-colors group/link"
+                    >
+                      <Globe size={16} className="flex-shrink-0" />
+                      <span className="group-hover/link:underline">{partner.website}</span>
+                      <ExternalLink size={14} className="opacity-50" />
+                    </a>
+                  </div>
                 </div>
-              ))}
-            </Slider>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mt-16 text-center"
-          >
-            <p className="font-body text-[var(--text-secondary)] mb-6">
-              더 많은 협력 기업 정보가 궁금하신가요?
-            </p>
-            <motion.a
-              href="/partners"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[var(--accent-gold)] to-[var(--accent-gold-dark)] text-white font-body font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              전체 협력 기업 보기
-              <ExternalLink size={18} />
-            </motion.a>
-          </motion.div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-  )
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-16 flex justify-center items-center gap-2"
+        >
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="px-4 py-2 rounded-lg border-2 border-[var(--border-gold)]/30 text-[var(--text-secondary)] hover:border-[var(--accent-gold)] hover:text-[var(--accent-gold)] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300"
+          >
+            이전
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+            <button
+              key={pageNumber}
+              onClick={() => handlePageChange(pageNumber)}
+              className={`w-10 h-10 rounded-lg font-body font-semibold transition-all duration-300 ${
+                currentPage === pageNumber
+                  ? 'bg-gradient-to-r from-[var(--accent-gold)] to-[var(--accent-gold-dark)] text-white shadow-lg'
+                  : 'border-2 border-[var(--border-gold)]/30 text-[var(--text-secondary)] hover:border-[var(--accent-gold)] hover:text-[var(--accent-gold)]'
+              }`}
+            >
+              {pageNumber}
+            </button>
+          ))}
+
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="px-4 py-2 rounded-lg border-2 border-[var(--border-gold)]/30 text-[var(--text-secondary)] hover:border-[var(--accent-gold)] hover:text-[var(--accent-gold)] disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-300"
+          >
+            다음
+          </button>
+        </motion.div>
+      </div>
+    </div>
+  );
 }
