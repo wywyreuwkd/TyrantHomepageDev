@@ -10,7 +10,7 @@ export default function UserPageLayout({
     <div>
       <Header />
         {children}    
-      <Footer />
+      {/*<Footer />*/}
     </div>
   );
 }
