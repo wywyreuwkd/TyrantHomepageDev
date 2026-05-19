@@ -79,7 +79,7 @@ export function MainHeroSection() {
                 Since 2025
               </span>
             </div>
-            <h1 className="font-display font-bold text-7xl lg:text-7xl text-white mb-6 tracking-tight leading-none">
+            <h1 className="font-display font-bold text-5xl lg:text-7xl text-white mb-6 tracking-tight leading-none">
               마포구
               <br />
               골프협회

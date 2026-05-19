@@ -6,11 +6,6 @@ import { ImageWithFallback } from "@/components/shared/ImageWithFallback";
 import { ExternalLink, Phone } from "lucide-react";
 import Link from "next/link";
 
-import SampleImage1 from "@/public/sample_image_field_1.jpeg"
-import SampleImage2 from "@/public/sample_image_field_2.jpeg"
-// import SampleImage3 from "https://images.unsplash.com/photo-1768396747921-5a18367415d2?w=600&h=450&fit=crop"
-// import SampleImage4 from "https://images.unsplash.com/photo-1761400025076-8fec91f620f2?w=600&h=450&fit=crop"
-
 export function MainGallerySection() {
 
   const recentGalleryPhotos = [
@@ -50,7 +45,7 @@ export function MainGallerySection() {
                 PHOTO GALLERY
               </span>
             </div>
-            <h2 className="font-display font-bold text-5xl lg:text-6xl text-[var(--text-primary)] mb-6">
+            <h2 className="font-display font-bold text-4xl lg:text-6xl text-[var(--text-primary)] mb-6">
               활동 갤러리
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--accent-gold)] to-transparent mx-auto mb-6"></div>

@@ -412,7 +412,7 @@ export function MainPartnersSection() {
                 PARTNERS
               </span>
             </div>
-            <h2 className="font-display font-bold text-5xl lg:text-6xl text-[var(--text-primary)] mb-6">
+            <h2 className="font-display font-bold text-3xl lg:text-6xl text-[var(--text-primary)] mb-6">
               협력 기업
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--accent-gold)] to-transparent mx-auto mb-6"></div>

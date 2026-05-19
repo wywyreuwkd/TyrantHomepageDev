@@ -114,7 +114,7 @@ export function CalendarSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h1 className="font-display font-bold text-6xl text-[var(--text-primary)] mb-6">
+          <h1 className="font-display font-bold text-4xl lg:text-6xl text-[var(--text-primary)] mb-6">
             일정 캘린더
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--accent-gold)] to-transparent mx-auto mb-6"></div>

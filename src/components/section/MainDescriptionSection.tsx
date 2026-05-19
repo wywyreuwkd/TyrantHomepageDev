@@ -24,7 +24,7 @@ export function MainDescriptionSection() {
                   ABOUT US
                 </span>
               </div>
-              <h2 className="font-display font-bold text-5xl lg:text-5xl text-[var(--text-primary)] mb-6 leading-tight">
+              <h2 className="font-display font-bold text-3xl lg:text-5xl text-[var(--text-primary)] mb-6 leading-tight">
                 마포구 골프협회를<br />소개합니다
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-[var(--accent-gold)] to-transparent mb-8"></div>
@@ -39,26 +39,26 @@ export function MainDescriptionSection() {
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center p-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
-                  <div className="font-display font-bold text-4xl text-[var(--accent-gold)] mb-2">
+                  <div className="font-display font-bold text-2xl lg:text-4xl text-[var(--accent-gold)] mb-2">
                     100+
                   </div>
-                  <div className="font-body text-sm text-[var(--text-secondary)]">
+                  <div className="font-body text-xs lg:text-sm text-[var(--text-secondary)]">
                     총 회원 수
                   </div>
                 </div>
                 <div className="text-center p-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
-                  <div className="font-display font-bold text-4xl text-[var(--accent-gold)] mb-2">
+                  <div className="font-display font-bold text-2xl lg:text-4xl text-[var(--accent-gold)] mb-2">
                     10+
                   </div>
-                  <div className="font-body text-sm text-[var(--text-secondary)]">
+                  <div className="font-body text-xs lg:text-sm text-[var(--text-secondary)]">
                     연간 행사
                   </div>
                 </div>
                 <div className="text-center p-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
-                  <div className="font-display font-bold text-4xl text-[var(--accent-gold)] mb-2">
+                  <div className="font-display font-bold text-2xl lg:text-4xl text-[var(--accent-gold)] mb-2">
                     2년
                   </div>
-                  <div className="font-body text-sm text-[var(--text-secondary)]">
+                  <div className="font-body text-xs lg:text-sm text-[var(--text-secondary)]">
                     협회 역사
                   </div>
                 </div>
