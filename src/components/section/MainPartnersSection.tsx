@@ -351,7 +351,7 @@ export function MainPartnersSection() {
   const partnersSliderSettings = {
     dots: false,
     infinite: true,
-    speed: 5000,
+    speed: 2000,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
@@ -377,21 +377,21 @@ export function MainPartnersSection() {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
