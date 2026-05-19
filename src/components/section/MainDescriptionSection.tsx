@@ -37,7 +37,7 @@ export function MainDescriptionSection() {
                 우리는 단순한 친목 모임을 넘어, 지역사회 공헌과 골프 문화의 발전을 목표로 합니다.<br />
                 매해 발전을 거듭하는 마포구 골프 협회에 많은 관심 부탁 드립니다.
               </p>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-3 lg:gap-6">
                 <div className="text-center p-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
                   <div className="font-display font-bold text-2xl lg:text-4xl text-[var(--accent-gold)] mb-2">
                     100+
