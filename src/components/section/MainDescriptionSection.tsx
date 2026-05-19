@@ -38,7 +38,7 @@ export function MainDescriptionSection() {
                 매해 발전을 거듭하는 마포구 골프 협회에 많은 관심 부탁 드립니다.
               </p>
               <div className="grid grid-cols-3 gap-3 lg:gap-6">
-                <div className="text-center p-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
+                <div className="text-center py-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
                   <div className="font-display font-bold text-2xl lg:text-4xl text-[var(--accent-gold)] mb-2">
                     100+
                   </div>
@@ -46,7 +46,7 @@ export function MainDescriptionSection() {
                     총 회원 수
                   </div>
                 </div>
-                <div className="text-center p-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
+                <div className="text-center py-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
                   <div className="font-display font-bold text-2xl lg:text-4xl text-[var(--accent-gold)] mb-2">
                     10+
                   </div>
@@ -54,7 +54,7 @@ export function MainDescriptionSection() {
                     연간 행사
                   </div>
                 </div>
-                <div className="text-center p-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
+                <div className="text-center py-6 bg-white rounded-2xl border border-[var(--border-gold)]/30">
                   <div className="font-display font-bold text-2xl lg:text-4xl text-[var(--accent-gold)] mb-2">
                     2년
                   </div>
