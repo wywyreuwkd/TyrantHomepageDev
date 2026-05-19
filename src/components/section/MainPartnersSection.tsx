@@ -365,6 +365,7 @@ export function MainPartnersSection() {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
+          speed: 2500,
         },
       },
       {
@@ -372,6 +373,7 @@ export function MainPartnersSection() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          speed: 2500,
         },
       },
       {
@@ -379,7 +381,7 @@ export function MainPartnersSection() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          speed: 1500,
+          speed: 1800,
         },
       },
       {
@@ -387,7 +389,7 @@ export function MainPartnersSection() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          speed: 1500,
+          speed: 1800,
         },
       },
       {
@@ -395,7 +397,7 @@ export function MainPartnersSection() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          speed: 1500,
+          speed: 1800,
         },
       },
     ],
